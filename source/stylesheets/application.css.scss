@@ -1,0 +1,6 @@
+// DON'T put .css or the end or it won't be found!
+$icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
+@import "bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
+@import "bootstrap-sass/assets/stylesheets/bootstrap";
+@import "prism/themes/prism-okaidia";
+@import "conways";

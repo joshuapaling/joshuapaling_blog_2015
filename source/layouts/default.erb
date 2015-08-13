@@ -1,0 +1,18 @@
+
+<%= partial 'layouts/header' %>
+
+<div class="row">
+
+  <!-- Blog Post Content Column -->
+  <div class="col-lg-8" role="main">
+    <%= yield %>
+  </div>
+
+  <!-- Blog Sidebar Widgets Column -->
+  <div class="col-md-4">
+    <%= partial 'layouts/sidebar' %>
+  </div>
+
+</div>
+<!-- /.row -->
+<%= partial 'layouts/footer' %>

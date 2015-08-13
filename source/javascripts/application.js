@@ -1,0 +1,9 @@
+//= require jquery/dist/jquery.min.js
+//= require bootstrap-sass/assets/javascripts/bootstrap-sprockets.js
+//= require prism/prism.js
+//= require prism/components/prism-ruby.min.js
+//= require prism/components/prism-bash.min.js
+//= require prism/components/prism-php.min.js
+//= require prism/components/prism-scss.min.js
+//= require prism/components/prism-javascript.min.js
+//= require_tree .
