@@ -36,3 +36,9 @@ A directory in a Unix-like operating system is merely a special type of file tha
 **/bin and /usr/bin** These two directories contain most of the programs for the system. The /bin directory has the essential programs that the system requires to operate, while /usr/bin contains applications for the system's users.
 
 **/sbin** contains executable (i.e., ready to run) programs. They are mostly administrative tools, that should be made available only to the root (i.e., administrative) user.
+
+
+~~~bash
+# show all processes containing 'terminal'
+ps aux | grep 'terminal'
+~~~
