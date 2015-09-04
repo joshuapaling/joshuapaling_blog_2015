@@ -42,3 +42,25 @@ A directory in a Unix-like operating system is merely a special type of file tha
 # show all processes containing 'terminal'
 ps aux | grep 'terminal'
 ~~~
+
+Piping - redirect stoud of the first command to stin of the second.
+
+grep
+
+~~~bash
+grep Mount mountains.txt
+grep Mount mountains.txt --color
+grep -i Mount mountains.txt # case insensitive
+grep -R Arctic /home/ccuser/workspace/geography # search directory recursively
+grep -Rl Arctic /home/ccuser/workspace/geography # search directory and list only (don't show full text occurance)
+~~~
+
+~~~bash
+env # show all environment variables
+~~~
+
+sed - stream editor
+
+~~~bash
+sed 's/snow/rain/g' forests.txt # replace snow with rain, all occurrences in every line
+~~~
