@@ -108,7 +108,7 @@ The general rule of thumb here is making changes to anything outside of app/ or 
 rails server -b 0.0.0.0
 ~~~
 
-Then access it via your local IP, eg: `http://169.254.90.15:3000/` or your bonjour address, eg `http://joshuas-macbook-pro-2.local:3000/`
+Then access it via your local IP, eg: `http://169.254.90.15:3000/` (Which you can find in System preferences -> network) or your bonjour address, eg `http://joshuas-macbook-pro-2.local:3000/`
 
 (as per [this answer](http://stackoverflow.com/a/28948293/1373987))
 
@@ -124,3 +124,9 @@ end
 ~~~
 
 [More info](http://stackoverflow.com/questions/1217088/what-does-mapname-mean-in-ruby)
+
+### Rails logger
+
+~~~ruby
+Rails.logger.info('Cookies: ' + cookies.count.to_s)
+~~~
