@@ -44,5 +44,12 @@
     </div>
     <!-- /.container -->
   </nav>
+
+  <h1>Joshua Paling</h1>
+  <nav>
+    <a class="<%= 'active' if current_page.url =~ /\/blog\/.*/ || current_page.url == '/' %>" href="/">Blog</a>
+    <a href="/about.html">About</a>
+    <%= link_to 'RSS', "#{blog.options.prefix.to_s}/feed.xml" %>
+  </nav>
   <!-- Page Content -->
   <div class="container">
