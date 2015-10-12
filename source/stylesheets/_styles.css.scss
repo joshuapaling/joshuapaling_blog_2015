@@ -1,0 +1,96 @@
+//xs only
+@media(max-width: $screen-xs-max) {
+  html { font-size: 13px }
+}
+//sm only
+@media(min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  html { font-size: 15px; }
+}
+
+//md only
+@media(min-width: $screen-md-min) {
+  html { font-size: 16px }
+}
+
+h1, h2 {
+  font-weight: normal;
+}
+
+p {
+  @include font-size(16px);
+}
+
+.page-wrapper {
+  width: 100%;
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header h1 {
+  text-align: center;
+  text-transform: uppercase;
+  @include font-size(46px);
+  @include rem(margin-top, 70px);
+  @include rem(margin-bottom, 20px);
+  letter-spacing: 3px;
+  font-weight: normal;
+}
+
+header nav {
+  display: block;
+  text-align: center;
+  @include rem(padding-bottom, 30px);
+  @include rem(margin-bottom, 60px);
+  border-bottom: 1px solid #ddd;
+  text-transform: uppercase;
+
+  a {
+    color: #999;
+    display: inline-block;
+    @include rem(margin, 0 15px);
+  }
+
+  a:hover,
+  a.active {
+    color: #111;
+    text-decoration: none;
+  }
+}
+
+.me-offline {
+  text-align: center;
+  @include rem(margin-top, 60px);
+  @include rem(padding-top, 60px);
+  border-top: 1px solid #ddd;
+
+  h1 {
+    text-transform: uppercase;
+    @include rem(margin-bottom, 40px);
+  }
+}
+
+footer {
+  color: #666;
+  text-align: center;
+  @include rem(padding-top, 90px);
+  @include rem(padding-bottom, 90px);
+  @include rem(margin-top, 150px);
+  border-top: 1px solid #ddd;
+
+  nav {
+    text-transform: uppercase;
+    @include rem(margin-bottom, 15px);
+  }
+
+  a {
+    color: #666;
+    display: inline-block;
+    @include rem(margin, 0 15px);
+  }
+
+  a:hover {
+    color: #111;
+    text-decoration: none;
+  }
+}

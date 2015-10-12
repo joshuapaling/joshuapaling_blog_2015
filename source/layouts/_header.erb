@@ -9,47 +9,13 @@
   <%= javascript_include_tag 'application' %>
 </head>
 <body>
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">Joss Paling</a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="<%= 'active' if current_page.url =~ /\/blog\/.*/ || current_page.url == '/' %>">
-            <a href="/">Blog</a>
-          </li>
-          <li class="<%= 'active' if current_page.url =~ /(\/archives\/|\/tags\/).*/ || current_page.url == '/archives.html' %>">
-            <a href="/archives.html">Archives</a>
-          </li>
-          <li class="<%= 'active' if current_page.url == '/about.html' %>">
-            <a href="/about.html">About</a>
-          </li>
-          <li>
-            <%= link_to 'RSS', "#{blog.options.prefix.to_s}/feed.xml" %>
-          </li>
-        </ul>
-      </div>
-      <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-  </nav>
-
-  <h1>Joshua Paling</h1>
-  <nav>
-    <a class="<%= 'active' if current_page.url =~ /\/blog\/.*/ || current_page.url == '/' %>" href="/">Blog</a>
-    <a href="/about.html">About</a>
-    <%= link_to 'RSS', "#{blog.options.prefix.to_s}/feed.xml" %>
-  </nav>
-  <!-- Page Content -->
-  <div class="container">
+  <div class="page-wrapper">
+    <header>
+      <h1>Joshua Paling</h1>
+      <nav>
+        <a class="<%= 'active' if current_page.url =~ /\/blog\/.*/ || current_page.url == '/' %>" href="/">Blog</a>
+        <a class="<%= 'active' if current_page.url == '/about.html' %>" href="/about.html">About</a>
+        <a target="_blank" href="https://twitter.com/joshuapaling">@joshuapaling</a>
+        <%= link_to 'RSS', "#{blog.options.prefix.to_s}/feed.xml" %>
+      </nav>
+    </header>

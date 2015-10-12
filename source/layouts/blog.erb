@@ -4,19 +4,9 @@
 <div class="row">
 
   <!-- Blog Post Content Column -->
-  <div class="col-lg-8" role="main">
+  <div class="col-lg-12" role="main">
     <h1><%= current_article.title %></h1>
-    <p class="lead">
-      <span class="glyphicon glyphicon-time"></span> August 24, 2013
-    </p>
-
-    <hr>
     <%= yield %>
-  </div>
-
-  <!-- Blog Sidebar Widgets Column -->
-  <div class="col-md-4">
-    <%= partial 'layouts/sidebar' %>
   </div>
 
 </div>

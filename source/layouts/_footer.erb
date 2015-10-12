@@ -1,9 +1,14 @@
-    <br />
-    <br />
-    <hr>
-
     <!-- Footer -->
     <footer>
+      <nav>
+        <a class="<%= 'active' if current_page.url =~ /\/blog\/.*/ || current_page.url == '/' %>" href="/">Blog</a>
+        &nbsp;&bull;&nbsp;
+        <a class="<%= 'active' if current_page.url == '/about.html' %>" href="/about.html">About</a>
+        &nbsp;&bull;&nbsp;
+        <%= link_to 'RSS', "#{blog.options.prefix.to_s}/feed.xml" %>
+        &nbsp;&bull;&nbsp;
+        <a class="<%= 'active' if current_page.url =~ /(\/archives\/|\/tags\/).*/ || current_page.url == '/archives.html' %>" href="/archives.html">Archives</a>
+      </nav>
       <div class="row">
         <div class="col-lg-12">
           <p>Copyright &copy; Joshua Paling 2015</p>
