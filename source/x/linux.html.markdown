@@ -31,11 +31,19 @@ A directory in a Unix-like operating system is merely a special type of file tha
 
 **/etc** contains configuration files. All files in /etc should be text files.
 
+**/etc/init.d** contains a number of start/stop scripts for various services on your system. Specifically, files in /etc/init.d are shell scripts that respond to start, stop, restart, and (when supported) reload commands to manage a particular service [more](http://askubuntu.com/questions/5039/what-is-the-difference-between-etc-init-and-etc-init-d)
+
+*Generally when you see that *.d convention, it means "this is a directory holding a bunch of configuration fragments which will be merged together into configuration for some service."* - from [here](http://unix.stackexchange.com/questions/4029/what-does-the-d-stand-for-in-directory-names)
+
 **/var** contains files to which the system writes data during the course of its operation. [more](http://www.linfo.org/var.html)
 
 **/bin and /usr/bin** These two directories contain most of the programs for the system. The /bin directory has the essential programs that the system requires to operate, while /usr/bin contains applications for the system's users.
 
 **/sbin** contains executable (i.e., ready to run) programs. They are mostly administrative tools, that should be made available only to the root (i.e., administrative) user.
+
+Included on some systems only:
+
+**/opt** for "the installation of add-on application software packages"
 
 
 ~~~bash

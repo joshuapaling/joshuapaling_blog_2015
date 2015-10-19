@@ -4,16 +4,7 @@ tags:
 published: false
 ---
 
-Code sample:
-
-~~~bash
-bower --help
-~~~
-
-~~~markup
-bower --help # no highlighting, just plain
-~~~
-
+http://martinfowler.com/articles/richardsonMaturityModel.html
 
 Related: RESTful Fever: http://notes.jerzygangi.com/it-is-okay-to-make-non-restful-controllers-and-routes-in-rails/
 (I think the more kinda 'specific' a page is to your application, the more it's like a crucial point in your app, the more likely it will be that REST might not fit)
