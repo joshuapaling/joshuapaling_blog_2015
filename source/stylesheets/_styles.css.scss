@@ -46,12 +46,13 @@ ul, ol {
   max-width: 850px;
   margin-left: auto;
   margin-right: auto;
+  padding: 15px;
 }
 
 header h1 {
   text-align: center;
   text-transform: uppercase;
-  @include font-size(46px);
+  @include font-size(35px);
   @include rem(margin-top, 70px);
   @include rem(margin-bottom, 20px);
   letter-spacing: 3px;
