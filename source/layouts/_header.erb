@@ -16,7 +16,7 @@
       <nav>
         <a class="<%= 'active' if current_page.url =~ /\/blog\/.*/ || current_page.url == '/' %>" href="/">Blog</a>
         <a class="<%= 'active' if current_page.url == '/about.html' %>" href="/about.html">About</a>
-        <a target="_blank" href="https://twitter.com/joshuapaling">@joshuapaling</a>
         <%= link_to 'RSS', "#{blog.options.prefix.to_s}/feed.xml" %>
+        <a target="_blank" href="https://twitter.com/joshuapaling">@joshuapaling</a>
       </nav>
     </header>
