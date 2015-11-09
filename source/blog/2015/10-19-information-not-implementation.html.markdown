@@ -15,7 +15,4 @@ While it was a small blow to my ego *(I thought I was an awesome dev-signer!?)*,
 
 Understanding the underlying problem, your job is to then guide them through the steps of defining the technical implementation, suggesting different options, letting them know about any trade-offs, weighing up cost/effort in vs result out, flexibility for the future, and letting them know about which decisions can be easily changed later, and which will be a nightmare. And, most importantly, mining them for information on all the complicated edge cases they require a solution for, which will significantly impact the implementation, but which they will no doubt have overlooked.
 
-<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Most things are simple as long as I don&#39;t spend too much time looking at them.</p>&mdash; The Expert Beginner (@ExpertBeginner1) <a href="https://twitter.com/ExpertBeginner1/status/652132346158714882">October 8, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-<br />
 Ask first for information. Then, move on to implementation.
