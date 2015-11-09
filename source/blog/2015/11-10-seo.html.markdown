@@ -4,7 +4,9 @@ tags:
 published: true
 ---
 
-**Transcript of my talk at #rorosyd on November 10th:**
+**Slides and transcript of my talk at #rorosyd on November 10th:**
+
+<script async class="speakerdeck-embed" data-id="bc8e2347ddd44b8b8c25946312ff95e0" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
 Hi I'm Joss, and I am not an SEO. However, I know enough to be able to call out really bad SEO advice when I see it, and that's something I feel every developer could benefit from, because in the span of your career, there's a non-trivial chance you'll come across it. I should warn you that I've compromised flow and ease of following along for just cramming a lot of info into 15mins, so I'll move quickly, but I'll post stuff on my blog afterwards.
 
