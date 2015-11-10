@@ -8,6 +8,8 @@ Eg. you can put markdown inside html:
 **Another paragraph** which allows *Markdown* within it.
 </p>
 
+Install bower dependencies: `bower install`
+
 Build and deploy:
 
 ~~~markup
