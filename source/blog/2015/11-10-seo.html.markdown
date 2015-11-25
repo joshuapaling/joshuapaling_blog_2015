@@ -4,7 +4,7 @@ tags:
 published: true
 ---
 
-**Slides and transcript of my talk at #rorosyd on November 10th:**
+**Slides and transcript of my recent talk given at both #rorosyd and [Alt.net](https://www.altopia.com/) meetups this November:**
 
 <script async class="speakerdeck-embed" data-id="bc8e2347ddd44b8b8c25946312ff95e0" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
