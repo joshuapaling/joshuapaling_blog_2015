@@ -13,6 +13,11 @@ Install bower dependencies: `bower install`
 Build and deploy:
 
 ~~~markup
-be middleman build
-be middleman deploy
+sh shipit.sh
+~~~
+
+Develop:
+
+~~~markup
+be middleman server
 ~~~
