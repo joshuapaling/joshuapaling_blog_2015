@@ -19,8 +19,6 @@ More info [here](https://devcenter.heroku.com/articles/heroku-postgres-import-ex
 
 ## Postgres heroku import local database:
 
-You can get PG credentials with
-
 Export your local db with:
 
 ~~~markup

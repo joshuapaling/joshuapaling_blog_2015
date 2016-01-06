@@ -54,7 +54,7 @@ and in the migration:
 drop_table :posts
 remove_column :table_name, :column_name
 rename_column :table_name, :old_column, :new_column
-add_column :table_name, :column_name, :type, :null => false, :default => ''
+add_column :table_name, :column_name, :type, null: false, default: ''
 
 add_reference(:products, :user, foreign_key: true) # creates user_id col, with proper fkey index
 ~~~
