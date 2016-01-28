@@ -19,5 +19,5 @@ sh shipit.sh
 Develop:
 
 ~~~markup
-be middleman server
+bundle exec middleman server
 ~~~
