@@ -10,4 +10,4 @@ I was once told three rules for good writing:
 * Clear connections
 * Utter simplicity
 
-The same apply to writing software. If you're code adheres to these three rules, it's good code. No matter what anyone says.
+The same apply to writing software. Forget design patters and best practices — they're a means to an end, not an end in themselves. If you're code adheres to these three rules, it's good code. No matter what anyone says.
