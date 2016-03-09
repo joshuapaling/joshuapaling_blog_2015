@@ -26,6 +26,14 @@ User.find(id)
 User.where(email: 'joss@bbl.com').first
 ~~~
 
+~~~ruby
+# bypasses callbacks and validation
+Model.update_columns(column: 'Value')
+
+# does not bypass validation
+Model.update_attributes(:field1 => "value", :field2 => "value2", :field3 => "value3")
+~~~
+
 <h2>Migrations</h2>
 
 
