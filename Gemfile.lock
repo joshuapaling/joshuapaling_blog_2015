@@ -146,6 +146,3 @@ DEPENDENCIES
   middleman-deploy (~> 1.0)
   middleman-livereload
   nokogiri
-
-BUNDLED WITH
-   1.10.6

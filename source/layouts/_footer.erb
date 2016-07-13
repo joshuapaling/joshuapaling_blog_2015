@@ -5,6 +5,8 @@
         &nbsp;&bull;&nbsp;
         <a class="<%= 'active' if current_page.url == '/about.html' %>" href="/about.html">About</a>
         &nbsp;&bull;&nbsp;
+        <a class="<%= 'active' if current_page.url == '/resume.html' %>" href="/resume.html">Resume</a>
+        &nbsp;&bull;&nbsp;
         <%= link_to 'RSS', "#{blog.options.prefix.to_s}/feed.xml" %>
         &nbsp;&bull;&nbsp;
         <a class="<%= 'active' if current_page.url =~ /(\/archives\/|\/tags\/).*/ || current_page.url == '/archives.html' %>" href="/archives.html">Archives</a>
