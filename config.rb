@@ -112,10 +112,11 @@ configure :build do
   # set :http_prefix, "/Content/images/"
 end
 
+activate :sprockets
 sprockets.append_path File.join "#{root}", "bower_components"
 
 activate :deploy do |deploy|
-  deploy.method = :git
+  deploy.deploy_method = :git
   # Optional Settings
   # deploy.remote   = 'custom-remote' # remote name or git url, default: origin
   # deploy.branch   = 'custom-branch' # default: gh-pages
