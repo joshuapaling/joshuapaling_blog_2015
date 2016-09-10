@@ -4,6 +4,14 @@ title: Sequelize
 
 <h1>Sequelize</h1>
 
+~~~
+sequelize db:migrate
+sequelize db:migrate:undo
+sequelize db:migrate:undo:all
+~~~
+
+[http://docs.sequelizejs.com/en/latest/docs/migrations/](http://docs.sequelizejs.com/en/latest/docs/migrations/)
+
 new migration: `sequelize migration:create` (name it after creating it)
 
 Example migration:
@@ -17,6 +25,16 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.BIGINT
+      },
+      other_table_id: {
+        type: Sequelize.BIGINT,
+        allowNull: false,
+        references: {
+          model: 'clusters',
+          key: 'id'
+        },
+        onUpdate: 'cascade',
+        onDelete: 'cascade'
       },
       code: {
         allowNull: false,
@@ -39,7 +57,14 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
-    })
+    }).then(() => queryInterface.addIndex(
+      'scenario_school_years',
+      ['scenario_id', 'school_code', 'school_year'],
+      {
+        indexName: 'unique_scenario_school_years',
+        indicesType: 'UNIQUE'
+      }
+    ))
   },
   down: function(queryInterface, Sequelize) {
     return queryInterface.dropTable('clusters')
