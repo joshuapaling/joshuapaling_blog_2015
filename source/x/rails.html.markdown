@@ -49,6 +49,14 @@ Create new table including fkey to courses table.
 
 [All options for  field:type](http://stackoverflow.com/questions/4384284/rails-generate-model-fieldtype-what-are-the-options-for-fieldtype)
 
+~~~
+def change
+  create_table :workout_substitutions do |t|
+    t.references :user, index: true, foreign_key: true
+    t.timestamps null: false
+  end
+end
+~~~
 
 migration only, no model generation:
 
