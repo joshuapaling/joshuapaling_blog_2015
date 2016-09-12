@@ -55,6 +55,9 @@ def change
     t.references :user, index: true, foreign_key: true
     t.timestamps null: false
   end
+
+  # Add unique index:
+  add_index(:accounts, [:branch_id, :party_id], unique: true)
 end
 ~~~
 
