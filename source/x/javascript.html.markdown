@@ -16,6 +16,13 @@ if ('y' in x) {
 }
 ~~~
 
+[Pretty print an object for debugging:](http://stackoverflow.com/questions/130404/javascript-data-formatting-pretty-printer)
+
+~~~javascript
+var myArray = ['e', {pluribus: 'unum'}];
+var text = JSON.stringify(myArray, null, '\t');
+~~~
+
 Toggle next:
 
 ~~~javascript
