@@ -30,3 +30,7 @@ $('a.question').click(function () {
     $(this).next('.answer').slideToggle();
 });
 ~~~
+
+[Debugging node apps](https://nodejs.org/api/debugger.html)
+`node debug myscript.js` (it'll pause on a `debugger`)
+type `repl` at the debugger to execute code / inspect vars
