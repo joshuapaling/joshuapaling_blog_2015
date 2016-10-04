@@ -72,3 +72,44 @@ module.exports = {
 }
 
 ~~~
+
+## Rename column:
+
+~~~
+'use strict';
+
+module.exports = {
+  up: function (queryInterface, Sequelize) {
+    return queryInterface.renameColumn('scenarios', 'azure_job_status', 'last_azure_job_status')
+  },
+
+  down: function (queryInterface, Sequelize) {
+    return queryInterface.renameColumn('scenarios', 'last_azure_job_status', 'azure_job_status')
+  }
+};
+~~~
+
+## Add column:
+
+~~~
+'use strict';
+
+module.exports = {
+  up: function (queryInterface, Sequelize) {
+    return queryInterface.addColumn(
+      'scenarios',
+      'azure_job_status',
+      {
+        allowNull: false,
+        defaultValue: '',
+        type: Sequelize.STRING,
+        comment: "The status of azure_job_id from Azure's machine learning"
+      }
+    )
+  },
+
+  down: function (queryInterface, Sequelize) {
+    return queryInterface.removeColumn('scenarios', 'azure_job_status')
+  }
+};
+~~~
