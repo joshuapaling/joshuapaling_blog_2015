@@ -34,3 +34,18 @@ $('a.question').click(function () {
 [Debugging node apps](https://nodejs.org/api/debugger.html)
 `node debug myscript.js` (it'll pause on a `debugger`)
 type `repl` at the debugger to execute code / inspect vars
+
+## switch statement
+
+~~~
+switch (status) {
+  case 0:
+    // do something
+    break
+  case 1:
+    // do something
+    break
+  default:
+    // something else
+}
+~~~
