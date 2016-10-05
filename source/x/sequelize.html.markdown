@@ -125,3 +125,16 @@ yield models.scenario_meshblock_result.create({
   allocated_students: 100,
 })
 ~~~
+
+
+## Find one
+
+~~~
+const baseScenario = yield models.scenario.findOne({ where: { cluster_id: cluster.id, type }})
+~~~
+
+## Find all
+
+~~~
+const clusters = yield models.cluster.findAll()
+~~~
