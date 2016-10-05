@@ -126,6 +126,8 @@ yield models.scenario_meshblock_result.create({
 })
 ~~~
 
+# [find doco](http://docs.sequelizejs.com/en/latest/api/model/#findalloptions-promisearrayinstance)
+
 
 ## Find one
 
