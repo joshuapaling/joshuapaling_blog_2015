@@ -113,3 +113,15 @@ module.exports = {
   }
 };
 ~~~
+
+## Create new record
+
+~~~
+yield models.scenario_meshblock_result.create({
+  result_year: 2016,
+  meshblock_code: '1234',
+  school_code: '10011670000',
+  scenario_id: scenario.id,
+  allocated_students: 100,
+})
+~~~
