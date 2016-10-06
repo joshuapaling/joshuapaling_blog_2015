@@ -49,3 +49,10 @@ switch (status) {
     // something else
 }
 ~~~
+
+Round a number:
+
+~~~
+// returns a string, so OK for presentation, not future calculations
+(1.2345).toFixed(2)
+~~~
