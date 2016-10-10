@@ -36,6 +36,11 @@ Model.update_attributes(:field1 => "value", :field2 => "value2", :field3 => "val
 
 <h2>Migrations</h2>
 
+In mySQL, with certain settings, Text cols can't have a default value. So they must allow null and have default value set to false. Example migration converting varchar to text:
+
+~~~ruby
+change_column :employees, :asset_return_details, :text, null: true, default: nil
+~~~
 
 Create new table including fkey to courses table.
 
