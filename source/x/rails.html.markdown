@@ -52,6 +52,14 @@ Create new table including fkey to courses table.
 # :time, :date, :binary, :boolean, :references
 ~~~
 
+example decimal migration, with precision and scale:
+
+~~~ruby
+# more at https://ariejan.net/2012/08/28/rails-migrations-decimal-precision-and-scale/
+# allows up to 999.99
+change_column :my_table, :my_col, :decimal, precision: 5, scale: 2
+~~~
+
 [All options for  field:type](http://stackoverflow.com/questions/4384284/rails-generate-model-fieldtype-what-are-the-options-for-fieldtype)
 
 ~~~
@@ -153,4 +161,18 @@ end
 
 ~~~ruby
 Rails.logger.info('Cookies: ' + cookies.count.to_s)
+~~~
+
+### Routes
+
+Additional routes on same controller
+
+~~~ruby
+resources :territory_masters, only: [:index, :update] do
+  member do
+    get 'edit_employee'
+    put 'update_employee'
+    delete 'delete_employee'
+  end
+end
 ~~~
