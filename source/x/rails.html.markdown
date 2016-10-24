@@ -169,6 +169,10 @@ Additional routes on same controller
 
 ~~~ruby
 resources :territory_masters, only: [:index, :update] do
+  collection do
+    get 'search'
+  end
+
   member do
     get 'edit_employee'
     put 'update_employee'
