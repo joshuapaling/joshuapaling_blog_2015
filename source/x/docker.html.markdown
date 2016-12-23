@@ -22,7 +22,10 @@ Docker native doesn't mean that docker doesn't run in a VM. It just means that r
 
 Docker containers still have an 'operating system' or linux distro installed on them. What they share with the underlying VM is the linux kernel, not the whole distro.
 
+`docker ps`: list running containers.
 `docker ps -a`: list ALL containers, even those not running.
+`docker volume ls`: list all volumes
+`docker volume rm <name>`: remove a volume
 
 In the case of this error:
 
@@ -31,6 +34,7 @@ web_rails_1    | Could not find rake-11.2.2 in any of the sources
 web_rails_1    | Run `bundle install` to install missing gems.
 thebigvaultrails_web_rails_1 exited with code 7
 ```
+
 Run bash in the container with
 
 `docker-compose run web_rails /bin/bash`
