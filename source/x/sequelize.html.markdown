@@ -114,6 +114,23 @@ module.exports = {
 };
 ~~~
 
+## Execute some SQL:
+
+~~~
+'use strict';
+
+module.exports = {
+  up: function (queryInterface, Sequelize) {
+    return queryInterface.sequelize.query("insert into settings (setting_key, setting_value) values ('power_bi_url', 'https://app.powerbi.com/groups/3721a85d-41c6-45e9-8a65-2669ee462b47/dashboards/3eeed953-09a6-4713-bf8c-66ec46b8af56')")
+  },
+
+  down: function (queryInterface, Sequelize) {
+    return queryInterface.sequelize.query("delete from settings where setting_key = 'power_bi_url'")
+  }
+};
+
+~~~
+
 ## Create new record
 
 ~~~
