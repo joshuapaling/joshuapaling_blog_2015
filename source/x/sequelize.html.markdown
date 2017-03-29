@@ -114,6 +114,43 @@ module.exports = {
 };
 ~~~
 
+## Change column:
+
+~~~
+'use strict';
+
+module.exports = {
+  up: function (queryInterface, Sequelize) {
+    return queryInterface.changeColumn(
+      'schools',
+      'meshblock_code',
+      {
+        type: Sequelize.BIGINT,
+        allowNull: true,
+        references: {
+          model: 'meshblocks',
+          key: 'meshblock_code'
+        },
+        onUpdate: 'cascade',
+        onDelete: 'cascade'
+      }
+    )
+  },
+
+  down: function (queryInterface, Sequelize) {
+    return queryInterface.changeColumn(
+      'schools',
+      'meshblock_code',
+      {
+        type: Sequelize.BIGINT,
+        allowNull: true,
+      }
+    )
+  }
+};
+
+~~~
+
 ## Execute some SQL:
 
 ~~~
