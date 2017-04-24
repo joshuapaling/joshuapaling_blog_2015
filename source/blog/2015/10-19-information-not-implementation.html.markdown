@@ -4,9 +4,6 @@ tags:
 published: true
 ---
 
-<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">I keep developers out of conversations about the domain because they always want to know &quot;why this&quot; and &quot;why that.&quot;  Just write your code.</p>&mdash; The Expert Beginner (@ExpertBeginner1) <a href="https://twitter.com/ExpertBeginner1/status/656122859773820929">October 19, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-<br />
 Recently at work, I was describing what a client wanted to a designer, and I said "let me take a look at what you've got so far."
 
 His reply: "No, 'cos then you'll give me design input, and what I want is information."
