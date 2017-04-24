@@ -3,8 +3,8 @@
 ###
 
 # Time.zone = "UTC"
-page "/*", layout: 'layouts/default'
 page "/blog/*", layout: 'layouts/blog'
+page "/*", layout: 'layouts/default'
 
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
