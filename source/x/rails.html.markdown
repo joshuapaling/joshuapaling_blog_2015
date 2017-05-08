@@ -89,6 +89,8 @@ rename_column :table_name, :old_column, :new_column
 add_column :table_name, :column_name, :type, null: false, default: ''
 
 add_reference(:products, :user, foreign_key: true) # creates user_id col, with proper fkey index
+
+remove_reference :tasks, :employee, index: true, foreign_key: true
 ~~~
 
 More [here](http://edgeapi.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-add_reference)
