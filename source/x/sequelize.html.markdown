@@ -80,11 +80,11 @@ module.exports = {
 
 module.exports = {
   up: function (queryInterface, Sequelize) {
-    return queryInterface.renameColumn('scenarios', 'azure_job_status', 'last_azure_job_status')
+    return queryInterface.renameColumn('scenarios', 'old_name', 'new_name')
   },
 
   down: function (queryInterface, Sequelize) {
-    return queryInterface.renameColumn('scenarios', 'last_azure_job_status', 'azure_job_status')
+    return queryInterface.renameColumn('scenarios', 'new_name', 'old_name')
   }
 };
 ~~~
