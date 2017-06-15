@@ -1,0 +1,15 @@
+---
+title: D3
+---
+
+<h1>D3</h1>
+
+*Scale*: A scale is a function that takes a datum as an input, and returns an output that's used for visualising that datum. Most common is eg: take input in meters, return output in pixels, or "svg points". But a scale could eg. take degrees Celsius and map it to a color from blue to red.
+
+*Domain*: The valid x/input values of a function
+
+*Range*: The possible y/output values of a function
+
+*Ordinal Number*: Eg. first, second, 3rd, etc. A specified rank in a series.
+
+*Ordinal Scale*: Eg. maps a category name to a color. Ordinal scales have discrete domain and range, rather than continuous.
