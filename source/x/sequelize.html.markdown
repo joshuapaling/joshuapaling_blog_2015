@@ -73,6 +73,22 @@ module.exports = {
 
 ~~~
 
+## Rename table:
+
+~~~
+'use strict';
+
+module.exports = {
+  up: function (queryInterface, Sequelize) {
+    return queryInterface.renameTable('old_name', 'new_name')
+  },
+
+  down: function (queryInterface, Sequelize) {
+    return queryInterface.renameTable('new_name', 'old_name')
+  }
+};
+~~~
+
 ## Rename column:
 
 ~~~
