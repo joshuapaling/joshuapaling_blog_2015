@@ -72,3 +72,9 @@ sed - stream editor
 ~~~bash
 sed 's/snow/rain/g' forests.txt # replace snow with rain, all occurrences in every line
 ~~~
+
+## Show loc count for a project, example:
+
+~~~bash
+find ./app ./spec -type f | grep -v node_modules | xargs wc -l
+~~~
