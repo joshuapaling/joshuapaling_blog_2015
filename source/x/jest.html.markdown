@@ -7,6 +7,7 @@ title: Jest
 Example test with mocks
 
 ~~~javascript
+
 const { factory } = require('test/helpers/jest');
 
 //////////////////////////////////
@@ -40,3 +41,4 @@ describe('averageTravelDistanceByYear', () => {
     }
   );
 });
+~~~
