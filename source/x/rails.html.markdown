@@ -74,6 +74,8 @@ def change
 end
 ~~~
 
+To add a fkey column to an existing table: see [here](https://stackoverflow.com/a/42056089/1373987)
+
 migration only, no model generation:
 
 ~~~ruby
