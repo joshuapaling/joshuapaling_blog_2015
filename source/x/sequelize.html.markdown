@@ -189,18 +189,15 @@ module.exports = {
 ~~~
 'use strict';
 const models = require('../models');
-const co = require('co');
 const Promise = require('bluebird');
 const interventionCrud = require('../modules/interventionCrud');
 
 module.exports = {
-  up: function(queryInterface, Sequelize) {
+  up: async function(queryInterface, Sequelize) {
     // Find all interventions and calcDerivedInterventionFields
-    return co(function*() {
-      const interventions = yield models.intervention.findAll();
-      // Updating with no changes will re-calc all derived fields
-      yield Promise.map(interventions, i => interventionCrud.update(i.id, {}));
-    });
+    const interventions = await models.intervention.findAll();
+    // Updating with no changes will re-calc all derived fields
+    await Promise.map(interventions, i => interventionCrud.update(i.id, {}));
   },
 
   down: function(queryInterface, Sequelize) {
@@ -209,6 +206,7 @@ module.exports = {
     */
   },
 };
+
 ~~~
 
 ## Create new record
