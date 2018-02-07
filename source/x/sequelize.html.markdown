@@ -75,7 +75,7 @@ module.exports = {
 
 ## Rename table:
 
-~~~
+~~~javascript
 'use strict';
 
 module.exports = {
@@ -91,7 +91,7 @@ module.exports = {
 
 ## Rename column:
 
-~~~
+~~~javascript
 'use strict';
 
 module.exports = {
@@ -107,7 +107,7 @@ module.exports = {
 
 ## Add column:
 
-~~~
+~~~javascript
 'use strict';
 
 module.exports = {
@@ -132,7 +132,7 @@ module.exports = {
 
 ## Change column:
 
-~~~
+~~~javascript
 'use strict';
 
 module.exports = {
@@ -169,7 +169,7 @@ module.exports = {
 
 ## Execute some SQL:
 
-~~~
+~~~javascript
 'use strict';
 
 module.exports = {
@@ -186,7 +186,7 @@ module.exports = {
 
 ## Execute some other code to update records in a migration, using model classes:
 
-~~~
+~~~javascript
 'use strict';
 const models = require('../models');
 const Promise = require('bluebird');
@@ -211,7 +211,7 @@ module.exports = {
 
 ## Create new record
 
-~~~
+~~~javascript
 yield models.scenario_meshblock_result.create({
   result_year: 2016,
   meshblock_code: '1234',
@@ -226,12 +226,26 @@ yield models.scenario_meshblock_result.create({
 
 ## Find one
 
-~~~
+~~~javascript
 const baseScenario = yield models.scenario.findOne({ where: { cluster_id: cluster.id, type }})
 ~~~
 
 ## Find all
 
-~~~
+~~~javascript
 const clusters = yield models.cluster.findAll()
+~~~
+
+~~~javascript
+const Op = models.Sequelize.Op;
+const scenarios = await models.scenario.findAll({
+  where: { id: { [Op.in]: ids } },
+  include: [
+    { model: models.cluster },
+    {
+      model: models.school,
+      include: [models.intervention],
+    },
+  ],
+});
 ~~~
