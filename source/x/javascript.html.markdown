@@ -4,6 +4,10 @@ title: Javascript
 
 <h1>Javascript</h1>
 
+[using promises in loops](https://blog.lavrton.com/javascript-loops-how-to-handle-async-await-6252dd3c795)
+
+[Object.entries](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries) - Iterate through key/value pairs
+
 [Check if object has property](http://stackoverflow.com/questions/1894792/determining-if-a-javascript-object-has-a-given-property)
 
 ~~~javascript
