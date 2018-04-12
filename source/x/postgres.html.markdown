@@ -55,3 +55,11 @@ More info [here](http://stackoverflow.com/questions/11890084/importing-a-postgre
 cd /Volumes/Macintosh\ HD/usr/local/var/postgres/
 rm -r postmaster.pid
 ~~~
+
+# Shortcuts at console
+
+~~~markup
+\l
+\d (display databases)
+\dT+ (display enums with details)
+~~~
