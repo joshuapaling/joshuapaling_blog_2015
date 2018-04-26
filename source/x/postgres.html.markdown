@@ -17,6 +17,12 @@ curl -o latest.dump `heroku pg:backups public-url -a your-app-name`
 More info [here](https://devcenter.heroku.com/articles/heroku-postgres-import-export)
 
 
+copy heroku prod to staging:
+
+~~~markup
+heroku pg:copy prod-svc-ee-offer-syd::DATABASE_URL DATABASE_URL --app test-svc-ee-offer-syd
+~~~
+
 ## Postgres heroku import local database:
 
 Export your local db with:
