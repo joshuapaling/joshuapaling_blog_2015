@@ -8,7 +8,7 @@ title: Linux
 
 [ops school curriculum](http://www.opsschool.org/en/latest/introduction.html)
 
-list disk space for files in directory `du -sh *`:
+list disk space for files in directory `du -sh *` - or, show hidden files too: `du -sch .[!.]* * |sort -h`
 
 ~~~markup
 [root@sneakerology httpd]# du -sh *
