@@ -58,6 +58,9 @@ example decimal migration, with precision and scale:
 # more at https://ariejan.net/2012/08/28/rails-migrations-decimal-precision-and-scale/
 # allows up to 999.99
 change_column :my_table, :my_col, :decimal, precision: 5, scale: 2
+
+# change col to be null - http://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-change_column_null
+change_column_null :employee_sites, :employee_site_role_id, false
 ~~~
 
 [All options for  field:type](http://stackoverflow.com/questions/4384284/rails-generate-model-fieldtype-what-are-the-options-for-fieldtype)
