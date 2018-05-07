@@ -8,6 +8,8 @@ psql
 
 `\l` or `\list` list databases
 
+`\x` show results stacked row-on-row, key/value pair style, rather than one big wide table
+
 ## Dump heroku DB:
 
 ~~~markup
