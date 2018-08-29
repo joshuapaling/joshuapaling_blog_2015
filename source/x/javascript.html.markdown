@@ -60,3 +60,7 @@ Round a number:
 // returns a string, so OK for presentation, not future calculations
 (1.2345).toFixed(2)
 ~~~
+
+## Don't convert an arrow function just to console log:
+
+[here](https://twitter.com/thekitze/status/1029369487685021696)
