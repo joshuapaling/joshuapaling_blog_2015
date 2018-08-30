@@ -10,6 +10,8 @@ title: Linux
 
 list disk space for files in directory `du -sh *` - or, show hidden files too: `du -sch .[!.]* * |sort -h`
 
+More user-friendly tool for listing disk space: `ncdu`
+
 ~~~markup
 [root@sneakerology httpd]# du -sh *
 184K	access_log
