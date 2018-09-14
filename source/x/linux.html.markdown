@@ -4,6 +4,12 @@ title: Linux
 
 <h1>Linux</h1>
 
+Kill process on port:
+
+~~~
+lsof -ti:8182 | xargs kill
+~~~
+
 [Manage disk space](https://kb.mediatemple.net/questions/916/Managing+your+disk+usage#dv)
 
 [ops school curriculum](http://www.opsschool.org/en/latest/introduction.html)
