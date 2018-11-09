@@ -64,3 +64,25 @@ Round a number:
 ## Don't convert an arrow function just to console log:
 
 [here](https://twitter.com/thekitze/status/1029369487685021696)
+
+
+## Execute main function if running direct from command line. Import it otherwise.
+
+~~~
+const main = async function(mode = 'scheduled_vendors') {
+  // do stuff...
+}
+
+module.exports = main
+if (require.main === module) {
+  // file is being called directly from the command line, not required by
+  // another module, so execute it
+  let mode = process.argv[2]
+  main(mode).then(
+    () => process.exit(0)
+  ).catch(e => {
+    console.log('error', e.message);
+    process.exit(0);
+  })
+}
+~~~
