@@ -27,3 +27,12 @@ rollback
 ~~~markup
 heroku rollback v54 -a prod-le-svc-discovery
 ~~~
+
+
+connect to redis
+
+~~~markup
+heroku redis:cli -a prod-le-svc-vendor-syd
+Connecting to redis-animated-94383 (REDIS_URL):
+ec2-13-237-235-169.ap-southeast-2.compute.amazonaws.com:6479> FLUSHDB
+~~~
