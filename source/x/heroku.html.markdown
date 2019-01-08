@@ -36,3 +36,10 @@ heroku redis:cli -a prod-le-svc-vendor-syd
 Connecting to redis-animated-94383 (REDIS_URL):
 ec2-13-237-235-169.ap-southeast-2.compute.amazonaws.com:6479> FLUSHDB
 ~~~
+
+see what's running and kill a dyno
+
+~~~markup
+heroku ps -a prod-le-svc-vendor-syd
+heroku ps:kill scheduler.8377 -a prod-le-svc-vendor-syd
+~~~
