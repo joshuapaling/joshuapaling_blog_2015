@@ -14,3 +14,15 @@ git commit -m "my msg"
 git branch -r --merged | grep -v master | sed 's/origin\///' | xargs -n 1 git push --delete origin
 ~~~
 
+## Git bisect
+
+~~~bash
+git bisect start
+git bisect good # marks current commit as good
+git bisect bad 33f3849b # marks the commit you know to be bad
+# then, git takes over from there... you just mark each as good or bad
+git bisect good # marks current commit as good
+
+# at the end:
+git bisect reset
+~~~
