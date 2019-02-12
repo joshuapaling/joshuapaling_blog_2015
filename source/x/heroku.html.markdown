@@ -43,3 +43,9 @@ see what's running and kill a dyno
 heroku ps -a prod-le-svc-vendor-syd
 heroku ps:kill scheduler.8377 -a prod-le-svc-vendor-syd
 ~~~
+
+refresh a view on reporting DB (or just run any bit of SQL)
+
+~~~bash
+heroku psql -c "refresh materialized view vendor.ee_voucher_trxs" -a prod-le-svc-reporting-syd
+~~~
