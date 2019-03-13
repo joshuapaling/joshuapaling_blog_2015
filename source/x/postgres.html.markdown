@@ -10,6 +10,18 @@ psql
 
 `\x` show results stacked row-on-row, key/value pair style, rather than one big wide table
 
+## query json
+
+~~~sql
+-- nested...
+select offer_response_json->'result'->>'category' from items
+
+-- or first level...
+select offer_response_json->>'result' from items
+
+-- rulte: use -> until the last property, then use ->>
+~~~
+
 ## Dump heroku DB:
 
 ~~~markup
