@@ -24,6 +24,12 @@ select offer_response_json->>'result' from items
 -- rulte: use -> until the last property, then use ->>
 ~~~
 
+## View active queries
+
+~~~sql
+select * FROM pg_stat_activity
+~~~
+
 ## Dump heroku DB:
 
 ~~~markup
