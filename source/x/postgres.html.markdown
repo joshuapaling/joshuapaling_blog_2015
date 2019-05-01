@@ -12,6 +12,12 @@ psql
 
 `\x` show results stacked row-on-row, key/value pair style, rather than one big wide table
 
+## Clone a database locally
+
+~~~bash
+dropdb to_db_name && createdb -T from_db_name to_db_name
+~~~
+
 ## query json
 
 ~~~sql
