@@ -24,7 +24,9 @@ git bisect bad 33f3849b # marks the commit you know to be bad
 git bisect good # marks current commit as good
 
 # or run it automatically:
-git bisect run yarn --ignore-engines && yarn jest
+git bisect run yarn jest
+# with multiple commands:
+git bisect run sh -c 'yarn --ignore-engines && yarn jest'
 
 # at the end:
 git bisect reset
