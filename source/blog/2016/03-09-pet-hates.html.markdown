@@ -6,7 +6,7 @@ published: false
 
 A list of my pet hates - particularly re: management, so I can make sure not to do them should I ever be in that position.
 
-- People who prefix every task they delegate with words like 'simple', 'quick' and 'easy'. They rarely are, and it makes you feel like you're constantly under performing.
+- People who prefix every task they delegate with words like 'simple', 'quick' and 'easy'. They rarely are, and it makes you feel like you're constantly under performing when a "simple" or "quick" task takes longer than expected.
 
 - Context switching. A productivity killer, and general motivation killer. Creative work (including software dev) takes place when developers are given time and autonomy. Nothing's worse than being pulled off a task just when you've got into the zone.
 
@@ -18,4 +18,4 @@ A list of my pet hates - particularly re: management, so I can make sure not to 
 
 - Being tasked my multiple people. The trouble is, then each of the people tasking you don't know how busy you are, or how much work the other "taskers" have given you. There should be a single point of contact managing your workflow (that point of contact can be you, but that means you have to have the authority to turn down tasks, or say that they can't be done for a while, because you've got too much on). If someone requests new work that could be done by you, it should go through that single point of contact, even if the person requesting it is above that point of contact in the heirarchy. (Eg, CEO should ask CTO for a change, as opposed to asking a dev directly. If they ask a dev directly, dev can just pass on to CTO.)
 
-- Managers who speak in text speak, eliminate punctuation etc in their emails. Gives the vibe of "I'm busy, and you weren't worth taking the extra few seconds to add in punctuation". eg "Can I get an update on ALL projects please. havent heard from you in a while." is SO much better as "Can I get an update on ALL projects please. I haven't heard from you in a while." It's about 3 characters difference.
+- Managers who speak in text speak and leave out joining words or eliminate punctuation etc in their emails, making them harder to read. It gives the vibe of "I'm too busy to communicate clearly".
