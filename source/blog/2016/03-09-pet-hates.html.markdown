@@ -1,7 +1,8 @@
 ---
 title: Workplace Pet Hates
 tags:
-published: false
+published: true
+layout: blog
 ---
 
 A list of my pet hates - particularly re: management, so I can make sure not to do them should I ever be in that position.

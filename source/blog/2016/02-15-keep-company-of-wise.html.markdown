@@ -2,6 +2,7 @@
 title: Keep the company of the wise
 tags:
 published: true
+layout: blog
 ---
 
 In India, one of the top recommendations for young yogis aspiring to enlightenment is "keep the company of the wise".

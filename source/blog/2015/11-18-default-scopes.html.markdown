@@ -2,6 +2,7 @@
 title: Never, ever, ever user Rails default scopes
 tags:
 published: true
+layout: blog
 ---
 
 I'm [not](http://rails-bestpractices.com/posts/2013/06/15/default_scope-is-evil/) [the](http://www.ombulabs.com/blog/ruby/rails/best-practices/why-using-default-scope-is-a-bad-idea.html) [first](http://stackoverflow.com/questions/25087336/why-is-using-the-rails-default-scope-often-recommend-against) [person](http://www.railszilla.com/default_scope-in-rails-is-bad/rails) to recommend against default scopes.

@@ -2,6 +2,7 @@
 title: React and Flux
 tags:
 published: false
+layout: blog
 ---
 
 http://fluxxor.com/documentation/stores.html

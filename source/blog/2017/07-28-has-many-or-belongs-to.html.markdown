@@ -2,6 +2,7 @@
 title: ToDo
 tags: ToDo
 published: false
+layout: blog
 ---
 
 Sebastion gave a talk: no circular dependencies. Most commmon is "hasMany" and "belongsTo". Pick one or the other. Factors influencing your decision:

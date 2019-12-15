@@ -2,6 +2,7 @@
 title: 2015 Development Goals
 tags:
 published: true
+layout: blog
 ---
 
 I [did this last year](/blog/2014/11/16/2014-development-goals.html). Been meaning to do it this year (I've had goals in my head since the beginning of the year). We're almost a third the way though 2015, but I've finally got around to writing them down.

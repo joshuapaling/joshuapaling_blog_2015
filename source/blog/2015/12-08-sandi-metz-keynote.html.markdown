@@ -2,6 +2,7 @@
 title: Summary of Sandi's Keep Ruby Weird keynote
 tags:
 published: true
+layout: blog
 ---
 
 Sandi Metz gave a [great keynote](https://www.youtube.com/watch?v=skG09s9S3Fc&feature=youtu.be) at [keeprubyweird.com](http://keeprubyweird.com/). You should watch it.

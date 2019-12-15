@@ -2,6 +2,7 @@
 title: The bare minimum developers should know about SEO
 tags:
 published: true
+layout: blog
 ---
 
 **Slides and transcript of my recent talk given at both #rorosyd and [Alt.net](https://www.altopia.com/) meetups this November:**

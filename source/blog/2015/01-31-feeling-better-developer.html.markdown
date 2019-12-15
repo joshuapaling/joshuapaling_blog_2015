@@ -1,6 +1,7 @@
 ---
 title: Feeling like a better developer
 tags: programming
+layout: blog
 ---
 
 <script async class="speakerdeck-embed" data-id="61bfc191985442f4af9a165c975a4208" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script>

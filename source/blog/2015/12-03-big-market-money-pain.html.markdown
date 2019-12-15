@@ -2,6 +2,7 @@
 title: Criteria for a good product
 tags:
 published: false
+layout: blog
 ---
 
 summarise https://twitter.com/joshuapaling/status/669312139224485888

@@ -2,6 +2,7 @@
 title: ToDo
 tags: ToDo
 published: false
+layout: blog
 ---
 
 Syntax highlighting

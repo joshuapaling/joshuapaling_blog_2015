@@ -2,6 +2,7 @@
 title: Nulls In Your Database
 tags:
 published: true
+layout: blog
 ---
 
 <p class="lead">TLDR; You should make all your database columns so they DON'T allow nulls - unless you have an explicit reason for needing nulls.</p>

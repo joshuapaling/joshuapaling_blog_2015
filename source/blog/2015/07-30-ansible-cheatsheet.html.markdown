@@ -2,6 +2,7 @@
 title: Ansible Cheatsheet
 tags:
 published: false
+layout: blog
 ---
 
 **task:** is basically like a single bash command.

@@ -2,6 +2,7 @@
 title: Vagrant Cheatsheet
 tags:
 published: false
+layout: blog
 ---
 
 Virtualisation: running one operating system within another operating system (eg what parallels does with mac and windows). Ie, run a virutal machine.

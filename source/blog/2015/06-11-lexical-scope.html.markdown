@@ -2,6 +2,7 @@
 title: Lexical Scope
 tags:
 published: false
+layout: blog
 ---
 
 useful: http://stackoverflow.com/questions/1047454/what-is-lexical-scope

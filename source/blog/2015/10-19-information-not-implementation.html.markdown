@@ -2,6 +2,7 @@
 title: Information before implementation
 tags:
 published: true
+layout: blog
 ---
 
 Recently at work, I was describing what a client wanted to a designer, and I said "let me take a look at what you've got so far."

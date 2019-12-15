@@ -2,6 +2,7 @@
 title: Some good reads
 tags:
 published: true
+layout: blog
 ---
 
 - [Scaling ruby apps to 1000 request per minute](http://www.nateberkopec.com/2015/07/29/scaling-ruby-apps-to-1000-rpm.html): Most of us don't have to worry about reaching twitter-scale. 1000 rpm will more than cover us.

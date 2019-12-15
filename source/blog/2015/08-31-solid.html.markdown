@@ -2,6 +2,7 @@
 title: SOLID
 tags:
 published: false
+layout: blog
 ---
 
 ## Listkov substitution principle

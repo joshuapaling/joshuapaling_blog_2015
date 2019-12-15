@@ -2,6 +2,7 @@
 title: REST in rails
 tags:
 published: false
+layout: blog
 ---
 
 http://martinfowler.com/articles/richardsonMaturityModel.html

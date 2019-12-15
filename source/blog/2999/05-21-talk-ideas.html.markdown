@@ -2,6 +2,7 @@
 title: ToDo
 tags: ToDo
 published: false
+layout: blog
 ---
 
 "It's not a bug it's a feature: a programmers guide to the human brain"

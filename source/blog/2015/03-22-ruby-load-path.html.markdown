@@ -2,6 +2,7 @@
 title: Ruby Load Path
 tags: ruby
 published: true
+layout: blog
 ---
 
 A summary of [this video](http://www.sitepoint.com/loading-code-ruby/) for my future reference.
