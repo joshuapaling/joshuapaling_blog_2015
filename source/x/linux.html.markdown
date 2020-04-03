@@ -86,3 +86,9 @@ sed 's/snow/rain/g' forests.txt # replace snow with rain, all occurrences in eve
 ~~~bash
 find ./app ./spec -type f | grep -v node_modules | xargs wc -l
 ~~~
+
+## find use of packages (in this case, bull package):
+
+~~bash
+grep --include=package.json -rnw ./ -e "\"bull\":"
+~~~
