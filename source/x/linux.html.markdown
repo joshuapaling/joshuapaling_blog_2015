@@ -89,6 +89,6 @@ find ./app ./spec -type f | grep -v node_modules | xargs wc -l
 
 ## find use of packages (in this case, bull package):
 
-~~bash
+~~~bash
 grep --include=package.json -rnw ./ -e "\"bull\":"
 ~~~
