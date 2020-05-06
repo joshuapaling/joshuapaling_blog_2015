@@ -49,3 +49,5 @@ refresh a view on reporting DB (or just run any bit of SQL)
 ~~~bash
 heroku psql -c "refresh materialized view vendor.ee_voucher_trxs" -a prod-le-svc-reporting-syd
 ~~~
+
+Logs formatting: [https://brandur.org/logfmt](https://brandur.org/logfmt)
