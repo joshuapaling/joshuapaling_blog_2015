@@ -51,3 +51,11 @@ heroku psql -c "refresh materialized view vendor.ee_voucher_trxs" -a prod-le-svc
 ~~~
 
 Logs formatting: [https://brandur.org/logfmt](https://brandur.org/logfmt)
+
+Find how many cores your heroku dyno type has:
+
+```bash
+▶ heroku run "grep -c processor /proc/cpuinfo" --app prod-le-svc-graphql-syd
+Running grep -c processor /proc/cpuinfo on ⬢ prod-le-svc-graphql-syd... up, run.1612 (Private-M)
+2
+```
