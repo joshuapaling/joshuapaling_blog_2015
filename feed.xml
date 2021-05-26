@@ -6,7 +6,7 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
   <title>Joshua Paling </title>
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
-  <link href="/stylesheets/application-650b1803.css" rel="stylesheet" />
+  <link href="/stylesheets/application-65eac6ab.css" rel="stylesheet" />
   <script src="/javascripts/application-8d565278.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
@@ -31,101 +31,38 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2018-10-14T00:00:00Z</updated>
+  <updated>2018-07-27T00:00:00Z</updated>
   <author>
     <name>Joshua Paling</name>
   </author>
   <entry>
-    <title>How to make fixed price work</title>
-    <link rel="alternate" href="http://blog.url.com/blog/2018/10/14/how-to-make-fixed-price-work.html"/>
-    <id>http://blog.url.com/blog/2018/10/14/how-to-make-fixed-price-work.html</id>
-    <published>2018-10-14T00:00:00Z</published>
-    <updated>2021-05-26T18:33:26+10:00</updated>
+    <title>Breaking Prod</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2018/07/27/breaking-prod.html"/>
+    <id>http://blog.url.com/blog/2018/07/27/breaking-prod.html</id>
+    <published>2018-07-27T00:00:00Z</published>
+    <updated>2021-05-26T19:26:16+10:00</updated>
     <author>
       <name>Article Author</name>
     </author>
-    <content type="html">&lt;p&gt;Customers want fixed price. Here’s how to make it a fair deal for yourself.
-I recently read &lt;a href="https://twitter.com/arohner/status/766688027745751041"&gt;this tweet-storm&lt;/a&gt;, on why you should never take fixed price contracts.&lt;/p&gt;
+    <content type="html">&lt;p&gt;When I’ve broken production apps, stakeholders have often asked: &lt;em&gt;“What can we do to ensure this doesn’t happen again?”&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;It says:&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../../../images/bugs-vs-speed-f15f9700.jpg" alt="Bugs vs speed" /&gt;&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;Unless you’ve done the job 20 times, and can estimate how long it will take with a high-degree of certainty, fixed-price is suboptimal. Like the over-under in betting, someone wins, and someone loses. And to answer who is more likely to win, the contractor or the employer, you can answer with another question: When was the last time you had a software project come in on-schedule? For clarity, fixed duration contracts are fine: “You pay for N weeks of work, I do N weeks of work”. Where you get into trouble is: “I pay for N weeks of work, regardless of how much time it takes to complete”. The employers who do this tend to also like to play games with what is in vs. out of scope. Avoid.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;The relationship between development speed and bugs looks something like this:&lt;/p&gt;
 
-&lt;p&gt;Having spent years in a small digital agency where &amp;gt; 95% of our work was fixed price, I agree with all the points. The problem is, almost all customers want a fixed price.&lt;/p&gt;
+&lt;p&gt;As you slow development speed, the impact of bugs does not decrease linearly&lt;/p&gt;
 
-&lt;p&gt;Here’s some tips for making fixed price work.&lt;/p&gt;
+&lt;p&gt;Rushed pace &amp;amp; poor testing means many bugs. Slow down, and at first you’ll drastically reduce bugs. But slow down more, and you begin to bottom out. You can never reach zero.&lt;/p&gt;
 
-&lt;h2 id="fixed-price-is-insurance"&gt;Fixed price is insurance&lt;/h2&gt;
+&lt;p&gt;Breaking prod less means using time, money, and bureaucracy to slide right on an axis of diminishing returns.&lt;/p&gt;
 
-&lt;p&gt;This is the golden rule. In a fixed price job, you’re selling the customer two things:&lt;/p&gt;
+&lt;p&gt;Finding the sweet spot requires ongoing collaboration between business and tech. Since sliding RIGHT is expensive, you want to be as far LEFT as your appetite for risk allows.&lt;/p&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;The product you’re building them&lt;/li&gt;
-  &lt;li&gt;Insurance on the cost of that product&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;Writing pacemaker firmware? Slide very far right to ensure no one dies.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Insurance costs money.&lt;/strong&gt; In the case of software, you should charge ~30% additional for fixed price jobs. You can tell the client this in plain english. They will still want fixed cost for the same reasons they still buy travel/car/indemnity insurance.&lt;/p&gt;
+&lt;p&gt;Selling shoes online? You have a higher tolerance for risk. Slide left and &lt;em&gt;take advantage of it.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;Companies selling insurance (ie, you):&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Don’t win on every single customer. They win overall.&lt;/li&gt;
-  &lt;li&gt;Have different premiums for different customers, based on risk.&lt;/li&gt;
-  &lt;li&gt;Have strict written terms on what is and isn’t inside the scope of the insurance policy.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id="estimating"&gt;Estimating&lt;/h2&gt;
-
-&lt;p&gt;You’ll drastically underestimate your first few projects. Don’t underestimate the next few. Here’s some tips:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Hofstadtler’s law states “It always takes longer than you expect, even when you take into account Hofstadter’s Law.” This is doubly true of software.&lt;/li&gt;
-  &lt;li&gt;Break the work into small chunks, estimate each, then total.&lt;br /&gt; You’ll want to break the project into chunks for writing your scope too. More on that later.&lt;/li&gt;
-  &lt;li&gt;Scope will change. The client doesn’t know what they want yet. You’ll write a formal scope to protect you against scope change, but asking for more money at every tiny change sucks. Allow a significant amount of fat so you can absorb some reasonable amount of scope change.&lt;/li&gt;
-  &lt;li&gt;Consider the value of the job to the client. Is it a game changer for them? If so, charge more.&lt;/li&gt;
-  &lt;li&gt;Got your estimate? Now, Double it. Everything takes twice as long as you think.&lt;br /&gt;
-&lt;em&gt;And DON’T consider the fact that it’ll get doubled when going through the points above!&lt;/em&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id="wont-i-be-out-competed-on-price"&gt;Won’t I be out-competed on price?&lt;/h2&gt;
-
-&lt;p&gt;Companies who get a few quotes on a job will get figures all over the place. Not everyone’s shopping for the cheapest price, and regardless of your price point, you’ll have people turning you down for being too expensive, and others turning you down for being too cheap. Yes, really.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;You want to go for the clients who know cheapest isn’t best.&lt;/em&gt; Not only do they pay more, they’re also usually more professional, less petty, and much more enjoyable to work with.&lt;/p&gt;
-
-&lt;h2 id="writing-a-scope"&gt;Writing a scope&lt;/h2&gt;
-
-&lt;p&gt;For a significant sized job, you should write a scope and have clients read and sign it before commencing work. Most clients won’t actually read it, but do it anyway.&lt;/p&gt;
-
-&lt;p&gt;A scope should detail what you will complete under the fixed cost. It should also outline what you won’t complete. You can place this under a euphemism like “Future Considerations”, and mention that these are ideas / possible enhancements for future, not included under the current scope.&lt;/p&gt;
-
-&lt;p&gt;A scope is what you’ll fall back on when your client says “… but I wanted this from the beginning” and you say “it wasn’t mentioned in the scope — we can do it, but at additional cost”. Assuming you’re being fair and telling the truth, clients will usually accept that without much fuss.&lt;/p&gt;
-
-&lt;p&gt;A scope is also what you’ll fall back on, on the off chance things get much worse than that. A scope is like writing the terms for the insurance you’re offering. Insurance companies don’t say “sure, we’ll cover any unexpected expenses you have on your holiday, no questions asked!”&lt;/p&gt;
-
-&lt;h2 id="payment"&gt;Payment&lt;/h2&gt;
-
-&lt;p&gt;It’s hard, but if you can, charge some amount to prepare a scope. One way to pitch it is “it comes of the cost of the job if you go ahead with us”. Companies can, and will, get you to write a great scope, then take your scope out to tender with cheaper companies that would not have done half as good a job of scoping out their project. A good scope is worth money in its own right.&lt;/p&gt;
-
-&lt;p&gt;Take a deposit up front. For smaller jobs (say up to 20k), take 50% up front, as soon as the scope is signed. For larger jobs, break it into milestones as makes sense, but the first payment should be up front, before starting work.&lt;/p&gt;
-
-&lt;p&gt;The last payment should be prior to going live — as in “it’s in staging and we’re ready to flick the go live switch once you pay”. Even if you trust the client, invoices get paid much more slowly after the project is live! (If the client resists, you may hold back some nominal amount to bill after it’s gone live, but 90% + should be before.)
-Most importantly, watch Mike Montiero’s great talk &lt;a href="https://www.youtube.com/watch?v=jVkLVRt6c1U"&gt;“Fuck you, pay me”&lt;/a&gt;. I can’t say I follow all his advice, but I probably should.&lt;/p&gt;
-
-&lt;h2 id="no-claim-bonus"&gt;No claim bonus&lt;/h2&gt;
-
-&lt;p&gt;You know how insurance companies have a “no claim bonus”? That’s clever marketing. It means “clients who make claims get charged more”. You can do the same. For difficult clients, or clients where you’ve lost out before, charge them a higher premium for future fixed price work (and recoup some of what you lost previously).&lt;/p&gt;
-
-&lt;h2 id="tracking-time--estimates-vs-actuals"&gt;Tracking time — estimates vs actuals&lt;/h2&gt;
-
-&lt;p&gt;Fixed price means you’re under no obligation to track time. It’s a good idea to do so anyway, for your own future reference. Don’t be too transparent with the client, though.&lt;/p&gt;
-
-&lt;p&gt;If you do fixed price right, there’ll be plenty of times where you come in under estimate, and the client could have got it cheaper at an hourly rate. That’s completely fair — fixed price is insurance, which the client wanted. You took the risk and it paid off. But there’s nothing to be gained from letting the client know that this time, you won.&lt;/p&gt;
-
-&lt;p&gt;Many clients expect a “Fixed price if it goes over estimate, but hourly if it goes under” deal — and that’s simply not viable for you. Fixed price means actual hours aren’t the client’s concern.&lt;/p&gt;
-
+&lt;p&gt;Coming back to the original question, the answer is &lt;em&gt;“we can slide as far right as you want, but it’s not free… how much do you want to pay for it?”&lt;/em&gt;&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -198,6 +135,99 @@ Most importantly, watch Mike Montiero’s great talk &lt;a href="https://www.you
 &lt;h2 id="overestimate"&gt;Overestimate&lt;/h2&gt;
 
 &lt;p&gt;Often the advice for estimating software projects is “decide how long you think it’ll take, then double it”. For data imports, multiplying by 4, or negotiating to do that part of the project hourly rather than fixed cost, is a safer bet.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>How to make fixed price work</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2016/10/14/how-to-make-fixed-price-work.html"/>
+    <id>http://blog.url.com/blog/2016/10/14/how-to-make-fixed-price-work.html</id>
+    <published>2016-10-14T00:00:00Z</published>
+    <updated>2021-05-26T19:22:31+10:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;Customers want fixed price. Here’s how to make it a fair deal for yourself.
+I recently read &lt;a href="https://twitter.com/arohner/status/766688027745751041"&gt;this tweet-storm&lt;/a&gt;, on why you should never take fixed price contracts.&lt;/p&gt;
+
+&lt;p&gt;It says:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Unless you’ve done the job 20 times, and can estimate how long it will take with a high-degree of certainty, fixed-price is suboptimal. Like the over-under in betting, someone wins, and someone loses. And to answer who is more likely to win, the contractor or the employer, you can answer with another question: When was the last time you had a software project come in on-schedule? For clarity, fixed duration contracts are fine: “You pay for N weeks of work, I do N weeks of work”. Where you get into trouble is: “I pay for N weeks of work, regardless of how much time it takes to complete”. The employers who do this tend to also like to play games with what is in vs. out of scope. Avoid.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Having spent years in a small digital agency where &amp;gt; 95% of our work was fixed price, I agree with all the points. The problem is, almost all customers want a fixed price.&lt;/p&gt;
+
+&lt;p&gt;Here’s some tips for making fixed price work.&lt;/p&gt;
+
+&lt;h2 id="fixed-price-is-insurance"&gt;Fixed price is insurance&lt;/h2&gt;
+
+&lt;p&gt;This is the golden rule. In a fixed price job, you’re selling the customer two things:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;The product you’re building them&lt;/li&gt;
+  &lt;li&gt;Insurance on the cost of that product&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Insurance costs money.&lt;/strong&gt; In the case of software, you should charge \~30% additional for fixed price jobs. You can tell the client this in plain english. They will still want fixed cost for the same reasons they still buy travel/car/indemnity insurance.&lt;/p&gt;
+
+&lt;p&gt;Companies selling insurance (ie, you):&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Don’t win on every single customer. They win overall.&lt;/li&gt;
+  &lt;li&gt;Have different premiums for different customers, based on risk.&lt;/li&gt;
+  &lt;li&gt;Have strict written terms on what is and isn’t inside the scope of the insurance policy.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id="estimating"&gt;Estimating&lt;/h2&gt;
+
+&lt;p&gt;You’ll drastically underestimate your first few projects. Don’t underestimate the next few. Here’s some tips:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Hofstadtler’s law states “It always takes longer than you expect, even when you take into account Hofstadter’s Law.” This is doubly true of software.&lt;/li&gt;
+  &lt;li&gt;Break the work into small chunks, estimate each, then total.&lt;br /&gt; You’ll want to break the project into chunks for writing your scope too. More on that later.&lt;/li&gt;
+  &lt;li&gt;Scope will change. The client doesn’t know what they want yet. You’ll write a formal scope to protect you against scope change, but asking for more money at every tiny change sucks. Allow a significant amount of fat so you can absorb some reasonable amount of scope change.&lt;/li&gt;
+  &lt;li&gt;Consider the value of the job to the client. Is it a game changer for them? If so, charge more.&lt;/li&gt;
+  &lt;li&gt;Got your estimate? Now, Double it. Everything takes twice as long as you think.&lt;br /&gt;
+&lt;em&gt;And DON’T consider the fact that it’ll get doubled when going through the points above!&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id="wont-i-be-out-competed-on-price"&gt;Won’t I be out-competed on price?&lt;/h2&gt;
+
+&lt;p&gt;Companies who get a few quotes on a job will get figures all over the place. Not everyone’s shopping for the cheapest price, and regardless of your price point, you’ll have people turning you down for being too expensive, and others turning you down for being too cheap. Yes, really.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;You want to go for the clients who know cheapest isn’t best.&lt;/em&gt; Not only do they pay more, they’re also usually more professional, less petty, and much more enjoyable to work with.&lt;/p&gt;
+
+&lt;h2 id="writing-a-scope"&gt;Writing a scope&lt;/h2&gt;
+
+&lt;p&gt;For a significant sized job, you should write a scope and have clients read and sign it before commencing work. Most clients won’t actually read it, but do it anyway.&lt;/p&gt;
+
+&lt;p&gt;A scope should detail what you will complete under the fixed cost. It should also outline what you won’t complete. You can place this under a euphemism like “Future Considerations”, and mention that these are ideas / possible enhancements for future, not included under the current scope.&lt;/p&gt;
+
+&lt;p&gt;A scope is what you’ll fall back on when your client says “… but I wanted this from the beginning” and you say “it wasn’t mentioned in the scope — we can do it, but at additional cost”. Assuming you’re being fair and telling the truth, clients will usually accept that without much fuss.&lt;/p&gt;
+
+&lt;p&gt;A scope is also what you’ll fall back on, on the off chance things get much worse than that. A scope is like writing the terms for the insurance you’re offering. Insurance companies don’t say “sure, we’ll cover any unexpected expenses you have on your holiday, no questions asked!”&lt;/p&gt;
+
+&lt;h2 id="payment"&gt;Payment&lt;/h2&gt;
+
+&lt;p&gt;It’s hard, but if you can, charge some amount to prepare a scope. One way to pitch it is “it comes of the cost of the job if you go ahead with us”. Companies can, and will, get you to write a great scope, then take your scope out to tender with cheaper companies that would not have done half as good a job of scoping out their project. A good scope is worth money in its own right.&lt;/p&gt;
+
+&lt;p&gt;Take a deposit up front. For smaller jobs (say up to 20k), take 50% up front, as soon as the scope is signed. For larger jobs, break it into milestones as makes sense, but the first payment should be up front, before starting work.&lt;/p&gt;
+
+&lt;p&gt;The last payment should be prior to going live — as in “it’s in staging and we’re ready to flick the go live switch once you pay”. Even if you trust the client, invoices get paid much more slowly after the project is live! (If the client resists, you may hold back some nominal amount to bill after it’s gone live, but 90% + should be before.)
+Most importantly, watch Mike Montiero’s great talk &lt;a href="https://www.youtube.com/watch?v=jVkLVRt6c1U"&gt;“Fuck you, pay me”&lt;/a&gt;. I can’t say I follow all his advice, but I probably should.&lt;/p&gt;
+
+&lt;h2 id="no-claim-bonus"&gt;No claim bonus&lt;/h2&gt;
+
+&lt;p&gt;You know how insurance companies have a “no claim bonus”? That’s clever marketing. It means “clients who make claims get charged more”. You can do the same. For difficult clients, or clients where you’ve lost out before, charge them a higher premium for future fixed price work (and recoup some of what you lost previously).&lt;/p&gt;
+
+&lt;h2 id="tracking-time--estimates-vs-actuals"&gt;Tracking time — estimates vs actuals&lt;/h2&gt;
+
+&lt;p&gt;Fixed price means you’re under no obligation to track time. It’s a good idea to do so anyway, for your own future reference. Don’t be too transparent with the client, though.&lt;/p&gt;
+
+&lt;p&gt;If you do fixed price right, there’ll be plenty of times where you come in under estimate, and the client could have got it cheaper at an hourly rate. That’s completely fair — fixed price is insurance, which the client wanted. You took the risk and it paid off. But there’s nothing to be gained from letting the client know that this time, you won.&lt;/p&gt;
+
+&lt;p&gt;Many clients expect a “Fixed price if it goes over estimate, but hourly if it goes under” deal — and that’s simply not viable for you. Fixed price means actual hours aren’t the client’s concern.&lt;/p&gt;
+
 </content>
   </entry>
   <entry>
@@ -324,28 +354,6 @@ A "yes" here is good and reveals a lot about general attitude towards employees.
     &lt;p&gt;Managers who speak in text speak and leave out joining words or eliminate punctuation etc in their emails, making them harder to read. It gives the vibe of "I'm too busy to communicate clearly".&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Perfectionism is a disease</title>
-    <link rel="alternate" href="http://blog.url.com/blog/2016/02/16/perfectionism-is-a-disease.html"/>
-    <id>http://blog.url.com/blog/2016/02/16/perfectionism-is-a-disease.html</id>
-    <published>2016-02-16T00:00:00Z</published>
-    <updated>2021-05-26T17:57:47+10:00</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;In year 10, my art teacher stopped me.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Stop! You're a perfectionist! And perfectionism is a disease!&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Having been praised for my perfectionism all my life, I dismissed her advice. It took more than a decade for me to realise just how right she was.&lt;/p&gt;
-
-&lt;p&gt;Perfectionism exists in maths tests and multiple choice comprehensions. It doesn’t exist in real life, and it certainly doesn’t exist in business or software. "Perfect" is the good-enough trade off between countless goals pulling in different directions.&lt;/p&gt;
-
-&lt;p&gt;In real life, perfectionism is a disease.&lt;/p&gt;
 </content>
   </entry>
 </feed>
