@@ -31,10 +31,50 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2018-07-27T00:00:00Z</updated>
+  <updated>2021-05-26T00:00:00Z</updated>
   <author>
     <name>Joshua Paling</name>
   </author>
+  <entry>
+    <title>Hiring Offshore</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2021/05/26/hiring-offshore.html"/>
+    <id>http://blog.url.com/blog/2021/05/26/hiring-offshore.html</id>
+    <published>2021-05-26T00:00:00Z</published>
+    <updated>2021-05-26T20:25:35+10:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;Though most of our engineers are based in Australia, at work we've now got teams in Ukraine, Sri Lanka, India, and Brazil. Here's some tips.&lt;/p&gt;
+
+&lt;h2 id="dont-lower-your-bar"&gt;Don't lower your bar&lt;/h2&gt;
+
+&lt;p&gt;If you wouldn't hire them for full price at on-shore rates, don't hire them off-shore just because they're cheaper. Sub-par developers are a drain on the entire team, and not worth having at any cost. Be willing to pay a bit extra to get the best developers overseas, just like you would, here.&lt;/p&gt;
+
+&lt;p&gt;We're using an agency, so applicants come to us already pre-vetted. Still, we interview them again and turn down a majority. Finding pre-vetted candidates, then vetting again yourself, is the right approach.&lt;/p&gt;
+
+&lt;h2 id="communication-is-as-important-as-technical-ability"&gt;Communication is as important as technical ability&lt;/h2&gt;
+
+&lt;p&gt;You absolutely must be able to communicate easily, both in writing and over the phone. No amount of programming expertise changes this. This means that your off-shore hires must be great at English, or they must be managed by an on-shore team member who speaks their language fluently.&lt;/p&gt;
+
+&lt;h2 id="over-do-communication-early-on"&gt;Over-do communication early on&lt;/h2&gt;
+
+&lt;p&gt;Anecdotally, I've noticed off-shore developers being reluctant to ask for help, and reluctant to take help even when it's offered. Insist on pair-programming with new off-shore starters for at least a couple of hours a day, every day, by default as they start off. Let go gradually as it's clear they have a firm grip of the wheel. Emphasise how useful it was, and encourage them to reach out for help whenever needed. Even if they're not reaching out for help, pro-actively reach out&lt;/p&gt;
+
+&lt;h2 id="encourage-autonomy-and-push-back"&gt;Encourage autonomy and push-back&lt;/h2&gt;
+
+&lt;p&gt;Off-shore hires tend to do whatever they're asked, with little or no push back. But you don't want that! Emphasise that you might be wrong, that they can question or challenge your advice. Praise it when they do. It's a waste of their intelligence to be merely a pencil in your hand.&lt;/p&gt;
+
+&lt;h2 id="be-patient"&gt;Be patient&lt;/h2&gt;
+
+&lt;p&gt;If you're not finding great hires, keep looking. Among the billion people in India, there's exactly zero chance that there's not thousands and thousands of great programmers. Yes, we've all heard the bad stories. Those people didn't have their hiring bar high enough.&lt;/p&gt;
+
+&lt;h2 id="treat-them-as-first-class-citizens-of-the-team"&gt;Treat them as first class citizens of the team&lt;/h2&gt;
+
+&lt;p&gt;Because they're cheaper, because they're not permanent / direct employees, and because they &lt;em&gt;feel&lt;/em&gt; further removed, it's tempting to give off-shore hires second-class service as a manager. "I know they're blocked… but I'm busy, I'll get to it in a few hours" or "Doesn't matter if it takes twice as long; they're half the cost anyway".&lt;/p&gt;
+
+&lt;p&gt;Don't. Apart from being a shitty thing to do, there's a big opportunity cost in leaving good developers un-supported. As much as reasonable, give your off-shore teams the same level of support and service as your on-shore teams.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Breaking Prod</title>
     <link rel="alternate" href="http://blog.url.com/blog/2018/07/27/breaking-prod.html"/>
@@ -318,42 +358,6 @@ A "yes" here is good and reveals a lot about general attitude towards employees.
 &lt;h2 id="great-tech-talks-require-great-examples"&gt;Great Tech talks require great examples&lt;/h2&gt;
 
 &lt;p&gt;Distill the technical idea to the smallest, most basic possible representation. Come up with a simple, self-contained example domain for all code demonstrated. Most people don’t do this and their talks are much worse for it. (The quote &lt;em&gt;‘I wrote a long letter because I didn’t have time to write you a short one’&lt;/em&gt; comes to mind)&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Workplace Pet Hates</title>
-    <link rel="alternate" href="http://blog.url.com/blog/2016/03/09/pet-hates.html"/>
-    <id>http://blog.url.com/blog/2016/03/09/pet-hates.html</id>
-    <published>2016-03-09T00:00:00Z</published>
-    <updated>2021-05-26T17:57:47+10:00</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;A list of my pet hates - particularly re: management, so I can make sure not to do them should I ever be in that position.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;People who prefix every task they delegate with words like 'simple', 'quick' and 'easy'. They rarely are, and it makes you feel like you're constantly under performing when a "simple" or "quick" task takes longer than expected.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Context switching. A productivity killer, and general motivation killer. Creative work (including software dev) takes place when developers are given time and autonomy. Nothing's worse than being pulled off a task just when you've got into the zone.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;No team building / social stuff. I'd really love to think that team building stuff is a wank and a distraction from getting real work done. The reality is, though, over the years I've noticed it really has an impact. It creates a sense of solidarity that carries through into work, and it's really important. The problem is, it's never the most pressing task; there's never something that will break the next day if it doesn't get done. And, especially as workers get older / have families, it's increasingly less appealing to eg. go out for drinks after work. Still, you have to make team building a priority.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;A "bums in seats" mentality. The easiest, and also least effective, way for a manager to determine employee productivity is to count the number of hours they're sitting at their desk. A far more effective way is to gauge general attitude, frequency of screwing up, and what other team members think of working with them.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Putting pressure on you to get a task done ASAP. This is a tricky one. There are certainly times when a "good enough" job is better than a "perfect" job. In general though, the developers themselves are usually in the better position to make the call on what's worth tidying up now, and what's worth leaving for "later" (aka never).&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Being tasked my multiple people. The trouble is, then each of the people tasking you don't know how busy you are, or how much work the other "taskers" have given you. There should be a single point of contact managing your workflow (that point of contact can be you, but that means you have to have the authority to turn down tasks, or say that they can't be done for a while, because you've got too much on). If someone requests new work that could be done by you, it should go through that single point of contact, even if the person requesting it is above that point of contact in the heirarchy. (Eg, CEO should ask CTO for a change, as opposed to asking a dev directly. If they ask a dev directly, dev can just pass on to CTO.)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Managers who speak in text speak and leave out joining words or eliminate punctuation etc in their emails, making them harder to read. It gives the vibe of "I'm too busy to communicate clearly".&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
 </content>
   </entry>
 </feed>
