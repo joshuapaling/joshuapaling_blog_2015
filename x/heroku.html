@@ -1,0 +1,103 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+  <title>Joshua Paling </title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+  <link href="../stylesheets/application-650b1803.css" rel="stylesheet" />
+  <script src="../javascripts/application-8d565278.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+  <div class="page-wrapper">
+    <header>
+      <h1>Joshua Paling</h1>
+      <nav>
+        <a class="" href="/">Blog</a>
+        <a class="" href="/about.html">About</a>
+        <a class="" href="/resume.html">Resume</a>
+        <a href="../feed.xml">RSS</a>
+        <a target="_blank" href="https://twitter.com/joshuapaling">@joshuapaling</a>
+      </nav>
+    </header>
+
+
+<h1>Heroku</h1>
+
+<p>Bash session</p>
+
+<pre><code class="language-markup">heroku run bash -a test-www-ee-scoopon-syd
+</code></pre>
+
+<p>Run a command</p>
+
+<pre><code class="language-markup">heroku run yarn algolia:sync:native --app prod-svc-ee-offer-syd
+</code></pre>
+
+<p>tail logs</p>
+
+<pre><code class="language-markup">heroku logs -a test-www-ee-scoopon-syd -t
+</code></pre>
+
+<p>rollback</p>
+
+<pre><code class="language-markup">heroku rollback v54 -a prod-le-svc-discovery
+</code></pre>
+
+<p>connect to redis</p>
+
+<pre><code class="language-markup">heroku redis:cli -a prod-le-svc-vendor-syd
+Connecting to redis-animated-94383 (REDIS_URL):
+ec2-13-237-235-169.ap-southeast-2.compute.amazonaws.com:6479&gt; FLUSHDB
+</code></pre>
+
+<p>see what's running and kill a dyno</p>
+
+<pre><code class="language-markup">heroku ps -a prod-le-svc-vendor-syd
+heroku ps:kill scheduler.8377 -a prod-le-svc-vendor-syd
+</code></pre>
+
+<p>refresh a view on reporting DB (or just run any bit of SQL)</p>
+
+<pre><code class="language-bash">heroku psql -c "refresh materialized view vendor.ee_voucher_trxs" -a prod-le-svc-reporting-syd
+</code></pre>
+
+<p>Logs formatting: <a href="https://brandur.org/logfmt">https://brandur.org/logfmt</a></p>
+
+<p>Find how many cores your heroku dyno type has:</p>
+
+<p><code>bash
+▶ heroku run "grep -c processor /proc/cpuinfo" --app prod-le-svc-graphql-syd
+Running grep -c processor /proc/cpuinfo on ⬢ prod-le-svc-graphql-syd... up, run.1612 (Private-M)
+2
+</code></p>
+
+
+    <!-- Footer -->
+    <footer>
+      <nav>
+        <a class="" href="/">Blog</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/about.html">About</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/resume.html">Resume</a>
+        &nbsp;&bull;&nbsp;
+        <a href="../feed.xml">RSS</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/archives.html">Archives</a>
+      </nav>
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright &copy; Joshua Paling 2015</p>
+        </div>
+      </div>
+      <!-- /.row -->
+    </footer>
+
+  </div>
+
+</body>
+</html>
+

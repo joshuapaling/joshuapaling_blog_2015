@@ -1,0 +1,185 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+  <title>Joshua Paling  - Superclass method for DRY model joins in CakePHP</title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+  <link href="../../../../stylesheets/application-650b1803.css" rel="stylesheet" />
+  <script src="../../../../javascripts/application-8d565278.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+  <div class="page-wrapper">
+    <header>
+      <h1>Joshua Paling</h1>
+      <nav>
+        <a class="active" href="/">Blog</a>
+        <a class="" href="/about.html">About</a>
+        <a class="" href="/resume.html">Resume</a>
+        <a href="../../../../feed.xml">RSS</a>
+        <a target="_blank" href="https://twitter.com/joshuapaling">@joshuapaling</a>
+      </nav>
+    </header>
+
+
+<p>Sometimes in your CakePHP apps, you'll need to ditch the <code>Containable</code> behaviour, and use raw joins instead. The problem is, specifying joins across a few tables gets pretty verbose, and the code is anything but <a href="http://en.wikipedia.org/wiki/Don't_repeat_yourself">DRY</a>. Here's a little method for your AppModel to keep your joins brief and readable.</p>
+
+<p>(update: I've made it even DRYer on the basis of <a href="https://twitter.com/savant">@savant's</a> suggestions to allow multiple joins to be defined in one call, and to assume CakePHP conventions)</p>
+
+<p>So, here's the superclass method, straight up. Put it in your AppModel.php. Be sure to read the comments, which describe how to use the method for non-standard cases.</p>
+
+<pre><code class="language-php">&lt;?php
+/**
+ * Return a (verbose) joins array from the (shorthand) $joins param.
+ * each element of $joins should consist of a key, representing the Model we already have,
+ * and a value, representing the Model we are adding via this join
+ *
+ * When following CakePHP conventions, and when the model we already have is
+ * the one containing the foreign key, only the model names are needed.
+ * eg:
+ * array(
+ *  'Suburb' =&gt; 'Postcode', // joins suburb.postcode_id (foreign key) to postcode.id (primary key)
+ *  'Postcode.subregion_id' =&gt; 'Subregion.id' // joins postcode.subregion_id to subregion.id
+ *  // ^ Specifying column names will also work, but is optional
+ * )
+ *
+ * When not following CakePHP conventions, or when the model we already have
+ * contains the primary key and the model we are joining to contains the
+ * foreign key, use ModelName.col_name notation
+ *
+ * eg.
+ * array(
+ *  'Suburb.id' =&gt; 'Employee.suburb_id' // joins suburb.id (primary key) to employee.suburb_id (foreign key).
+ *  // ^ We specify column names, so it doesn't assume the foreign key is on the left.
+ *  'Postcode.custom_col1' =&gt; 'Region.custom_col2' // Specify column names when not following CakePHP conventions
+ * )
+ *
+ * This method assumes all joins have the same $type (ie, LEFT, RIGHT or INNER). If that is not
+ * the case, you'll need to call it once per join type, and then merge the two
+ * arrays which are returned.
+ *
+ * @param  array $joins shorthand array of joins, eg:
+ * @param  string $type  'LEFT', 'RIGHT' or 'INNER'
+ * @return array An array of joins suitable to pass to a Model find call.
+ */
+ public function joinArray($joins, $type = 'LEFT') {
+ 	$joinArray = array();
+ 	foreach ($joins as $fromStr =&gt; $toStr) {
+   $from = explode('.', $fromStr);
+   $fromModel = $from[0];
+
+   $to = explode('.', $toStr);
+   $toModel = $to[0];
+
+   if (!empty($from[1])) {
+    $fromCol = $from[1];
+   } else {
+    $fromCol = Inflector::singularize(Inflector::tableize($toModel)) . '_id';
+   }
+
+   if (!empty($to[1])) {
+    $toCol = $to[1];
+   } else {
+    $toCol = 'id';
+   }
+
+   $join = array(
+    'table' =&gt; Inflector::tableize($toModel),
+    'alias' =&gt; $toModel,
+    'type' =&gt; $type,
+    'conditions' =&gt; array(
+    	"$toModel.$toCol = $fromModel.$fromCol",
+    )
+   );
+   $joinArray[] = $join;
+ 	}
+
+ 	return $joinArray;
+ }
+</code></pre>
+
+<p>Here's an example of how to use it. It should be pretty self-explanatory, but basically we're joining Suburbs, to Postcodes, to Subregions, to Regions, to States. So, 4 joins, across 5 tables.</p>
+
+<pre><code class="language-php">&lt;?php
+// (in your Suburbs controller)
+$joins = $this-&gt;Suburb-&gt;joinArray(array(
+ 'Suburb' =&gt; 'Postcode',
+ 'Postcode' =&gt; 'Subregion',
+ 'Subregion' =&gt; 'Region',
+ 'Region' =&gt; 'State',
+));
+
+$suburbs = $this-&gt;Suburb-&gt;find('all', array('joins' =&gt; $joins));
+</code></pre>
+
+<p>Below is what the same code would have looked like without our superclass method. As you can see, it's verbose, repetitive, and umm… WET? Not DRY, anyway. We've turned 35 lines of code into 7 more readable ones. WIN!</p>
+
+<pre><code class="language-php">&lt;?php
+// (in your Suburbs controller)
+$joins = array(
+ array(
+ 	'table' =&gt; 'postcodes',
+ 	'alias' =&gt; 'Postcode',
+ 	'type' =&gt; 'LEFT',
+ 	'conditions' =&gt; array(
+   'Postcode.id = Suburb.postcode_id',
+ 	)
+ ),
+ array(
+ 	'table' =&gt; 'subregions',
+ 	'alias' =&gt; 'Subregion',
+ 	'type' =&gt; 'LEFT',
+ 	'conditions' =&gt; array(
+   'Subregion.id = Postcode.subregion_id',
+ 	)
+ ),
+ array(
+ 	'table' =&gt; 'regions',
+ 	'alias' =&gt; 'Region',
+ 	'type' =&gt; 'LEFT',
+ 	'conditions' =&gt; array(
+   'Region.id = Subregion.region_id',
+ 	)
+ ),
+ array(
+ 	'table' =&gt; 'states',
+ 	'alias' =&gt; 'State',
+ 	'type' =&gt; 'LEFT',
+ 	'conditions' =&gt; array(
+   'State.id = Region.state_id',
+ 	)
+ )
+);
+
+$suburbs = $this-&gt;Suburb-&gt;find('all', array('joins' =&gt; $joins));
+</code></pre>
+
+
+    <!-- Footer -->
+    <footer>
+      <nav>
+        <a class="active" href="/">Blog</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/about.html">About</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/resume.html">Resume</a>
+        &nbsp;&bull;&nbsp;
+        <a href="../../../../feed.xml">RSS</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/archives.html">Archives</a>
+      </nav>
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright &copy; Joshua Paling 2015</p>
+        </div>
+      </div>
+      <!-- /.row -->
+    </footer>
+
+  </div>
+
+</body>
+</html>
+

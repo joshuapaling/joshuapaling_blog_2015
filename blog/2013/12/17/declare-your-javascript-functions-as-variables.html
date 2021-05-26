@@ -1,0 +1,89 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+  <title>Joshua Paling  - Declare your javascript functions as variables</title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+  <link href="../../../../stylesheets/application-650b1803.css" rel="stylesheet" />
+  <script src="../../../../javascripts/application-8d565278.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+  <div class="page-wrapper">
+    <header>
+      <h1>Joshua Paling</h1>
+      <nav>
+        <a class="active" href="/">Blog</a>
+        <a class="" href="/about.html">About</a>
+        <a class="" href="/resume.html">Resume</a>
+        <a href="../../../../feed.xml">RSS</a>
+        <a target="_blank" href="https://twitter.com/joshuapaling">@joshuapaling</a>
+      </nav>
+    </header>
+
+
+<p>Just sharing a quick tip I recieved at the last <a href="http://reinteractive.net/community/development_hub">Ruby on Rails Dev Hub</a>: declare your javascript functions as variables.</p>
+
+<p>Rather than declaring your javascript functions like this:</p>
+
+<pre><code class="language-javascript">function sayHello($name){
+ alert('hello ' + $name);
+}
+</code></pre>
+
+<p>declare them as variables, like this:</p>
+
+<pre><code class="language-javascript">var sayHello = function($name){
+ alert('hello ' + $name);
+}
+</code></pre>
+
+<p>Of course, the two above snippets essentially do the same thing.</p>
+
+<p>The reason for using the later is simply to remind yourself that javascript has <a href="http://en.wikipedia.org/wiki/First-class_function">first-class functions</a>. That is to say, functions can be assigned to variables, returned from methods (just like other variables can be), and passed into other functions as parameters (again, just like any other variable).</p>
+
+<p>So, since functions are like other variables in javascript, you might aswell write your code in a way that reminds you of this!</p>
+
+<p>While I'm at it, a few definitions and other tidbits worth knowing:</p>
+
+<p><a href="http://en.wikipedia.org/wiki/First-class_function">First-class function</a>: A language is said to have first class functions if it treats functions as first-class citizens.</p>
+
+<p>A <a href="http://en.wikipedia.org/wiki/First-class_citizen">First-class citizen</a> is something which supports all the operations generally available to other entities - eg. being passed as a parameter, returned from a function, and assigned to a variable.</p>
+
+<p>(So, because functions can be treated just like other variables in Javascript - passed as parameters, assigned to variables, and returned from functions, functions are <em>First Class Citizens</em> in Javascript. That is to say, Javascript has <em>First Class Functions</em>)</p>
+
+<p><a href="http://en.wikipedia.org/wiki/Functional_programming">Functional Programming</a> is a style of programming that avoids state. In functional programming, the idea is that everything is done using functions, and functions are little isloated islands of code that do one thing, and have no side effect.</p>
+
+<p>The opposite, if you want to call it that, is imperative programming, where state is changed often - eg. a class is instantiated with instance variables and so on, and methods in that class change the state of that instance; the methods are not completely isolated and self-contained, they have side effects.</p>
+
+<p>And just to clarify, the difference between a <em>function</em> and a <em>method</em> is that a method belongs to an object (that usually just means a method is declared within a class, if you prefer to think of it that way). A function does not belong to an object - it is its own self-contained thing. Some programming languages only have methods, some only have functions, and some have both.</p>
+
+
+    <!-- Footer -->
+    <footer>
+      <nav>
+        <a class="active" href="/">Blog</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/about.html">About</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/resume.html">Resume</a>
+        &nbsp;&bull;&nbsp;
+        <a href="../../../../feed.xml">RSS</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/archives.html">Archives</a>
+      </nav>
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright &copy; Joshua Paling 2015</p>
+        </div>
+      </div>
+      <!-- /.row -->
+    </footer>
+
+  </div>
+
+</body>
+</html>
+

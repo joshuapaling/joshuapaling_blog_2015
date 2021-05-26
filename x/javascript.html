@@ -1,0 +1,131 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+  <title>Joshua Paling </title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+  <link href="../stylesheets/application-650b1803.css" rel="stylesheet" />
+  <script src="../javascripts/application-8d565278.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+  <div class="page-wrapper">
+    <header>
+      <h1>Joshua Paling</h1>
+      <nav>
+        <a class="" href="/">Blog</a>
+        <a class="" href="/about.html">About</a>
+        <a class="" href="/resume.html">Resume</a>
+        <a href="../feed.xml">RSS</a>
+        <a target="_blank" href="https://twitter.com/joshuapaling">@joshuapaling</a>
+      </nav>
+    </header>
+
+
+<h1>Javascript</h1>
+
+<p><a href="https://blog.lavrton.com/javascript-loops-how-to-handle-async-await-6252dd3c795">using promises in loops</a></p>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries">Object.entries</a> - Iterate through key/value pairs</p>
+
+<p><a href="http://stackoverflow.com/questions/1894792/determining-if-a-javascript-object-has-a-given-property">Check if object has property</a></p>
+
+<pre><code class="language-javascript">if (x.hasOwnProperty('y')) {
+  // object itself has the propery
+}
+
+if ('y' in x) {
+  // object or it's prototype have the propery
+}
+</code></pre>
+
+<p><a href="http://stackoverflow.com/questions/130404/javascript-data-formatting-pretty-printer">Pretty print an object for debugging:</a></p>
+
+<pre><code class="language-javascript">var myArray = ['e', {pluribus: 'unum'}];
+var text = JSON.stringify(myArray, null, '\t');
+</code></pre>
+
+<p>Toggle next:</p>
+
+<pre><code class="language-javascript">$('a.question').click(function () {
+    $(this).next('.answer').slideToggle();
+});
+</code></pre>
+
+<p><a href="https://nodejs.org/api/debugger.html">Debugging node apps</a>
+<code>node debug myscript.js</code> (it'll pause on a <code>debugger</code>)
+type <code>repl</code> at the debugger to execute code / inspect vars</p>
+
+<h2 id="switch-statement">switch statement</h2>
+
+<pre><code>switch (status) {
+  case 0:
+    // do something
+    break
+  case 1:
+    // do something
+    break
+  default:
+    // something else
+}
+</code></pre>
+
+<p>Round a number:</p>
+
+<pre><code>// returns a string, so OK for presentation, not future calculations
+(1.2345).toFixed(2)
+</code></pre>
+
+<h2 id="dont-convert-an-arrow-function-just-to-console-log">Don't convert an arrow function just to console log:</h2>
+
+<p><a href="https://twitter.com/thekitze/status/1029369487685021696">here</a></p>
+
+<h2 id="execute-main-function-if-running-direct-from-command-line-import-it-otherwise">Execute main function if running direct from command line. Import it otherwise.</h2>
+
+<pre><code>const myFunc = async function(mode = 'scheduled_vendors') {
+  // do stuff...
+}
+
+module.exports = myFunc
+if (require.main === module) {
+  // file is being called directly from the command line, not required by
+  // another module, so execute it
+  let mode = process.argv[2]
+  myFunc(mode).then(
+    () =&gt; process.exit(0)
+  ).catch(e =&gt; {
+    console.log('error', e.message);
+    process.exit(0);
+  })
+}
+</code></pre>
+
+
+    <!-- Footer -->
+    <footer>
+      <nav>
+        <a class="" href="/">Blog</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/about.html">About</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/resume.html">Resume</a>
+        &nbsp;&bull;&nbsp;
+        <a href="../feed.xml">RSS</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/archives.html">Archives</a>
+      </nav>
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright &copy; Joshua Paling 2015</p>
+        </div>
+      </div>
+      <!-- /.row -->
+    </footer>
+
+  </div>
+
+</body>
+</html>
+

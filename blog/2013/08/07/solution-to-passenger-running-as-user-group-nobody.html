@@ -1,0 +1,89 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+  <title>Joshua Paling  - Solution to Passenger running as user 'nobody' and group 'nobody'</title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+  <link href="../../../../stylesheets/application-650b1803.css" rel="stylesheet" />
+  <script src="../../../../javascripts/application-8d565278.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+  <div class="page-wrapper">
+    <header>
+      <h1>Joshua Paling</h1>
+      <nav>
+        <a class="active" href="/">Blog</a>
+        <a class="" href="/about.html">About</a>
+        <a class="" href="/resume.html">Resume</a>
+        <a href="../../../../feed.xml">RSS</a>
+        <a target="_blank" href="https://twitter.com/joshuapaling">@joshuapaling</a>
+      </nav>
+    </header>
+
+
+<p><strong>The error:</strong> <em>When setting up a Rails site with Passenger, you get the following message in your browser:</em></p>
+
+<p><em>This web application process is being run as user 'nobody' and group 'nobody' and must be able to access its application root directory '/var/www/vhosts/mysite.com/httpdocs'. However this directory is not accessible because it has wrong permissions. Please fix these permissions first.</em></p>
+
+<p>Read on for an explanation and solution…</p>
+
+<h2 id="my-setup">My setup</h2>
+
+<p>I'm on a Media Temple DV 4.0, running CentOS 5.8. I'm using Passenger 4.0.10. Today is 7 Aug, 2013. If your setup is too far off mine, ignore this post!</p>
+
+<h2 id="the-explaination-or-at-least-heres-what-it-was-in-my-situation">The explaination <em>(Or at least, here's what it was in my situation)</em></h2>
+
+<p>There's a lot of detailed info <a href="http://www.modrails.com/documentation/Security%20of%20user%20switching%20support.html">here</a>, but my abbreviation of the situation is as follows.</p>
+
+<p>The contents of the directory <code>/var/www/vhosts/mysite.com/httpdocs</code> were owned by user/group <code>root:root</code>. This was because I'd logged in as root and SFTP'd up the files. (Note to self: don't do that in future!)</p>
+
+<p>Now, apache runs as the root user. However, passenger won't run as root, for security reasons. So what user does passenger run as?</p>
+
+<p>The <a href="http://www.modrails.com/documentation/Security%20of%20user%20switching%20support.html">passenger website</a> says: <em>to make a long story short: it will switch to the owner of the file config/environment.rb. […] We rely on the system administrator to set the correct owner on that file.</em></p>
+
+<p>The system adminstrator! That's us! So Passenger relies on us to make sure <code>config/environment.rb</code> has the right owner, but we've got it owend by <code>root:root</code>. FAIL.</p>
+
+<p>Because Passenger won't run as <code>root:root</code>, it will just run as <code>nobody:nobody</code>.</p>
+
+<h2 id="the-solution-just-change-the-owner">The Solution: <em>Just change the owner</em></h2>
+
+<p>Find the owner/group of your Document Root (ie, your httpdocs folder, or equivalent) - the folder that contains your entire rails install. Then, recursively set everything inside that folder to be owned by the same user/group (assuming, of course, that user/group isn't <code>root:root</code>).</p>
+
+<p>For me, it meant <code>cd</code>-ing into the correct directory, and then running:</p>
+
+<pre><code class="language-markup">chown -R my_user:psaserv ./httpdocs
+</code></pre>
+<p>(Obviously, you'll need to replace <code>my_user:psaserv</code> with your <code>username:groupname</code>)</p>
+
+<p>I didn't need to re-start Passenger, Apache or anything else at this point. I was just able to refresh my browser and it worked.</p>
+
+
+    <!-- Footer -->
+    <footer>
+      <nav>
+        <a class="active" href="/">Blog</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/about.html">About</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/resume.html">Resume</a>
+        &nbsp;&bull;&nbsp;
+        <a href="../../../../feed.xml">RSS</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/archives.html">Archives</a>
+      </nav>
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright &copy; Joshua Paling 2015</p>
+        </div>
+      </div>
+      <!-- /.row -->
+    </footer>
+
+  </div>
+
+</body>
+</html>
+

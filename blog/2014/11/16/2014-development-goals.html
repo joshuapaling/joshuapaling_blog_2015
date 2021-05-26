@@ -1,0 +1,136 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+  <title>Joshua Paling  - 2014 Development Goals - how did I go?</title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+  <link href="../../../../stylesheets/application-650b1803.css" rel="stylesheet" />
+  <script src="../../../../javascripts/application-8d565278.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+  <div class="page-wrapper">
+    <header>
+      <h1>Joshua Paling</h1>
+      <nav>
+        <a class="active" href="/">Blog</a>
+        <a class="" href="/about.html">About</a>
+        <a class="" href="/resume.html">Resume</a>
+        <a href="../../../../feed.xml">RSS</a>
+        <a target="_blank" href="https://twitter.com/joshuapaling">@joshuapaling</a>
+      </nav>
+    </header>
+
+
+<p>At the start of this year, I wrote a post about <a href="/post/my-2014-development-goals">my goals for the year</a>.</p>
+
+<p>How did I go? Here's a point-by-point breakdown.</p>
+
+<h2 id="in-no-particular-order">In no particular order:</h2>
+
+<h3 class="text-success">1. Have at least a few live Rails sites under my belt by 2015 ✔ </h3>
+
+<p>I've made:
+<a href="https://espionagesydney.com.au/">https://espionagesydney.com.au/</a>
+<a href="http://gobigorgolocal.com.au/">http://gobigorgolocal.com.au/</a>
+One custom shop, that the client is taking a LONG time to populate. (Was done partly by me, partly by a contractor)
+One more bigger site that will be released early next year.</p>
+
+<p>So, only 2 live, but 1 more completed, and one in the pipeline. I'm calling that a check.</p>
+
+<h3 class="text-danger"> 2. Learn more about server admin, and have an automated solution for Rails hosting (probably learning <a href="http://www.getchef.com/chef/">Chef</a> / <a href="http://www.vagrantup.com/">Vagrant</a> etc from <a href="https://leanpub.com/deploying_rails_applications">Reliably Deploying Rails Web Apps</a>) ✘</h3>
+
+<p>I've learned more, and did go through the book. But I'm not using an automated solution for server setup - more on that in the next point. (So this is a fail - though I'm happy with the outcome.)</p>
+
+<h3 class="text-success"> 3. Come up with a solution I'm happy with for hosting Rails apps that my business makes - probably <a href="http://aws.amazon.com/">AWS</a> ✔</h3>
+
+<p>I've decided that <em>really, properly</em> learning server admin is too much for me to take on. I've got enough on my plate keeping on top of the rest of the stack.</p>
+
+<p>So, for small, straight-forward apps we're using <a href="http://digitalocean.com/">Digital Ocean</a> - one-click rails server setup, with minimal knowledge required.</p>
+
+<p>For large, business-critical sites we're using <a href="http://www.anchor.com.au/">Anchor</a>. They're not cheap, but they're good. They know servers, so I don't have to.</p>
+
+<p>It's not the solution I imagined, but I'm happy with it. Check.</p>
+
+<h3 class="text-success">  4. Present something (that doesn't totally suck) at <a href="https://github.com/rails-oceania/roro/wiki/rorosyd-topics">Roro Syd meetup</a> ✔</h3>
+
+<p>I presented at RORO, at DevHub, and at RailsCamp Perth. And I'm an accepted speaker for <a href="http://rubyconf.org.au/2015#speakers">Ruby Conf Australia</a>. While it's up to others to judge wether or not I sucked, I'm calling this one a big fat win.</p>
+
+<h3 class="text-success">  5. Move from student to mentor at <a href="http://reinteractive.net/community/development_hub">Dev Hub nights</a> ✔</h3>
+
+<p>I did this… it was pretty unofficial. I just started wearing the blue 'mentor' badge rather than the white 'student' one. I still take the opportunity to gain knowledge from seniors, but I'll also answer questions if they come my way. So I guess that's a half-hearted check for this goal?</p>
+
+<h3 class="text-danger"> 6. Carry out the <a href="http://joshuapaling.com/post/rails-camp-micro-courses">MicroCourses idea</a> at a RailsCamp &amp; Dev Hub ✘</h3>
+
+<p>Nope. Fail. I tried to get it going at DevHub, but basically, <a href="/post/my-microcourses-idea-sucked">the idea sucked</a></p>
+
+<h3 class="text-danger">  7. Be involved as an organiser or mentor at some Rails community events (apart from Dev Hub) ✘</h3>
+
+<p>I mentored at Rails Girls - but that's it. Speaking to people who've organised events, it's a HUGE amount of work, and with my kids the age they are, I think I'll have to put this goal on the back burner for a few years.</p>
+
+<p>Although I technically did mentor at one event, I'm calling this one a fail, because I'd aimed for more.</p>
+
+<h3 class="text-success">  8. Write at least 6 blog posts on dev-related stuff ✔</h3>
+
+<p>Yeah, I did this. I'm not stoked on the quality. A lot of it is just unpolished stuff for my own reference. But that's a check.</p>
+
+<h3 class="text-danger"> 9. Make at least two screencasts (as in, a Ruby / Rails related ones) ✘</h3>
+
+<p>Fail. I've done zero, but there's still a bit over a month left in this year, so I'm going to try get this done.</p>
+
+<h3 class="text-success">  10. Make a nice responsive admin area theme for Rails, and, ideally, make generators so it can be built easily for each new app. (Or find existing solution to do this - possibly <a href="http://www.railsbricks.net/">Rails Bricks</a>) ✔</h3>
+
+<p>I'm just doing a basic theme with Bootstrap, and I'm happy with it. Nothing spectacular, but it works. I'm definitely confident with the decision not to use ActiveAdmin or Rails Bricks or similar.</p>
+
+<p>I haven't made a generator, but I've <a href="https://github.com/dhampik/rails-admin-scaffold/pull/8">added bootstrap support</a> to <a href="https://github.com/dhampik/rails-admin-scaffold">Rails Admin Scaffold generator</a></p>
+
+<p>I may go further with generating my own admin theme, but for now I'm happy with what I've got. Check.</p>
+
+<h3 class="text-success"> 11. Make a commit to an open source Ruby / Rails gem. ✔</h3>
+
+<p>Check. I made PR's to a few gems:
+<a href="https://github.com/spree-contrib/spree_slider/pull/1">Spree Slider - tidy admin interface</a>
+<a href="https://github.com/dhampik/rails-admin-scaffold/pull/8">Rails Admin Scaffold - add bootstrap option for views</a> (It hasn't been merged yet…)
+<a href="https://github.com/josevalim/rails-footnotes/pulls?q=is%3Apr+is%3Aclosed+author%3Ajoshuapaling">Rails Footnotes - 4 PRs merged</a></p>
+
+<h3 class="text-success"> 12. Make a few responsive websites using a CSS grid system. (I've done responsive sites manually before, but grids seem much easier!) ✔</h3>
+
+<p>Yeah. I've made admin interfaces with them. Not sure if I've done it for a frontend? Anyway, they're a bit over-rated. Good for an admin area, but to get a frontend looking super nice on devices of all sizes, it takes more than just a grid. Grids help get the easy stuff done I guess.</p>
+
+<p>I feel I'm satisfied, and know when to use them, and when not to. Check.</p>
+
+<h3 class="text-success">  13. Score higher on <a href="http://www.joelonsoftware.com/articles/fog0000000043.html">the Joel Test</a>, or at least <a href="http://www.brandonsavage.net/adapting-the-joel-test-to-web-development/">the web dev version of it</a>. (When I first found out about this test a couple of years ago, I was scoring embarrassingly low. I've moved up a decent amount, but there's still room to improve!) ✔</h3>
+
+<p>I know I've improved on some things, though I wish I'd recorded where I was at exactly in the beginning of the year. Check. But that's another blog post in itself.</p>
+
+<h2 id="overall-im-happy-with-that-bring-on-next-year">9/13. Overall, I'm happy with that. Bring on next year!</h2>
+
+
+    <!-- Footer -->
+    <footer>
+      <nav>
+        <a class="active" href="/">Blog</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/about.html">About</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/resume.html">Resume</a>
+        &nbsp;&bull;&nbsp;
+        <a href="../../../../feed.xml">RSS</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/archives.html">Archives</a>
+      </nav>
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright &copy; Joshua Paling 2015</p>
+        </div>
+      </div>
+      <!-- /.row -->
+    </footer>
+
+  </div>
+
+</body>
+</html>
+

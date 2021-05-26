@@ -1,0 +1,101 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+  <title>Joshua Paling </title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+  <link href="../stylesheets/application-650b1803.css" rel="stylesheet" />
+  <script src="../javascripts/application-8d565278.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+  <div class="page-wrapper">
+    <header>
+      <h1>Joshua Paling</h1>
+      <nav>
+        <a class="" href="/">Blog</a>
+        <a class="" href="/about.html">About</a>
+        <a class="" href="/resume.html">Resume</a>
+        <a href="../feed.xml">RSS</a>
+        <a target="_blank" href="https://twitter.com/joshuapaling">@joshuapaling</a>
+      </nav>
+    </header>
+
+
+<h1>Docker</h1>
+
+<p>Container vs Virtual Machine: Containers share an OS, VMs don't.</p>
+
+<p>Good article: <a href="https://medium.freecodecamp.com/a-beginner-friendly-introduction-to-containers-vms-and-docker-79a9e3e119b#.1tgltv6co">Intro to Containers, VMs and Docker</a></p>
+
+<p>To run bash in a container:</p>
+
+<p><code>docker run -i -t &lt;name-or-id&gt; /bin/bash</code></p>
+
+<p>docker: Deals with single containers. When people say “Docker” they typically mean Docker Engine, the client-server application made up of the Docker daemon, a REST API that specifies interfaces for interacting with the daemon, and a command line interface (CLI) client that talks to the daemon (through the REST API wrapper). Docker Engine accepts docker commands from the CLI, such as docker run <image>, docker ps to list running containers, docker images to list images, and so on. (from [here](https://docs.docker.com/machine/overview/))</image></p>
+
+<p>docker-machine: Don't think you need to use this if you're using docker-native: It's for dealing with a virtual machine that docker containers can run inside of. See <a href="https://blog.docker.com/2016/03/docker-for-mac-windows-beta/">here</a> abnd search for docker-machine for more info.</p>
+
+<p>docker-compose: deals with multiple containers connected together to form a more complex system.</p>
+
+<p>Docker native doesn't mean that docker doesn't run in a VM. It just means that rather than using VirtualBox (or similar) to run the VM, it runs in a VM managed by docker native, which communicates directly with the Mac OSX hypervisor. So, it takes out VirtualBox as a middleman.</p>
+
+<p>Docker containers still have an 'operating system' or linux distro installed on them. What they share with the underlying VM is the linux kernel, not the whole distro.</p>
+
+<p><code>docker ps</code>: list running containers.
+<code>docker ps -a</code>: list ALL containers, even those not running.
+<code>docker volume ls</code>: list all volumes
+<code>docker volume rm &lt;name&gt;</code>: remove a volume</p>
+
+<p>In the case of this error:</p>
+
+<p><code>
+web_rails_1    | Could not find rake-11.2.2 in any of the sources
+web_rails_1    | Run `bundle install` to install missing gems.
+thebigvaultrails_web_rails_1 exited with code 7
+</code></p>
+
+<p>Run bash in the container with</p>
+
+<p><code>docker-compose run web_rails /bin/bash</code></p>
+
+<p>And then <code>bundle install</code></p>
+
+<p>Still not sure why this error comes up? The gems should be installed as part of the docker image. I think that after changing gems in the web_rails image, or maybe just when rebuilding it, you need to do <code>docker-compose build sidekiq bundle</code>.</p>
+
+<p>Think I've fixed it - added 'volumes_from' to the web_rails container.</p>
+
+<p>So:</p>
+
+<p>If you build the rails container stand-alone with <code>docker build .</code> the gems will be packaged up with that container - not on an external volume. If you do `docker-compose build</p>
+
+
+
+    <!-- Footer -->
+    <footer>
+      <nav>
+        <a class="" href="/">Blog</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/about.html">About</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/resume.html">Resume</a>
+        &nbsp;&bull;&nbsp;
+        <a href="../feed.xml">RSS</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/archives.html">Archives</a>
+      </nav>
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright &copy; Joshua Paling 2015</p>
+        </div>
+      </div>
+      <!-- /.row -->
+    </footer>
+
+  </div>
+
+</body>
+</html>
+

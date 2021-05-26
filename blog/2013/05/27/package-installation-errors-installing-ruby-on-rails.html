@@ -1,0 +1,129 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+  <title>Joshua Paling  - Package installation errors when installing Ruby on Rails</title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+  <link href="../../../../stylesheets/application-650b1803.css" rel="stylesheet" />
+  <script src="../../../../javascripts/application-8d565278.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+  <div class="page-wrapper">
+    <header>
+      <h1>Joshua Paling</h1>
+      <nav>
+        <a class="active" href="/">Blog</a>
+        <a class="" href="/about.html">About</a>
+        <a class="" href="/resume.html">Resume</a>
+        <a href="../../../../feed.xml">RSS</a>
+        <a target="_blank" href="https://twitter.com/joshuapaling">@joshuapaling</a>
+      </nav>
+    </header>
+
+
+<p>So, at Step 5 of the tutorial, when I run:</p>
+
+<pre><code class="language-markup">rvm install 1.9.3
+</code></pre>
+
+<p>I get this output at the terminal:</p>
+
+<p><em>The “all good” part</em></p>
+
+<pre><code class="language-markup">Searching for binary rubies, this might take some time.
+No binary rubies available for: osx/10.8/x86_64/ruby-1.9.3-p429.
+Continuing with compilation. Please read ‘rvm mount’ to get more information on binary rubies.
+Installing requirements for osx, might require sudo password.
+Already up-to-date.
+</code></pre>
+
+<p><em>The error</em></p>
+
+<pre><code class="language-markup">Installing required packages: automake, apple-gcc42, libyaml, readline, libxml2, libxslt, libksba, openssl….
+Error running ‘requirements_osx_brew_libs_install automake apple-gcc42 libyaml readline libxml2 libxslt libksba openssl’,
+please read /Users/joshuapaling/.rvm/log/ruby-1.9.3-p429/1368886724_package_install_automake_apple-gcc42_libyaml_readline_libxml2_libxslt_libksba_openssl.log
+</code></pre>
+
+<p>As advised, I check the log, which says:</p>
+
+<pre><code class="language-markup">[2013-05-19 00:18:44] requirements_osx_brew_libs_install
+Error: No such keg: /usr/local/Cellar/automake
+There were package installation errors, make sure to read the log.
+Check Homebrew requirements https://github.com/mxcl/homebrew/wiki/Installation
+</code></pre>
+
+<p>I’m trying to resolve it by installing each of the required packages, mentioned in the terminal output, individually:</p>
+
+<pre><code class="language-markup">brew install automake
+brew install apple-gcc42
+brew install libyaml
+brew install readline
+brew install libxml2
+brew install libxslt
+brew install libksba
+brew install openssl
+</code></pre>
+
+<p>All installed successfully. I saw this line:</p>
+
+<pre><code class="language-markup">Installing libksba dependency: libgpg-error
+</code></pre>
+
+<p>and had a split second of panic before realising that it wasn’t an error – just a dependancy with ‘error’ in it’s name!</p>
+
+<p>Anyway, time to retry installing ruby 1.9.3:</p>
+
+<pre><code class="language-markup">rvm install 1.9.3
+</code></pre>
+
+<p>Seems to be going better than last time… Worked!</p>
+
+<p>Now, back to step 6 of the tutorial: I made Ruby version 1.9.3 the default with:</p>
+
+<pre><code class="language-markup">rvm --default use 1.9.3
+</code></pre>
+
+<p>Then re-started the Terminal and did a quick check of the ruby version:</p>
+
+<pre><code class="language-markup">ruby -v
+</code></pre>
+
+<p>The output was</p>
+
+<pre><code class="language-markup">ruby 1.9.3p429 (2013-05-15 revision 40747) [x86_64-darwin12.3.0
+</code></pre>
+
+<p>Perfect! I was actually expecting it to be more painful than that.</p>
+
+<p>Hope I help someone else having the same problem!</p>
+
+
+    <!-- Footer -->
+    <footer>
+      <nav>
+        <a class="active" href="/">Blog</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/about.html">About</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/resume.html">Resume</a>
+        &nbsp;&bull;&nbsp;
+        <a href="../../../../feed.xml">RSS</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/archives.html">Archives</a>
+      </nav>
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright &copy; Joshua Paling 2015</p>
+        </div>
+      </div>
+      <!-- /.row -->
+    </footer>
+
+  </div>
+
+</body>
+</html>
+

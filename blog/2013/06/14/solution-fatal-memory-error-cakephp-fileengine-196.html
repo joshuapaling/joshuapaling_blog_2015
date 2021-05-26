@@ -1,0 +1,99 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+  <title>Joshua Paling  - Solution to Fatal error - Allowed memory size exhausted in CakePHP FileEngine.php on line 196</title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+  <link href="../../../../stylesheets/application-650b1803.css" rel="stylesheet" />
+  <script src="../../../../javascripts/application-8d565278.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+  <div class="page-wrapper">
+    <header>
+      <h1>Joshua Paling</h1>
+      <nav>
+        <a class="active" href="/">Blog</a>
+        <a class="" href="/about.html">About</a>
+        <a class="" href="/resume.html">Resume</a>
+        <a href="../../../../feed.xml">RSS</a>
+        <a target="_blank" href="https://twitter.com/joshuapaling">@joshuapaling</a>
+      </nav>
+    </header>
+
+
+<p>I just came accross this error in one of my CakePHP apps. I’m going to keep track of my debugging as I go here, for my own reference, and to improve the luck of any error-code-googlers out there.</p>
+
+<p>In my CakePHP 2.3 app, every request, I’m getting the following error:</p>
+
+<pre><code class="language-markup">Fatal error: Allowed memory size of 33554432 bytes exhausted (tried to allocate 32 bytes) in /Applications/MAMP/htdocs/BIG/Employee_Management_Website/www/lib/Cake/Cache/Engine/FileEngine.php on line 196
+</code></pre>
+
+<p>Let’s open <code>/lib/Cake/Cache/Engine/FileEngine.php</code> and see what it’s trying to do (if you’re new to CakePHP, although you shouldn’t permanently change the core files, taking a look at them and adding temporary debug messages is not a problem – and the code is very well written and easy to read):</p>
+
+<p>Line 196 of FileEngine.php is within the ‘read’ method. So, Cake is trying to read something from the Cache, but is running out of memory.</p>
+
+<p>196 reads:</p>
+
+<pre><code class="language-php">&lt;?php
+$data = unserialize((string)$data);
+?&gt;
+</code></pre>
+
+<p>To debug, right before line 196, I added:</p>
+
+<pre><code class="language-php">&lt;?php
+echo $key." (end of key) ";
+?&gt;
+</code></pre>
+
+<p>So that will tell me every key that my app tries to read from the cache. The last key that gets printed out before the error message is displayed will be the one that causes the error – too easy!</p>
+
+<p>Turns ou the culprit is: <code>cake_toolbar_cachecb15c56b604b708b46f1b0ae9142f278</code></p>
+
+<p>Sure enough, I take a look at app/tmp/cache/cake_toolbar_cachecb15c56b604b708b46f1b0ae9142f278 and it’s massive for a cache file – 3.9MB. It’s from CakePHP’s debugKit Toolbar.</p>
+
+<p>First, I just deleted the file and then viewed a page in my site (to regenerate the cache file). After this request, the cache file is regenerated at a size of 168K. So, that page wasn’t a problem, but at some point, some request has made the cache file massive.</p>
+
+<p>Now it’s just a matter of clicking around the site, doing the things I’ve recently been doing, and finding out which page causes the cache file to suddenly jump massively in size.</p>
+
+<p>As it turns out it’s a work-in-progress page where I display several hundred records, each with several joined records, without pagination.</p>
+
+<p>So, the solution is too easy: clean that page up, make it use pagination so it’s not making a million requests to the database. In the mean time, to avoid getting memory errors while I work, I can disable the debugKit toolbar, or just add the following line to my AppController’s before_filter method, to avoid getting memory problems as I work:</p>
+
+<pre><code class="language-php">&lt;?php
+ini_set('memory_limit', '-1');
+?&gt;
+</code></pre>
+
+<p>Make sure to remove the above line once the problem is resolved!!!</p>
+
+
+    <!-- Footer -->
+    <footer>
+      <nav>
+        <a class="active" href="/">Blog</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/about.html">About</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/resume.html">Resume</a>
+        &nbsp;&bull;&nbsp;
+        <a href="../../../../feed.xml">RSS</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/archives.html">Archives</a>
+      </nav>
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright &copy; Joshua Paling 2015</p>
+        </div>
+      </div>
+      <!-- /.row -->
+    </footer>
+
+  </div>
+
+</body>
+</html>
+

@@ -1,0 +1,90 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+  <title>Joshua Paling </title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+  <link href="../stylesheets/application-650b1803.css" rel="stylesheet" />
+  <script src="../javascripts/application-8d565278.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+  <div class="page-wrapper">
+    <header>
+      <h1>Joshua Paling</h1>
+      <nav>
+        <a class="" href="/">Blog</a>
+        <a class="" href="/about.html">About</a>
+        <a class="" href="/resume.html">Resume</a>
+        <a href="../feed.xml">RSS</a>
+        <a target="_blank" href="https://twitter.com/joshuapaling">@joshuapaling</a>
+      </nav>
+    </header>
+
+
+<h1>Redux</h1>
+
+<p>principals:
+1. Entire state of app (data and ui) is stored in single "state tree" object
+2. State tree is read-only. Dispatch an action to create an entirely new state tree.
+3. State mutations must be pure functions, based only on previous state and the action.</p>
+
+<p>1st principal: Everything that changes in your application, including the data and the ui state is contained in a single javascript object, called the state, or the state tree.</p>
+
+<p>2nd principal: The state tree is read-only. Any time you want to change the state, you have to dispatch an action.</p>
+
+<p>An action is a plain object describing the change. Just like the state is the minimal representation of the data in your app, the action is the minimal representation of the change to that data. Each action must have a type property</p>
+
+<p>Whether initiated by a user interaction or a network request, any data that gets into a redux app gets there by actions.</p>
+
+<p>Components don't know how stuff happens. They just know they have to send out an action.</p>
+
+<p>UI is most predictable when it's described as a pure function of application state.</p>
+
+<p>State changes in your app need to be a pure function, that takes the previous state, and the action, and returns the next state.
+Even in large apps, there's a single function that calculates the next state, based on prev state and action.</p>
+
+<p>3rd principal: To describe state mutations you have to write a pure function that takes the previous state, and the action, and returns the next state. This function is called the reducer.</p>
+
+<h2 id="store">Store</h2>
+
+<p>The store binds together the 3 principals of redux.
+It holds the current app state object. It lets you dispatch actions. And when you create it you need to specify the reducer,
+which tells it how state is updated with actions.</p>
+
+<p>A store accepts a function (the reducer) as an argument.
+A store has 3 methods: getState, dispatch (an action) and subscribe (lets you register a callback that'll fire everytime an action has been dispatched)</p>
+
+<p>Episode 9: shows how to protect yourself with deepFreeze in your tests to ensure the state is in fact not changed.</p>
+
+<p>Reducer composition: different reducers describe how different parts of the state tree are updated in response to actions. Reducers are normal javascript functions so they can call other reducers to delegate and abstract away handling of updates to some part of the state they manage. There is still a single reducer at the top of your app.</p>
+
+
+    <!-- Footer -->
+    <footer>
+      <nav>
+        <a class="" href="/">Blog</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/about.html">About</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/resume.html">Resume</a>
+        &nbsp;&bull;&nbsp;
+        <a href="../feed.xml">RSS</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/archives.html">Archives</a>
+      </nav>
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright &copy; Joshua Paling 2015</p>
+        </div>
+      </div>
+      <!-- /.row -->
+    </footer>
+
+  </div>
+
+</body>
+</html>
+

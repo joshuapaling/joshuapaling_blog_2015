@@ -1,0 +1,73 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+  <title>Joshua Paling </title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+  <link href="../stylesheets/application-650b1803.css" rel="stylesheet" />
+  <script src="../javascripts/application-8d565278.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+  <div class="page-wrapper">
+    <header>
+      <h1>Joshua Paling</h1>
+      <nav>
+        <a class="" href="/">Blog</a>
+        <a class="" href="/about.html">About</a>
+        <a class="" href="/resume.html">Resume</a>
+        <a href="../feed.xml">RSS</a>
+        <a target="_blank" href="https://twitter.com/joshuapaling">@joshuapaling</a>
+      </nav>
+    </header>
+
+
+<h1>Yarn</h1>
+
+<p>Notes from convo with Jocke in SMU slack on yarn.lock changing on yarn install:</p>
+
+<p>joss [6:26 PM]
+Figured it out.</p>
+
+<p>So if you start with installing <code>"react": "*"</code>, then each time you <code>yarn install</code> it will NOT upgrade you, even if a new version is available.
+You’d have to do <code>yarn upgrade react</code>
+BUT if you CHANGE package.json, from <code>"react": "15.0.0"</code> to <code>"react": "*"</code> then the way it works is it basically says “OK, no one needs <code>"react": "15.0.0"</code>, that dependency is gone. Oh, and here’s a new dependency… <code>"react": "*"</code> - to satisfy that we’ll install the latest version. So it considers those deps as separate, even though they’re “the same but just with different versions”.
+Let’s say you had: <code>"react": "^15.0.0"</code> which was currently being satisfied in your lockfile by version 15.1.1. And then, you changed <code>package.json</code> to <code>"react": "^15.1.0"</code>, or even <code>"react": "&gt;1.0.0"</code>, BOTH of which are satisfied by that 15.1.1 version in your lockfile… it will still just scrap the <code>"react": "^15.0.0"</code> dependency, and the 15.1.1 version that’s currently satisfying it, and it’ll treat those updated versions as a dependency to fulfil “from scratch”.
+So, I was kinda right: using <code>*</code> from the beginning won’t update every time you install.
+But, if we switch to <code>*</code> now, to do that without upgrading, we have to hack the lockfile ourselves.
+After updating package.json, this is the change you’d have to manually make to the lockfile in order to prevent the next <code>yarn install</code> from upgrading it:</p>
+
+<p>joss [6:35 PM]
+So to me that kinda makes sense - if you change a version in your package.json, you DO want to update to that version on the next <code>yarn install</code>, most of the time.
+But it’s a bummer that you can’t just say “I don’t want to upgrade anything now, but I want to change from <code>15.0.0</code> to <code>^15.0.0</code> or <code>*</code> or whatever right now, for when I do upgrade in future.
+But using <code>*</code> is safe for CI and everything. It’s just that “the first time you switch to <code>*</code>” you have to upgrade, and then after that, you don’t unless you explicitly run <code>yarn upgrade</code></p>
+
+
+    <!-- Footer -->
+    <footer>
+      <nav>
+        <a class="" href="/">Blog</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/about.html">About</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/resume.html">Resume</a>
+        &nbsp;&bull;&nbsp;
+        <a href="../feed.xml">RSS</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/archives.html">Archives</a>
+      </nav>
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright &copy; Joshua Paling 2015</p>
+        </div>
+      </div>
+      <!-- /.row -->
+    </footer>
+
+  </div>
+
+</body>
+</html>
+

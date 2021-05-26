@@ -1,0 +1,111 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+  <title>Joshua Paling  - Ruby Conf Day 1 Wrap Up</title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+  <link href="../../../../stylesheets/application-650b1803.css" rel="stylesheet" />
+  <script src="../../../../javascripts/application-8d565278.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+  <div class="page-wrapper">
+    <header>
+      <h1>Joshua Paling</h1>
+      <nav>
+        <a class="active" href="/">Blog</a>
+        <a class="" href="/about.html">About</a>
+        <a class="" href="/resume.html">Resume</a>
+        <a href="../../../../feed.xml">RSS</a>
+        <a target="_blank" href="https://twitter.com/joshuapaling">@joshuapaling</a>
+      </nav>
+    </header>
+
+
+<p>Rubyists across the globe will no doubt be flocking to my blog by the millions to read my wrap up of day 1. Not really. But <a href="http://www.bbldigital.com.au/">my business</a> paid for my ticket, so I should make some notes or something.</p>
+
+<p>Here's the talks I went to, and the main points I took home.</p>
+
+<h2 id="what-it-is-you-really-dohttphubrubyconforgauspeakerscameron-barrietalk-keynote-by-cameron-barriehttpstwittercomwhalec">1. <a href="http://hub.rubyconf.org.au/speakers/cameron-barrie/#talk">What it is you really do?</a> keynote by <a href="https://twitter.com/whalec">Cameron Barrie</a></h2>
+
+<p><strong>The beginning:</strong>
+Cameron wanted to do photojournalism, but upon seeing a random iphone user's pic featured on the cover of a major newspaper after the london bombings, and a couple of other similar incidents, decided he wanted to be creating the technology that allows that stuff to happen.</p>
+
+<p>And the first part of the talk was an inspiring speil about the role of devs in making that kind of world-changing stuff possible.</p>
+
+<p><strong>The middle:</strong>
+Dev is splitting in two: dev as a commodity (which is being shipped offshore, and with which we can't directly compete) and dev as a creative role (eg. original, bespoke solutions to tricky problems), which is what you've got to be doing.</p>
+
+<p>The antisocial programmer locked in his basement banging the keyboard all night offers dev as a commodity, and has no future in programming as a creative endevour. (At least, not in a city with Sydney's living costs.)</p>
+
+<p><em>There shouldn't be a hard-drawn distinction between 'creatives' and 'developers'.</em></p>
+
+<p><strong>The end:</strong></p>
+
+<p>If you don't stay on top of your game &amp; latest tech, there's an inevitable erosion of skill level. It will work out fine in the short term, but will bite you soon enough. Having said that, don't jump onto a new tech cos it's cool (aka 'hipster driven development'). Find the right balance.</p>
+
+<p><strong>Do</strong> take on technical debt. But do so consciously, and with a plan to deal with it. And make sure the client is aware of it, and willing to pay to resolve it.</p>
+
+<h2 id="extreme-makeover--rubygems-editionhttphubrubyconforgauspeakersandre-arkotalk-by-andre-arkohttpstwittercomindirect">2. <a href="http://hub.rubyconf.org.au/speakers/andre-arko/#talk">Extreme Makeover- Rubygems Edition</a> by <a href="https://twitter.com/indirect">Andre Arko</a></h2>
+
+<p><em>A very rough summary, likely with technical errors, and not covering all the points of the talk:</em></p>
+
+<p>There are almost 100,000 uniquely named gems. Which means almost 750,000 total gem-versions. And they each have dependencies.</p>
+
+<p>Currently, for <code>bundle install</code> to resolve dependencies, it has to download a blob with all that info, and it must download it from a server in the US, which sux in Australia. And cos it's all sent as a single blog, it's not like you can cache stuff and only download what's changed since you last ran <code>bundle install</code>.</p>
+
+<p>The makeover will use a text file to store all the gem names / versions / dependencies info, which makes it far easier to cache and only download what's changed.</p>
+
+<h2 id="racka-framework-to-roll-your-ownhttphubrubyconforgauspeakersnishant-modaktalk-by-nishant-modakhttpstwittercomnishantmodak">3. <a href="http://hub.rubyconf.org.au/speakers/nishant-modak/#talk">Rack—A Framework to Roll Your Own</a> by <a href="https://twitter.com/nishantmodak">Nishant Modak</a></h2>
+
+<p><em>A pretty technical talk, with lots of live coding, most of which I didn't follow very well. The main thing I did take home:</em></p>
+
+<ul>
+  <li>Rack basically converts an HTTP request into a consistently represented ruby object.</li>
+  <li>There's a LOT of middleware stuff (rack, and more) involved before an HTTP requrest even makes it to Rail's routes.</li>
+</ul>
+
+<p>Further reading: <a href="http://guides.rubyonrails.org/rails_on_rack.html">Rack on Rails</a> and <a href="http://rebuilding-rails.com/">Rebuilding Rails</a>, and also <a href="Nishant's%20git%20repo,%20of%20what%20he%20built">https://github.com/nishantmodak/chotu</a>. And also <a href="What%20is%20rack?">http://ruby.about.com/od/rack/a/What-Is-Rack.htm</a></p>
+
+<h2 id="the-parental-programmerhttphubrubyconforgauspeakersamanda-wagenertalk-by-amanda-wagenerhttpstwittercomawagener">4. <a href="http://hub.rubyconf.org.au/speakers/amanda-wagener/#talk">The Parental Programmer</a> by <a href="https://twitter.com/a_wagener">Amanda Wagener</a></h2>
+
+<p>How to manage parenting and programming:</p>
+
+<ul>
+  <li>Either be working, or be spending time with kids. Don't even bother trying to double it up at the same time.</li>
+  <li>It gets way easier as your kids get older. (Yay! My twins are only 10 months old, and I sure hope it gets a bit easier!)</li>
+  <li>Regarding new tech, meetups, and open source, you've kinda got to take it easy for a few years. Pick just the best &amp; most important stuff.</li>
+  <li>Find a job with flexible hours / location</li>
+</ul>
+
+<h3 id="thats-only-the-first-half-of-the-day-done-but-its-bed-time-gotta-get-some-sleep-so-im-not-useless-tomorrow">That's only the first half of the day done… but it's bed time. Gotta get some sleep so I'm not useless tomorrow.</h3>
+
+
+    <!-- Footer -->
+    <footer>
+      <nav>
+        <a class="active" href="/">Blog</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/about.html">About</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/resume.html">Resume</a>
+        &nbsp;&bull;&nbsp;
+        <a href="../../../../feed.xml">RSS</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/archives.html">Archives</a>
+      </nav>
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright &copy; Joshua Paling 2015</p>
+        </div>
+      </div>
+      <!-- /.row -->
+    </footer>
+
+  </div>
+
+</body>
+</html>
+
