@@ -36,15 +36,168 @@
     <name>Joshua Paling</name>
   </author>
   <entry>
-    <title>I'm blogging sometimes on medium</title>
-    <link rel="alternate" href="http://blog.url.com/blog/2018/10/14/medium.html"/>
-    <id>http://blog.url.com/blog/2018/10/14/medium.html</id>
+    <title>How to make fixed price work</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2018/10/14/how-to-make-fixed-price-work.html"/>
+    <id>http://blog.url.com/blog/2018/10/14/how-to-make-fixed-price-work.html</id>
     <published>2018-10-14T00:00:00Z</published>
-    <updated>2021-05-26T17:57:47+10:00</updated>
+    <updated>2021-05-26T18:33:26+10:00</updated>
     <author>
       <name>Article Author</name>
     </author>
-    <content type="html">&lt;p&gt;Follow my infrequent posts from now on over at &lt;a href="https://medium.com/@joshua.paling"&gt;medium&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;Customers want fixed price. Here’s how to make it a fair deal for yourself.
+I recently read &lt;a href="https://twitter.com/arohner/status/766688027745751041"&gt;this tweet-storm&lt;/a&gt;, on why you should never take fixed price contracts.&lt;/p&gt;
+
+&lt;p&gt;It says:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Unless you’ve done the job 20 times, and can estimate how long it will take with a high-degree of certainty, fixed-price is suboptimal. Like the over-under in betting, someone wins, and someone loses. And to answer who is more likely to win, the contractor or the employer, you can answer with another question: When was the last time you had a software project come in on-schedule? For clarity, fixed duration contracts are fine: “You pay for N weeks of work, I do N weeks of work”. Where you get into trouble is: “I pay for N weeks of work, regardless of how much time it takes to complete”. The employers who do this tend to also like to play games with what is in vs. out of scope. Avoid.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Having spent years in a small digital agency where &amp;gt; 95% of our work was fixed price, I agree with all the points. The problem is, almost all customers want a fixed price.&lt;/p&gt;
+
+&lt;p&gt;Here’s some tips for making fixed price work.&lt;/p&gt;
+
+&lt;h2 id="fixed-price-is-insurance"&gt;Fixed price is insurance&lt;/h2&gt;
+
+&lt;p&gt;This is the golden rule. In a fixed price job, you’re selling the customer two things:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;The product you’re building them&lt;/li&gt;
+  &lt;li&gt;Insurance on the cost of that product&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Insurance costs money.&lt;/strong&gt; In the case of software, you should charge ~30% additional for fixed price jobs. You can tell the client this in plain english. They will still want fixed cost for the same reasons they still buy travel/car/indemnity insurance.&lt;/p&gt;
+
+&lt;p&gt;Companies selling insurance (ie, you):&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Don’t win on every single customer. They win overall.&lt;/li&gt;
+  &lt;li&gt;Have different premiums for different customers, based on risk.&lt;/li&gt;
+  &lt;li&gt;Have strict written terms on what is and isn’t inside the scope of the insurance policy.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id="estimating"&gt;Estimating&lt;/h2&gt;
+
+&lt;p&gt;You’ll drastically underestimate your first few projects. Don’t underestimate the next few. Here’s some tips:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Hofstadtler’s law states “It always takes longer than you expect, even when you take into account Hofstadter’s Law.” This is doubly true of software.&lt;/li&gt;
+  &lt;li&gt;Break the work into small chunks, estimate each, then total.&lt;br /&gt; You’ll want to break the project into chunks for writing your scope too. More on that later.&lt;/li&gt;
+  &lt;li&gt;Scope will change. The client doesn’t know what they want yet. You’ll write a formal scope to protect you against scope change, but asking for more money at every tiny change sucks. Allow a significant amount of fat so you can absorb some reasonable amount of scope change.&lt;/li&gt;
+  &lt;li&gt;Consider the value of the job to the client. Is it a game changer for them? If so, charge more.&lt;/li&gt;
+  &lt;li&gt;Got your estimate? Now, Double it. Everything takes twice as long as you think.&lt;br /&gt;
+&lt;em&gt;And DON’T consider the fact that it’ll get doubled when going through the points above!&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id="wont-i-be-out-competed-on-price"&gt;Won’t I be out-competed on price?&lt;/h2&gt;
+
+&lt;p&gt;Companies who get a few quotes on a job will get figures all over the place. Not everyone’s shopping for the cheapest price, and regardless of your price point, you’ll have people turning you down for being too expensive, and others turning you down for being too cheap. Yes, really.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;You want to go for the clients who know cheapest isn’t best.&lt;/em&gt; Not only do they pay more, they’re also usually more professional, less petty, and much more enjoyable to work with.&lt;/p&gt;
+
+&lt;h2 id="writing-a-scope"&gt;Writing a scope&lt;/h2&gt;
+
+&lt;p&gt;For a significant sized job, you should write a scope and have clients read and sign it before commencing work. Most clients won’t actually read it, but do it anyway.&lt;/p&gt;
+
+&lt;p&gt;A scope should detail what you will complete under the fixed cost. It should also outline what you won’t complete. You can place this under a euphemism like “Future Considerations”, and mention that these are ideas / possible enhancements for future, not included under the current scope.&lt;/p&gt;
+
+&lt;p&gt;A scope is what you’ll fall back on when your client says “… but I wanted this from the beginning” and you say “it wasn’t mentioned in the scope — we can do it, but at additional cost”. Assuming you’re being fair and telling the truth, clients will usually accept that without much fuss.&lt;/p&gt;
+
+&lt;p&gt;A scope is also what you’ll fall back on, on the off chance things get much worse than that. A scope is like writing the terms for the insurance you’re offering. Insurance companies don’t say “sure, we’ll cover any unexpected expenses you have on your holiday, no questions asked!”&lt;/p&gt;
+
+&lt;h2 id="payment"&gt;Payment&lt;/h2&gt;
+
+&lt;p&gt;It’s hard, but if you can, charge some amount to prepare a scope. One way to pitch it is “it comes of the cost of the job if you go ahead with us”. Companies can, and will, get you to write a great scope, then take your scope out to tender with cheaper companies that would not have done half as good a job of scoping out their project. A good scope is worth money in its own right.&lt;/p&gt;
+
+&lt;p&gt;Take a deposit up front. For smaller jobs (say up to 20k), take 50% up front, as soon as the scope is signed. For larger jobs, break it into milestones as makes sense, but the first payment should be up front, before starting work.&lt;/p&gt;
+
+&lt;p&gt;The last payment should be prior to going live — as in “it’s in staging and we’re ready to flick the go live switch once you pay”. Even if you trust the client, invoices get paid much more slowly after the project is live! (If the client resists, you may hold back some nominal amount to bill after it’s gone live, but 90% + should be before.)
+Most importantly, watch Mike Montiero’s great talk &lt;a href="https://www.youtube.com/watch?v=jVkLVRt6c1U"&gt;“Fuck you, pay me”&lt;/a&gt;. I can’t say I follow all his advice, but I probably should.&lt;/p&gt;
+
+&lt;h2 id="no-claim-bonus"&gt;No claim bonus&lt;/h2&gt;
+
+&lt;p&gt;You know how insurance companies have a “no claim bonus”? That’s clever marketing. It means “clients who make claims get charged more”. You can do the same. For difficult clients, or clients where you’ve lost out before, charge them a higher premium for future fixed price work (and recoup some of what you lost previously).&lt;/p&gt;
+
+&lt;h2 id="tracking-time--estimates-vs-actuals"&gt;Tracking time — estimates vs actuals&lt;/h2&gt;
+
+&lt;p&gt;Fixed price means you’re under no obligation to track time. It’s a good idea to do so anyway, for your own future reference. Don’t be too transparent with the client, though.&lt;/p&gt;
+
+&lt;p&gt;If you do fixed price right, there’ll be plenty of times where you come in under estimate, and the client could have got it cheaper at an hourly rate. That’s completely fair — fixed price is insurance, which the client wanted. You took the risk and it paid off. But there’s nothing to be gained from letting the client know that this time, you won.&lt;/p&gt;
+
+&lt;p&gt;Many clients expect a “Fixed price if it goes over estimate, but hourly if it goes under” deal — and that’s simply not viable for you. Fixed price means actual hours aren’t the client’s concern.&lt;/p&gt;
+
+</content>
+  </entry>
+  <entry>
+    <title>Data imports done right</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2016/12/22/data-imports-done-right.html"/>
+    <id>http://blog.url.com/blog/2016/12/22/data-imports-done-right.html</id>
+    <published>2016-12-22T00:00:00Z</published>
+    <updated>2021-05-26T19:06:31+10:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;I’ve been bitten more than once by data imports consuming an unreasonable amount of time in software projects. Here are some lessons.&lt;/p&gt;
+
+&lt;h2 id="know-what-to-expect"&gt;Know what to expect&lt;/h2&gt;
+
+&lt;p&gt;The client (or whoever is sourcing the data) will give you poor quality data from disparate sources, and they’ll drip-feed it over a period of way-too-long. Each version will be in a slightly different format. They’ll say “just get started with this” then want a complete re-do with fresh data later. They’ll give you the final copy, then the actual final copy, then the final FINAL copy. Eventually, you’ll get the real actual final renamed FINAL CONFIRMED copy. A few months after going live, they’ll want to import a bit more data that they forgot about the first time round. Expect this.&lt;/p&gt;
+
+&lt;p&gt;You will end up running your import scripts countless times, with dozens of variations in the data format supplied by the client.&lt;/p&gt;
+
+&lt;h2 id="know-how-to-deal-with-it"&gt;Know how to deal with it&lt;/h2&gt;
+
+&lt;h3 id="your-import-scripts-should-be-production-level-code"&gt;Your import scripts should be production level code&lt;/h3&gt;
+
+&lt;p&gt;You and your team will run them enough to make this MORE than worth it. Write unit tests. Have tests for each edge case. Name them well. Where there’s cheap performance wins, take them. Commit them to the codebase with the expectation that they’ll live there for several months, minimum, and be used countless times.&lt;/p&gt;
+
+&lt;h3 id="your-import-scripts-should-be-easily-re-runnable"&gt;Your import scripts should be easily re-runnable&lt;/h3&gt;
+
+&lt;p&gt;You should be able to re-run them with a single command — ./import.sh or whatever. You should not have to manually delete or otherwise wrangle around with data in the database, or csv files, or anything else, before re-running.&lt;/p&gt;
+
+&lt;p&gt;Your import scripts should take care of either: deleting all data before they re-run, or running in an idempotent kinda way so on the second run through, they’ll update the same existing record if it exists, rather than adding a duplicate.&lt;/p&gt;
+
+&lt;h2 id="your-app-primarily-your-database-schema-should-dictate-the-data-format-for-imports"&gt;Your app (primarily your database schema) should dictate the data format for imports&lt;/h2&gt;
+
+&lt;p&gt;When the client gives you a messy spreadsheet, it’s easy to think: “That’s Ok, I’ll write script that loops over this, untangles it, and imports it directly to the database”.&lt;/p&gt;
+
+&lt;p&gt;Don’t do this. Don’t let the mess of spreadsheets you’re provided with dictate the data formats used by your import scripts. Imagine if the app was in production and the client wanted a page where they could upload a CSV of additional data at any time, and expect to get understandable errors when data didn’t match the expected format. You’d have to dictate the format of the CSV. What would you ideally dictate? That’s the format your inport scripts should use.&lt;/p&gt;
+
+&lt;p&gt;This requires a little more thought and effort up front on your part, but it pays back in the long run.&lt;/p&gt;
+
+&lt;p&gt;If you have to deal with a dirty spreadsheet of data, the approach should be to write a (possibly dirty, throw-away) script to transform that data into the format your app expects (ie, a format closely matching your app’s database schema), then import the transformed data using your nice, production quality code.&lt;/p&gt;
+
+&lt;p&gt;Alternatively, don’t write script to transform messy data, and just tell the client: “This data isn’t in a suitable format. Here’s a template CSV with the headers we expect. Fill that out and send it back”.&lt;/p&gt;
+
+&lt;h3 id="you-mostly-want-one-import-per-table-as-the-database-schema-changes-modify-existing-scripts-dont-add-new-ones"&gt;You mostly want one import per table. As the database schema changes, modify existing scripts; don’t add new ones.&lt;/h3&gt;
+
+&lt;p&gt;Let’s say a client wants to give you data about restaurants. They have the restaurant names now — but will give you the addresses later. So, create a restaurants import script that handles just names now. Later, modify that same script to handle both names and addresses. Don’t create a second restaurant_addresses import script later. One script per table, modify it as the schema for that table changes.&lt;/p&gt;
+
+&lt;p&gt;Ideally, when the client says “I have the addresses data now”, you say “great — add it to this spreadsheet which already contains the names, and empty columns for the address data, then send that spreadsheet back to me”. Of course, since your expected CSV format closely matches your database schema, it’ll be easy to export a CSV of existing data using your favourite RDBMS client.&lt;/p&gt;
+
+&lt;h3 id="know-whos-responsible-for-providing-clean-data"&gt;Know who’s responsible for providing clean data&lt;/h3&gt;
+
+&lt;p&gt;In almost all cases, the ultimate responsibility of providing clean data (or cleaning up bad data) should lie with the client. That should be clear in writing prior to starting the job.&lt;/p&gt;
+
+&lt;p&gt;Ideally, the job of getting that clean data into the most convenient format for your app should also lie with the client — that is, you should be able to say “here’s how the app’s import scripts expect the data to look”, and they’ll provide you data looking like that.&lt;/p&gt;
+
+&lt;p&gt;Both the above steps (getting clean data, and formatting it) ALWAYS take WAY longer than expected. So avoid those responsibilities if you can.&lt;/p&gt;
+
+&lt;p&gt;Of course, in practice, you’ll cut the client some slack and sometimes tidy up data for them. But having it clear in writing that cleaning and formatting data is their responsibility means after the 20th iteration of being provided unsuitable data, you can say “Stop! Get us clean data, and then we’ll continue. Or, pay us extra for cleaning up dirty data, because that work is outside scope.”&lt;/p&gt;
+
+&lt;h3 id="dont-be-too-preoccupied-with-getting-real-data-in-your-app-early-on"&gt;Don’t be too preoccupied with getting “real” data in your app early on&lt;/h3&gt;
+
+&lt;p&gt;It’s tempting to jump the gun and get “real” data in your app to make your dev or staging environment feel more complete or realistic, even when the data you’ve been provided so far is a messy, inconsistent or incomplete. Avoid this temptation.&lt;/p&gt;
+
+&lt;p&gt;The danger here is that every time you find a bug in the app, you’re never sure wether it’s a result of bad code, or bad data. Sticking to a smaller subset of “non-real” but clean, correct, consistent data ensures that when you do have a bug, you can be a lot more confident that the codebase, not the database, is where you should be trying to fix it.&lt;/p&gt;
+
+&lt;p&gt;Always make every effort to avoid having any inconsistent / incomplete data, even in the early stages of development / prototyping.&lt;/p&gt;
+
+&lt;p&gt;Maintain a small but complete and consistent subset of data that you can use for development, until ALL of the real data becomes available.&lt;/p&gt;
+
+&lt;h2 id="overestimate"&gt;Overestimate&lt;/h2&gt;
+
+&lt;p&gt;Often the advice for estimating software projects is “decide how long you think it’ll take, then double it”. For data imports, multiplying by 4, or negotiating to do that part of the project hourly rather than fixed cost, is a safer bet.&lt;/p&gt;
 </content>
   </entry>
   <entry>
@@ -193,24 +346,6 @@ A "yes" here is good and reveals a lot about general attitude towards employees.
 &lt;p&gt;Perfectionism exists in maths tests and multiple choice comprehensions. It doesn’t exist in real life, and it certainly doesn’t exist in business or software. "Perfect" is the good-enough trade off between countless goals pulling in different directions.&lt;/p&gt;
 
 &lt;p&gt;In real life, perfectionism is a disease.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Keep the company of the wise</title>
-    <link rel="alternate" href="http://blog.url.com/blog/2016/02/15/keep-company-of-wise.html"/>
-    <id>http://blog.url.com/blog/2016/02/15/keep-company-of-wise.html</id>
-    <published>2016-02-15T00:00:00Z</published>
-    <updated>2021-05-26T17:57:47+10:00</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;In India, one of the top recommendations for young yogis aspiring to enlightenment is "keep the company of the wise".&lt;/p&gt;
-
-&lt;p&gt;I gave up on enlightenment a while ago, but the same applies to any aspiration. Sometimes there's a tendency — at conferences, meetups, and in the work place— to want to stick to your own crowd. I'm a junior, I should stick with other juniors.&lt;/p&gt;
-
-&lt;p&gt;Actively fight that urge. Find the best people. Find the ones with the most wisdom to share. Then pull them off that pedestal, because you should never have put them up there in the first place, and talk to them.&lt;/p&gt;
-
-&lt;p&gt;Keep the company of the wise.&lt;/p&gt;
 </content>
   </entry>
 </feed>

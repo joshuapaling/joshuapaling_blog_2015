@@ -1,0 +1,116 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+  <title>Joshua Paling  - Data imports done right</title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+  <link href="../../../../stylesheets/application-650b1803.css" rel="stylesheet" />
+  <script src="../../../../javascripts/application-8d565278.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+  <div class="page-wrapper">
+    <header>
+      <h1>Joshua Paling</h1>
+      <nav>
+        <a class="active" href="/">Blog</a>
+        <a class="" href="/about.html">About</a>
+        <a class="" href="/resume.html">Resume</a>
+        <a href="../../../../feed.xml">RSS</a>
+        <a target="_blank" href="https://twitter.com/joshuapaling">@joshuapaling</a>
+      </nav>
+    </header>
+
+
+<h1>Data imports done right</h1>
+<p>I’ve been bitten more than once by data imports consuming an unreasonable amount of time in software projects. Here are some lessons.</p>
+
+<h2 id="know-what-to-expect">Know what to expect</h2>
+
+<p>The client (or whoever is sourcing the data) will give you poor quality data from disparate sources, and they’ll drip-feed it over a period of way-too-long. Each version will be in a slightly different format. They’ll say “just get started with this” then want a complete re-do with fresh data later. They’ll give you the final copy, then the actual final copy, then the final FINAL copy. Eventually, you’ll get the real actual final renamed FINAL CONFIRMED copy. A few months after going live, they’ll want to import a bit more data that they forgot about the first time round. Expect this.</p>
+
+<p>You will end up running your import scripts countless times, with dozens of variations in the data format supplied by the client.</p>
+
+<h2 id="know-how-to-deal-with-it">Know how to deal with it</h2>
+
+<h3 id="your-import-scripts-should-be-production-level-code">Your import scripts should be production level code</h3>
+
+<p>You and your team will run them enough to make this MORE than worth it. Write unit tests. Have tests for each edge case. Name them well. Where there’s cheap performance wins, take them. Commit them to the codebase with the expectation that they’ll live there for several months, minimum, and be used countless times.</p>
+
+<h3 id="your-import-scripts-should-be-easily-re-runnable">Your import scripts should be easily re-runnable</h3>
+
+<p>You should be able to re-run them with a single command — ./import.sh or whatever. You should not have to manually delete or otherwise wrangle around with data in the database, or csv files, or anything else, before re-running.</p>
+
+<p>Your import scripts should take care of either: deleting all data before they re-run, or running in an idempotent kinda way so on the second run through, they’ll update the same existing record if it exists, rather than adding a duplicate.</p>
+
+<h2 id="your-app-primarily-your-database-schema-should-dictate-the-data-format-for-imports">Your app (primarily your database schema) should dictate the data format for imports</h2>
+
+<p>When the client gives you a messy spreadsheet, it’s easy to think: “That’s Ok, I’ll write script that loops over this, untangles it, and imports it directly to the database”.</p>
+
+<p>Don’t do this. Don’t let the mess of spreadsheets you’re provided with dictate the data formats used by your import scripts. Imagine if the app was in production and the client wanted a page where they could upload a CSV of additional data at any time, and expect to get understandable errors when data didn’t match the expected format. You’d have to dictate the format of the CSV. What would you ideally dictate? That’s the format your inport scripts should use.</p>
+
+<p>This requires a little more thought and effort up front on your part, but it pays back in the long run.</p>
+
+<p>If you have to deal with a dirty spreadsheet of data, the approach should be to write a (possibly dirty, throw-away) script to transform that data into the format your app expects (ie, a format closely matching your app’s database schema), then import the transformed data using your nice, production quality code.</p>
+
+<p>Alternatively, don’t write script to transform messy data, and just tell the client: “This data isn’t in a suitable format. Here’s a template CSV with the headers we expect. Fill that out and send it back”.</p>
+
+<h3 id="you-mostly-want-one-import-per-table-as-the-database-schema-changes-modify-existing-scripts-dont-add-new-ones">You mostly want one import per table. As the database schema changes, modify existing scripts; don’t add new ones.</h3>
+
+<p>Let’s say a client wants to give you data about restaurants. They have the restaurant names now — but will give you the addresses later. So, create a restaurants import script that handles just names now. Later, modify that same script to handle both names and addresses. Don’t create a second restaurant_addresses import script later. One script per table, modify it as the schema for that table changes.</p>
+
+<p>Ideally, when the client says “I have the addresses data now”, you say “great — add it to this spreadsheet which already contains the names, and empty columns for the address data, then send that spreadsheet back to me”. Of course, since your expected CSV format closely matches your database schema, it’ll be easy to export a CSV of existing data using your favourite RDBMS client.</p>
+
+<h3 id="know-whos-responsible-for-providing-clean-data">Know who’s responsible for providing clean data</h3>
+
+<p>In almost all cases, the ultimate responsibility of providing clean data (or cleaning up bad data) should lie with the client. That should be clear in writing prior to starting the job.</p>
+
+<p>Ideally, the job of getting that clean data into the most convenient format for your app should also lie with the client — that is, you should be able to say “here’s how the app’s import scripts expect the data to look”, and they’ll provide you data looking like that.</p>
+
+<p>Both the above steps (getting clean data, and formatting it) ALWAYS take WAY longer than expected. So avoid those responsibilities if you can.</p>
+
+<p>Of course, in practice, you’ll cut the client some slack and sometimes tidy up data for them. But having it clear in writing that cleaning and formatting data is their responsibility means after the 20th iteration of being provided unsuitable data, you can say “Stop! Get us clean data, and then we’ll continue. Or, pay us extra for cleaning up dirty data, because that work is outside scope.”</p>
+
+<h3 id="dont-be-too-preoccupied-with-getting-real-data-in-your-app-early-on">Don’t be too preoccupied with getting “real” data in your app early on</h3>
+
+<p>It’s tempting to jump the gun and get “real” data in your app to make your dev or staging environment feel more complete or realistic, even when the data you’ve been provided so far is a messy, inconsistent or incomplete. Avoid this temptation.</p>
+
+<p>The danger here is that every time you find a bug in the app, you’re never sure wether it’s a result of bad code, or bad data. Sticking to a smaller subset of “non-real” but clean, correct, consistent data ensures that when you do have a bug, you can be a lot more confident that the codebase, not the database, is where you should be trying to fix it.</p>
+
+<p>Always make every effort to avoid having any inconsistent / incomplete data, even in the early stages of development / prototyping.</p>
+
+<p>Maintain a small but complete and consistent subset of data that you can use for development, until ALL of the real data becomes available.</p>
+
+<h2 id="overestimate">Overestimate</h2>
+
+<p>Often the advice for estimating software projects is “decide how long you think it’ll take, then double it”. For data imports, multiplying by 4, or negotiating to do that part of the project hourly rather than fixed cost, is a safer bet.</p>
+
+
+    <!-- Footer -->
+    <footer>
+      <nav>
+        <a class="active" href="/">Blog</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/about.html">About</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/resume.html">Resume</a>
+        &nbsp;&bull;&nbsp;
+        <a href="../../../../feed.xml">RSS</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/archives.html">Archives</a>
+      </nav>
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright &copy; Joshua Paling 2015</p>
+        </div>
+      </div>
+      <!-- /.row -->
+    </footer>
+
+  </div>
+
+</body>
+</html>
+
