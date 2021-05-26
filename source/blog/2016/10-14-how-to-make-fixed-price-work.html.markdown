@@ -23,7 +23,7 @@ This is the golden rule. In a fixed price job, you’re selling the customer two
 1. The product you’re building them
 2. Insurance on the cost of that product
 
-<strong>Insurance costs money.</strong> In the case of software, you should charge ~30% additional for fixed price jobs. You can tell the client this in plain english. They will still want fixed cost for the same reasons they still buy travel/car/indemnity insurance.
+<strong>Insurance costs money.</strong> In the case of software, you should charge \~30% additional for fixed price jobs. You can tell the client this in plain english. They will still want fixed cost for the same reasons they still buy travel/car/indemnity insurance.
 
 
 Companies selling insurance (ie, you):
