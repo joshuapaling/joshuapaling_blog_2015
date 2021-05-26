@@ -36,6 +36,41 @@
     <name>Joshua Paling</name>
   </author>
   <entry>
+    <title>Some Management Lessons</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2021/05/26/some-management-lessons.html"/>
+    <id>http://blog.url.com/blog/2021/05/26/some-management-lessons.html</id>
+    <published>2021-05-26T00:00:00Z</published>
+    <updated>2021-05-26T21:00:58+10:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;Just a few personal lessons here, recording for my own reference. They're not things I &lt;em&gt;didn't know&lt;/em&gt; before, but they've been hammered home strongly the past few months.&lt;/p&gt;
+
+&lt;h2 id="set-an-extremely-high-bar-on-hiring"&gt;Set an extremely high bar on hiring&lt;/h2&gt;
+
+&lt;p&gt;Hiring is the most important thing you do as a manager. And every new hire must raise the bar. This is an &lt;a href="https://www.aboutamazon.com/news/workplace/hire-power-how-amazonians-raise-the-bar-with-every-interview"&gt;Amazon principle&lt;/a&gt;, but it's universally applicable.&lt;/p&gt;
+
+&lt;p&gt;If you're unsure, pass on the candidate, or add an extra interview step to provide more certainty. Hire only when you're very confident that this candidate will be a bar-raiser.&lt;/p&gt;
+
+&lt;p&gt;When a good hire joins, it raises morale and productivity across the whole team. Likewise, a bad hire is a wet blanket on the whole team.&lt;/p&gt;
+
+&lt;h2 id="own-your-bad-hiring-decisions"&gt;Own your bad hiring decisions&lt;/h2&gt;
+
+&lt;p&gt;You'll make some. Hopefully not many, if your bar is high enough. But when you do, own it. They must be given direct, specific feedback, very quickly. If they can't turn around quickly, you must let them go within their probation period. The question to ask, regularly throughout the probation, is "if I could just re-wind time, would I hire them again?" If the answer's no, they can't pass probation.&lt;/p&gt;
+
+&lt;p&gt;Letting someone go sux for everyone - you, your team, and most of all, the person being fired. If you're doing it more than "very rarely", it means your hiring bar isn't high enough. You still must do it! But raise your bar to prevent it in future.&lt;/p&gt;
+
+&lt;h2 id="create-a-strong-feedback-culture"&gt;Create a strong feedback culture&lt;/h2&gt;
+
+&lt;p&gt;Not just for new hires, but for everyone. If a manager has negative feedback for a report, it must be delivered quickly. Don't wait for next performance review. And usually, don't wait for next 1:1. The feedback must be direct, specific, empathetic, and framed in the best way to allow the report to quickly change and grow.&lt;/p&gt;
+
+&lt;p&gt;You must lead by example on delivering feedback to this standard; culture filters down from the top. It's scary at first, but most people - either immediately, or at least later upon reflection - appreciate the honesty and opportunity to improve.&lt;/p&gt;
+
+&lt;p&gt;Likewise, positive feedback is easy to forget about (if everything's going well, no need for feedback, right?). But it's equally important. Positive feedback must be specific and heartfelt. "You're doing a great job" isn't good enough - what exact thing are they doing well, and what good outcome is it creating? Why do you truly appreciate them doing it? Let them know - and usually, do it in a public channel so they know the team is aware of their effort, and so the team knows what "doing a great job" looks like to you.&lt;/p&gt;
+
+</content>
+  </entry>
+  <entry>
     <title>Hiring Offshore</title>
     <link rel="alternate" href="http://blog.url.com/blog/2021/05/26/hiring-offshore.html"/>
     <id>http://blog.url.com/blog/2021/05/26/hiring-offshore.html</id>
@@ -334,30 +369,6 @@ A "yes" here is good and reveals a lot about general attitude towards employees.
 &lt;p&gt;&lt;a href="https://twitter.com/grokfail/status/769907753758228480"&gt;Garrow&lt;/a&gt;: how do you decide what gets built? Who does that? How do you measure the success of built thing?&lt;/p&gt;
 
 &lt;p&gt;&lt;a href="https://twitter.com/andrewdotnich/status/770197793424105473"&gt;Andrew&lt;/a&gt;: do you have any references? (I have to provide them, so where are yours?)&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>What makes a good talk?</title>
-    <link rel="alternate" href="http://blog.url.com/blog/2016/03/22/what-makes-a-good-talk.html"/>
-    <id>http://blog.url.com/blog/2016/03/22/what-makes-a-good-talk.html</id>
-    <published>2016-03-22T00:00:00Z</published>
-    <updated>2021-05-26T17:57:47+10:00</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;After Ruby Conf AU, I came away noticing a few common traits of good talks:&lt;/p&gt;
-
-&lt;h2 id="excellent-delivery"&gt;Excellent delivery&lt;/h2&gt;
-
-&lt;p&gt;On stage, you’re not just speaking, you’re performing. Turn the enthusiasm up a few notches from what you’d use in a face-to-face conversation. Don’t just stand behind the podium and read.&lt;/p&gt;
-
-&lt;h2 id="a-story"&gt;A story&lt;/h2&gt;
-
-&lt;p&gt;Don’t present points. A blog post can do that. Bring some personal anecdotes in, and weave a story out of the information you’re presenting. Relive the emotions you felt at the time. This comes back to the idea of ‘performing’.&lt;/p&gt;
-
-&lt;h2 id="great-tech-talks-require-great-examples"&gt;Great Tech talks require great examples&lt;/h2&gt;
-
-&lt;p&gt;Distill the technical idea to the smallest, most basic possible representation. Come up with a simple, self-contained example domain for all code demonstrated. Most people don’t do this and their talks are much worse for it. (The quote &lt;em&gt;‘I wrote a long letter because I didn’t have time to write you a short one’&lt;/em&gt; comes to mind)&lt;/p&gt;
 </content>
   </entry>
 </feed>
