@@ -68,11 +68,10 @@ heroku ps:kill scheduler.8377 -a prod-le-svc-vendor-syd
 
 <p>Find how many cores your heroku dyno type has:</p>
 
-<p><code>bash
-▶ heroku run "grep -c processor /proc/cpuinfo" --app prod-le-svc-graphql-syd
+<pre><code class="language-bash">▶ heroku run "grep -c processor /proc/cpuinfo" --app prod-le-svc-graphql-syd
 Running grep -c processor /proc/cpuinfo on ⬢ prod-le-svc-graphql-syd... up, run.1612 (Private-M)
 2
-</code></p>
+</code></pre>
 
 
     <!-- Footer -->
