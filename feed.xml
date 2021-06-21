@@ -36,19 +36,19 @@
     <name>Joshua Paling</name>
   </author>
   <entry>
-    <title>Some Management Lessons</title>
+    <title>Every New Hire Must Raise the Bar</title>
     <link rel="alternate" href="http://blog.url.com/blog/2021/05/26/some-management-lessons.html"/>
     <id>http://blog.url.com/blog/2021/05/26/some-management-lessons.html</id>
     <published>2021-05-26T00:00:00Z</published>
-    <updated>2021-05-26T21:00:58+10:00</updated>
+    <updated>2021-06-21T11:58:31+10:00</updated>
     <author>
       <name>Article Author</name>
     </author>
-    <content type="html">&lt;p&gt;Just a few personal lessons here, recording for my own reference. They're not things I &lt;em&gt;didn't know&lt;/em&gt; before, but they've been hammered home strongly the past few months.&lt;/p&gt;
+    <content type="html">&lt;p&gt;Just a few personal lessons here, recording for my own reference.&lt;/p&gt;
 
 &lt;h2 id="set-an-extremely-high-bar-on-hiring"&gt;Set an extremely high bar on hiring&lt;/h2&gt;
 
-&lt;p&gt;Hiring is the most important thing you do as a manager. And every new hire must raise the bar. This is an &lt;a href="https://www.aboutamazon.com/news/workplace/hire-power-how-amazonians-raise-the-bar-with-every-interview"&gt;Amazon principle&lt;/a&gt;, but it's universally applicable.&lt;/p&gt;
+&lt;p&gt;Hiring is the most important thing you do as a manager. And every new hire must raise the bar. They must make the whole team better. This is an &lt;a href="https://www.aboutamazon.com/news/workplace/hire-power-how-amazonians-raise-the-bar-with-every-interview"&gt;Amazon principle&lt;/a&gt;, but it's universally applicable.&lt;/p&gt;
 
 &lt;p&gt;If you're unsure, pass on the candidate, or add an extra interview step to provide more certainty. Hire only when you're very confident that this candidate will be a bar-raiser.&lt;/p&gt;
 
@@ -115,7 +115,7 @@
     <link rel="alternate" href="http://blog.url.com/blog/2018/07/27/breaking-prod.html"/>
     <id>http://blog.url.com/blog/2018/07/27/breaking-prod.html</id>
     <published>2018-07-27T00:00:00Z</published>
-    <updated>2021-06-21T11:48:10+10:00</updated>
+    <updated>2021-06-21T11:51:56+10:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -147,14 +147,12 @@
   &lt;li&gt;etc&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;These make you feel good bus are a bad idea. They slow the team down and marginally reduce risk. Instead, look for specific, low bureaucracy process changes. Example:&lt;/p&gt;
+&lt;p&gt;These make you feel like you've "done something about it" but you haven't. They slow the team down and don't really reduce risk. Instead, look for specific, low bureaucracy process changes that target high risk scenarios. Example:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;If someone posts in the #support slack channel after business hours, auto-respond with instructions on how to alert the on-call staff.&lt;/li&gt;
   &lt;li&gt;When releasing a significant feature outside of business hours, document a rollback plan and communicate it with on-call staff&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;These changes specifically target the high risk areas and don't globally slow everyone down.&lt;/p&gt;
 </content>
   </entry>
   <entry>
