@@ -25,15 +25,13 @@
 
 
 <h1>Breaking Prod</h1>
-<p>When I’ve broken production apps, stakeholders have often asked: <em>“What can we do to ensure this doesn’t happen again?”</em></p>
-
-<p><img src="../../../../images/bugs-vs-speed-f15f9700.jpg" alt="Bugs vs speed" /></p>
+<p>When broken production apps break, stakeholders immediately ask: <em>“What can we do to ensure this never happens again?”</em></p>
 
 <p>The relationship between development speed and bugs looks something like this:</p>
 
-<p>As you slow development speed, the impact of bugs does not decrease linearly</p>
+<p><img src="../../../../images/bugs-vs-speed-f15f9700.jpg" alt="Bugs vs speed" /></p>
 
-<p>Rushed pace &amp; poor testing means many bugs. Slow down, and at first you’ll drastically reduce bugs. But slow down more, and you begin to bottom out. You can never reach zero.</p>
+<p>Rushed pace &amp; poor testing means many bugs. Slow down (ie, be more thorough), and at first you’ll drastically reduce bugs. But slow down more, and you begin to bottom out. You can never reach zero.</p>
 
 <p>Breaking prod less means using time, money, and bureaucracy to slide right on an axis of diminishing returns.</p>
 
@@ -44,6 +42,25 @@
 <p>Selling shoes online? You have a higher tolerance for risk. Slide left and <em>take advantage of it.</em></p>
 
 <p>Coming back to the original question, the answer is <em>“we can slide as far right as you want, but it’s not free… how much do you want to pay for it?”</em></p>
+
+<hr />
+
+<p><em>Update:</em> What <em>is</em> important is to look for opportunities to efficiently decrease the risk of bugs. People's knee-jerk reaction to "prod is broken!" is to ramp up bureacracy with generic solutions like:</p>
+
+<ul>
+  <li>Ensure every PR has 2 reviews, not 1!</li>
+  <li>Do a second round of testing before promoting to prod!</li>
+  <li>etc</li>
+</ul>
+
+<p>These make you feel good bus are a bad idea. They slow the team down and marginally reduce risk. Instead, look for specific, low bureaucracy process changes. Example:</p>
+
+<ul>
+  <li>If someone posts in the #support slack channel after business hours, auto-respond with instructions on how to alert the on-call staff.</li>
+  <li>When releasing a significant feature outside of business hours, document a rollback plan and communicate it with on-call staff</li>
+</ul>
+
+<p>These changes specifically target the high risk areas and don't globally slow everyone down.</p>
 
 
     <!-- Footer -->
