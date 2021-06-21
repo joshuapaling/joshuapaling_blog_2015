@@ -1,15 +1,15 @@
 ---
-title: Some Management Lessons
+title: Every New Hire Must Raise the Bar
 tags:
 published: true
 layout: blog
 ---
 
-Just a few personal lessons here, recording for my own reference. They're not things I _didn't know_ before, but they've been hammered home strongly the past few months.
+Just a few personal lessons here, recording for my own reference.
 
 ## Set an extremely high bar on hiring
 
-Hiring is the most important thing you do as a manager. And every new hire must raise the bar. This is an [Amazon principle](https://www.aboutamazon.com/news/workplace/hire-power-how-amazonians-raise-the-bar-with-every-interview), but it's universally applicable.
+Hiring is the most important thing you do as a manager. And every new hire must raise the bar. They must make the whole team better. This is an [Amazon principle](https://www.aboutamazon.com/news/workplace/hire-power-how-amazonians-raise-the-bar-with-every-interview), but it's universally applicable.
 
 If you're unsure, pass on the candidate, or add an extra interview step to provide more certainty. Hire only when you're very confident that this candidate will be a bar-raiser.
 
