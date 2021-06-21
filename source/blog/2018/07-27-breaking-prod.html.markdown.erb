@@ -5,15 +5,13 @@ published: true
 layout: blog
 ---
 
-When I’ve broken production apps, stakeholders have often asked: _“What can we do to ensure this doesn’t happen again?”_
-
-<%= image_tag "bugs-vs-speed.jpg" %>
+When broken production apps break, stakeholders immediately ask: _“What can we do to ensure this never happens again?”_
 
 The relationship between development speed and bugs looks something like this:
 
-As you slow development speed, the impact of bugs does not decrease linearly
+<%= image_tag "bugs-vs-speed.jpg" %>
 
-Rushed pace & poor testing means many bugs. Slow down, and at first you’ll drastically reduce bugs. But slow down more, and you begin to bottom out. You can never reach zero.
+Rushed pace & poor testing means many bugs. Slow down (ie, be more thorough), and at first you’ll drastically reduce bugs. But slow down more, and you begin to bottom out. You can never reach zero.
 
 Breaking prod less means using time, money, and bureaucracy to slide right on an axis of diminishing returns.
 
@@ -24,3 +22,18 @@ Writing pacemaker firmware? Slide very far right to ensure no one dies.
 Selling shoes online? You have a higher tolerance for risk. Slide left and *take advantage of it.*
 
 Coming back to the original question, the answer is _“we can slide as far right as you want, but it’s not free… how much do you want to pay for it?”_
+
+<hr />
+
+*Update:* What *is* important is to look for opportunities to efficiently decrease the risk of bugs. People's knee-jerk reaction to "prod is broken!" is to ramp up bureacracy with generic solutions like:
+
+- Ensure every PR has 2 reviews, not 1!
+- Do a second round of testing before promoting to prod!
+- etc
+
+These make you feel good bus are a bad idea. They slow the team down and marginally reduce risk. Instead, look for specific, low bureaucracy process changes. Example:
+
+- If someone posts in the #support slack channel after business hours, auto-respond with instructions on how to alert the on-call staff.
+- When releasing a significant feature outside of business hours, document a rollback plan and communicate it with on-call staff
+
+These changes specifically target the high risk areas and don't globally slow everyone down.
