@@ -11,7 +11,10 @@ git commit -m "my msg"
 
 
 # delete all merged remote branches
-git branch -r --merged | grep -v master | sed 's/origin\///' | xargs -n 1 git push --delete origin
+git branch -r --merged | egrep -v "(^\*|main|master|dev|stable)" | sed 's/origin\///' | xargs -n 1 git push --delete origin
+
+# from Chris Ngyen, I think this one deletes local and remote merged branches
+git branch --merged | egrep -v "(^\*|main|master|dev|stable)" | xargs git branch -d
 ~~~
 
 ## Git bisect
