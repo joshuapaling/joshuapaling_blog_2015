@@ -18,4 +18,4 @@ gem "webrick", "~> 1.8"
 # Temporary fix for https://github.com/middleman/middleman/issues/2569
 gem 'haml', '~> 5.0'
 
-gem 'sass', '~> 3.4'
+gem 'sass', '~> 3.4' # fix errors running bundle exec middleman
