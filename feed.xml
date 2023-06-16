@@ -6,7 +6,7 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
   <title>Joshua Paling </title>
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
-  <link href="/stylesheets/application-65eac6ab.css" rel="stylesheet" />
+  <link href="/stylesheets/application-4b18c387.css" rel="stylesheet" />
   <script src="/javascripts/application-8d565278.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
@@ -31,50 +31,35 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2021-05-26T00:00:00Z</updated>
+  <updated>2023-06-13T10:00:00+10:00</updated>
   <author>
     <name>Joshua Paling</name>
   </author>
   <entry>
-    <title>Every New Hire Must Raise the Bar</title>
-    <link rel="alternate" href="http://blog.url.com/blog/2021/05/26/some-management-lessons.html"/>
-    <id>http://blog.url.com/blog/2021/05/26/some-management-lessons.html</id>
-    <published>2021-05-26T00:00:00Z</published>
-    <updated>2021-06-21T11:58:31+10:00</updated>
+    <title>Talk on database indexing</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2023/06/13/database-indexing.html"/>
+    <id>http://blog.url.com/blog/2023/06/13/database-indexing.html</id>
+    <published>2023-06-13T10:00:00+10:00</published>
+    <updated>2023-06-15T21:52:22+10:00</updated>
     <author>
       <name>Article Author</name>
     </author>
-    <content type="html">&lt;p&gt;Just a few personal lessons here, recording for my own reference.&lt;/p&gt;
+    <content type="html">&lt;p&gt;Great talk on &lt;a href="https://www.youtube.com/watch?v=HubezKbFL7E&amp;amp;amp;t=1732s"&gt;database indexing&lt;/a&gt;&lt;/p&gt;
 
-&lt;h2 id="set-an-extremely-high-bar-on-hiring"&gt;Set an extremely high bar on hiring&lt;/h2&gt;
+&lt;p&gt;Key points:&lt;/p&gt;
 
-&lt;p&gt;Hiring is the most important thing you do as a manager. And every new hire must raise the bar. They must make the whole team better. This is an &lt;a href="https://www.aboutamazon.com/news/workplace/hire-power-how-amazonians-raise-the-bar-with-every-interview"&gt;Amazon principle&lt;/a&gt;, but it's universally applicable.&lt;/p&gt;
-
-&lt;p&gt;If you're unsure, pass on the candidate, or add an extra interview step to provide more certainty. Hire only when you're very confident that this candidate will be a bar-raiser.&lt;/p&gt;
-
-&lt;p&gt;When a good hire joins, it raises morale and productivity across the whole team. Likewise, a bad hire is a wet blanket on the whole team.&lt;/p&gt;
-
-&lt;h2 id="own-your-bad-hiring-decisions"&gt;Own your bad hiring decisions&lt;/h2&gt;
-
-&lt;p&gt;You'll make some. Hopefully not many, if your bar is high enough. But when you do, own it. They must be given direct, specific feedback, very quickly. If they can't turn around quickly, you must let them go within their probation period. The question to ask, regularly throughout the probation, is "if I could just re-wind time, would I hire them again?" If the answer's no, they can't pass probation.&lt;/p&gt;
-
-&lt;p&gt;Letting someone go sux for everyone - you, your team, and most of all, the person being fired. If you're doing it more than "very rarely", it means your hiring bar isn't high enough. You still must do it! But raise your bar to prevent it in future.&lt;/p&gt;
-
-&lt;h2 id="create-a-strong-feedback-culture"&gt;Create a strong feedback culture&lt;/h2&gt;
-
-&lt;p&gt;Not just for new hires, but for everyone. If a manager has negative feedback for a report, it must be delivered quickly. Don't wait for next performance review. And usually, don't wait for next 1:1. The feedback must be direct, specific, empathetic, and framed in the best way to allow the report to quickly change and grow.&lt;/p&gt;
-
-&lt;p&gt;You must lead by example on delivering feedback to this standard; culture filters down from the top. It's scary at first, but most people - either immediately, or at least later upon reflection - appreciate the honesty and opportunity to improve.&lt;/p&gt;
-
-&lt;p&gt;Likewise, positive feedback is easy to forget about (if everything's going well, no need for feedback, right?). But it's equally important. Positive feedback must be specific and heartfelt. "You're doing a great job" isn't good enough - what exact thing are they doing well, and what good outcome is it creating? Why do you truly appreciate them doing it? Let them know - and usually, do it in a public channel so they know the team is aware of their effort, and so the team knows what "doing a great job" looks like to you.&lt;/p&gt;
-
+&lt;ul&gt;
+  &lt;li&gt;In a multi-column index, order matters&lt;/li&gt;
+  &lt;li&gt;All but the final column of an index can only work on exact match&lt;/li&gt;
+  &lt;li&gt;Range indexes only work on the final column of an index&lt;/li&gt;
+&lt;/ul&gt;
 </content>
   </entry>
   <entry>
     <title>Hiring Offshore</title>
     <link rel="alternate" href="http://blog.url.com/blog/2021/05/26/hiring-offshore.html"/>
     <id>http://blog.url.com/blog/2021/05/26/hiring-offshore.html</id>
-    <published>2021-05-26T00:00:00Z</published>
+    <published>2021-05-26T10:00:00+10:00</published>
     <updated>2021-05-26T20:25:35+10:00</updated>
     <author>
       <name>Article Author</name>
@@ -111,10 +96,45 @@
 </content>
   </entry>
   <entry>
+    <title>Every New Hire Must Raise the Bar</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2021/05/26/some-management-lessons.html"/>
+    <id>http://blog.url.com/blog/2021/05/26/some-management-lessons.html</id>
+    <published>2021-05-26T10:00:00+10:00</published>
+    <updated>2021-06-21T11:58:31+10:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;Just a few personal lessons here, recording for my own reference.&lt;/p&gt;
+
+&lt;h2 id="set-an-extremely-high-bar-on-hiring"&gt;Set an extremely high bar on hiring&lt;/h2&gt;
+
+&lt;p&gt;Hiring is the most important thing you do as a manager. And every new hire must raise the bar. They must make the whole team better. This is an &lt;a href="https://www.aboutamazon.com/news/workplace/hire-power-how-amazonians-raise-the-bar-with-every-interview"&gt;Amazon principle&lt;/a&gt;, but it's universally applicable.&lt;/p&gt;
+
+&lt;p&gt;If you're unsure, pass on the candidate, or add an extra interview step to provide more certainty. Hire only when you're very confident that this candidate will be a bar-raiser.&lt;/p&gt;
+
+&lt;p&gt;When a good hire joins, it raises morale and productivity across the whole team. Likewise, a bad hire is a wet blanket on the whole team.&lt;/p&gt;
+
+&lt;h2 id="own-your-bad-hiring-decisions"&gt;Own your bad hiring decisions&lt;/h2&gt;
+
+&lt;p&gt;You'll make some. Hopefully not many, if your bar is high enough. But when you do, own it. They must be given direct, specific feedback, very quickly. If they can't turn around quickly, you must let them go within their probation period. The question to ask, regularly throughout the probation, is "if I could just re-wind time, would I hire them again?" If the answer's no, they can't pass probation.&lt;/p&gt;
+
+&lt;p&gt;Letting someone go sux for everyone - you, your team, and most of all, the person being fired. If you're doing it more than "very rarely", it means your hiring bar isn't high enough. You still must do it! But raise your bar to prevent it in future.&lt;/p&gt;
+
+&lt;h2 id="create-a-strong-feedback-culture"&gt;Create a strong feedback culture&lt;/h2&gt;
+
+&lt;p&gt;Not just for new hires, but for everyone. If a manager has negative feedback for a report, it must be delivered quickly. Don't wait for next performance review. And usually, don't wait for next 1:1. The feedback must be direct, specific, empathetic, and framed in the best way to allow the report to quickly change and grow.&lt;/p&gt;
+
+&lt;p&gt;You must lead by example on delivering feedback to this standard; culture filters down from the top. It's scary at first, but most people - either immediately, or at least later upon reflection - appreciate the honesty and opportunity to improve.&lt;/p&gt;
+
+&lt;p&gt;Likewise, positive feedback is easy to forget about (if everything's going well, no need for feedback, right?). But it's equally important. Positive feedback must be specific and heartfelt. "You're doing a great job" isn't good enough - what exact thing are they doing well, and what good outcome is it creating? Why do you truly appreciate them doing it? Let them know - and usually, do it in a public channel so they know the team is aware of their effort, and so the team knows what "doing a great job" looks like to you.&lt;/p&gt;
+
+</content>
+  </entry>
+  <entry>
     <title>Breaking Prod</title>
     <link rel="alternate" href="http://blog.url.com/blog/2018/07/27/breaking-prod.html"/>
     <id>http://blog.url.com/blog/2018/07/27/breaking-prod.html</id>
-    <published>2018-07-27T00:00:00Z</published>
+    <published>2018-07-27T10:00:00+10:00</published>
     <updated>2021-06-21T11:51:56+10:00</updated>
     <author>
       <name>Article Author</name>
@@ -123,7 +143,7 @@
 
 &lt;p&gt;The relationship between development speed and bugs looks something like this:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="../../../../images/bugs-vs-speed-f15f9700.jpg" alt="Bugs vs speed" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="../../../../images/bugs-vs-speed-f15f9700.jpg" alt="" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Rushed pace &amp;amp; poor testing means many bugs. Slow down (ie, be more thorough), and at first you’ll drastically reduce bugs. But slow down more, and you begin to bottom out. You can never reach zero.&lt;/p&gt;
 
@@ -159,7 +179,7 @@
     <title>Data imports done right</title>
     <link rel="alternate" href="http://blog.url.com/blog/2016/12/22/data-imports-done-right.html"/>
     <id>http://blog.url.com/blog/2016/12/22/data-imports-done-right.html</id>
-    <published>2016-12-22T00:00:00Z</published>
+    <published>2016-12-22T11:00:00+11:00</published>
     <updated>2021-05-26T19:06:31+10:00</updated>
     <author>
       <name>Article Author</name>
@@ -231,7 +251,7 @@
     <title>How to make fixed price work</title>
     <link rel="alternate" href="http://blog.url.com/blog/2016/10/14/how-to-make-fixed-price-work.html"/>
     <id>http://blog.url.com/blog/2016/10/14/how-to-make-fixed-price-work.html</id>
-    <published>2016-10-14T00:00:00Z</published>
+    <published>2016-10-14T11:00:00+11:00</published>
     <updated>2021-05-26T19:22:31+10:00</updated>
     <author>
       <name>Article Author</name>
@@ -318,72 +338,6 @@ Most importantly, watch Mike Montiero’s great talk &lt;a href="https://www.you
 
 &lt;p&gt;Many clients expect a “Fixed price if it goes over estimate, but hourly if it goes under” deal — and that’s simply not viable for you. Fixed price means actual hours aren’t the client’s concern.&lt;/p&gt;
 
-</content>
-  </entry>
-  <entry>
-    <title>Questions for potential employers</title>
-    <link rel="alternate" href="http://blog.url.com/blog/2016/08/08/questions-for-potential-employers.html"/>
-    <id>http://blog.url.com/blog/2016/08/08/questions-for-potential-employers.html</id>
-    <published>2016-08-08T00:00:00Z</published>
-    <updated>2021-05-26T17:57:47+10:00</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;Unexpected circumstances have meant I've done two job hunts in recent months. I usually scribble down a handful of questions to ask or consider prior to each interview. Here they are so I can remember and refine them over time.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;What does the business do? Who's the target market? What's the dream? How big to you want to get etc?&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;How long have you been around? Are you profitable? Have you taken VC? Who are the main people strategically driving the direction of the business?&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;How big's the dev team? How many people? What roles? Full timers, part timers, contractors? How long have the core members been there? Who would I be reporting to and working with most closely?&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;How's the leadership structured, and how's work delegated? Top down? Flat? Collaborative? Do you follow any specific development methodologies?&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;What tech stack are you using? (and subsequently… you mentioned X an Y, which I don't have experience with. Are you OK with that?)
-&lt;em&gt;They should at least be fine with you not knowing peripheral technologies in their stack.&lt;/em&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Are you open to remote work? Does anyone actually work remotely? If so, how often? Have you found it good / bad / indifferent? What are typical work hours? Are you flexible with the times people work? Do people take advantage of that flexibility?&lt;br /&gt;
-&lt;em&gt;Being "open to remote work" and having people who actually do it are two different things. Likewise for flexible work times.&lt;/em&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;What will I learn from a technical standpoint in this role?&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;What are the career growth opportunities - both within this role / company, and if I were to move on in a year or two's time?&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;How do you manage technical debt and maintain code quality?&lt;br /&gt;
-&lt;em&gt;There are lots of valid answers to this. A vague answer is a red flag.&lt;/em&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Do you pay for employees to go to Ruby Conf and Rails Camp (or other equivalents)? Do you do anything else regarding ongoing professional development for your employees?
-A "yes" here is good and reveals a lot about general attitude towards employees.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;What are your expectations regarding pay?&lt;br /&gt;
-&lt;em&gt;I used to be very uncomfortable talking about pay. One of the best life skills you can get is the ability to talk about it in a confident, upfront, open manner.&lt;/em&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Edits: additional questions / comments given to me on twitter:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://twitter.com/sevenseacat/status/769855544349773825"&gt;Rebecca&lt;/a&gt;: "some of those would be useful to ask to both the employer, and one of the devs you would be working with. Compare the answers."&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://twitter.com/pat/status/769860587677331457"&gt;Pat&lt;/a&gt;: I'd be asking questions about culture and diversity - is it on the company's radar? How are they addressing such things? &lt;br /&gt;
-&lt;a href="https://twitter.com/pat/status/769864749735550976"&gt;and&lt;/a&gt;: I'd also be keen to hear about leadership (top-down, collaborative, etc) and ownership (profit-sharing? equity?)&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://twitter.com/RudyYazdi/status/769862693205311488"&gt;Rudy&lt;/a&gt;: I'd throw in something along the line of: "how do you measure my performance?" type question too ;)&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://twitter.com/grokfail/status/769907753758228480"&gt;Garrow&lt;/a&gt;: how do you decide what gets built? Who does that? How do you measure the success of built thing?&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://twitter.com/andrewdotnich/status/770197793424105473"&gt;Andrew&lt;/a&gt;: do you have any references? (I have to provide them, so where are yours?)&lt;/p&gt;
 </content>
   </entry>
 </feed>
