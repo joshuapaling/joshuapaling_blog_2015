@@ -26,29 +26,26 @@
 
 <h1>New Relic</h1>
 
-<p><code>
-# Anything in test that has a stack trace
+<pre><code># Anything in test that has a stack trace
 app:svc-order env:test stack:"*"
-</code></p>
+</code></pre>
 
 <p><a href="https://one.newrelic.com/logger?account=2826932&amp;begin=1691015904712&amp;end=1691102304712&amp;state=716ef9c1-c406-5ca8-4632-e2b027c07bf9">Any deployment</a></p>
 
-<p><code>
-Search logs for "running release"
-</code></p>
+<pre><code>Search logs for "running release"
+</code></pre>
 
 <p><a href="https://one.newrelic.com/logger?account=2826932&amp;begin=1691099406399&amp;end=1691101206399&amp;state=566c7377-b13d-68b1-3261-dee88bebba3e">public offer 500 responses for a particular offer ID</a></p>
 
-<p><code>
-tag:newrelic.prod-le-svc-public-offer-syd status=5 0062y00000CPKupAAH
-</code></p>
+<pre><code>tag:newrelic.prod-le-svc-public-offer-syd status=5 0062y00000CPKupAAH
+</code></pre>
 
 <p>Note the 500 responses only recognise the http response, and don't have a stack trace - they're not an exception (even though an exception resulted in the 500)</p>
 
-<p><a href="https://one.newrelic.com/logger?account=2826932&amp;begin=1691079897362&amp;end=1691101497362&amp;filters=%28name%20LIKE%20%27support%27%20OR%20id%20%3D%20%27support%27%20OR%20domainId%20%3D%20%27support%27%29&amp;state=25196d1e-2ee5-1103-ef1d-b404b65372d3">errors / exceptions containing a string</a>
-<code>
-app:svc-public-offer env:prod level:error unique_key
-</code></p>
+<p><a href="https://one.newrelic.com/logger?account=2826932&amp;begin=1691079897362&amp;end=1691101497362&amp;filters=%28name%20LIKE%20%27support%27%20OR%20id%20%3D%20%27support%27%20OR%20domainId%20%3D%20%27support%27%29&amp;state=25196d1e-2ee5-1103-ef1d-b404b65372d3">errors / exceptions containing a string</a></p>
+
+<pre><code>app:svc-public-offer env:prod level:error unique_key
+</code></pre>
 
 
     <!-- Footer -->
