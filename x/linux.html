@@ -106,6 +106,11 @@ grep -Rl Arctic /home/ccuser/workspace/geography # search directory and list onl
 <pre><code class="language-bash">grep --include=package.json -rnw ./ -e "\"bull\":"
 </code></pre>
 
+<h2 id="grab-a-section-of-a-json-api-response">Grab a section of a json API response</h2>
+
+<pre><code class="language-bash">curl 'https://api.luxuryescapes.com/api/v2/public-offers/0062y0000037J67AAE?region=AU&amp;brand=luxuryescapes' | jq -r '.result.lowestOption'
+</code></pre>
+
 
     <!-- Footer -->
     <footer>
