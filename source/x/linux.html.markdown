@@ -92,3 +92,9 @@ find ./app ./spec -type f | grep -v node_modules | xargs wc -l
 ~~~bash
 grep --include=package.json -rnw ./ -e "\"bull\":"
 ~~~
+
+## Grab a section of a json API response
+
+~~~bash
+curl 'https://api.luxuryescapes.com/api/v2/public-offers/0062y0000037J67AAE?region=AU&brand=luxuryescapes' | jq -r '.result.lowestOption'
+~~~
