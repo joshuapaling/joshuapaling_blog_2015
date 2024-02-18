@@ -34,3 +34,20 @@ Note the 500 responses only recognise the http response, and don't have a stack 
 ~~~
 app:svc-public-offer env:prod level:error unique_key
 ~~~
+
+---
+
+[all POST requests to svc payment prod](https://one.newrelic.com/logger?account=2826932&begin=1707960660000&end=1707982260000&state=a4a4f472-6b00-c56a-04bb-2cf474536de4)
+
+~~~
+env: prod tag:"newrelic.prod-le-svc-payment-syd" pid:"router" -http_method:"OPTIONS" http_method:"POST"
+~~~
+
+[all POST requests that errored](https://one.newrelic.com/logger?account=2826932&begin=1707960840000&end=1707982440000&state=bed58ac4-1282-5607-1ab0-dcb2cedfa3c6)
+
+
+~~~
+select max(numeric(memory_redis_bytes)) from Log where heroku_source like '%REDIS%' and team = 'flights' and env in ('prod') facet heroku_source, app limit max timeseries since  3 hour ago  COMPARE WITH 1 week ago
+~~~
+
+[Redis memory usage compared to previous week](https://onenr.io/0qQaPNPJVj1)
