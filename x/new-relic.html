@@ -53,6 +53,20 @@ app:svc-order env:test stack:"*"
 <pre><code>app:svc-public-offer env:prod level:error unique_key
 </code></pre>
 
+<hr />
+
+<p><a href="https://one.newrelic.com/logger?account=2826932&amp;begin=1707960660000&amp;end=1707982260000&amp;state=a4a4f472-6b00-c56a-04bb-2cf474536de4">all POST requests to svc payment prod</a></p>
+
+<pre><code>env: prod tag:"newrelic.prod-le-svc-payment-syd" pid:"router" -http_method:"OPTIONS" http_method:"POST"
+</code></pre>
+
+<p><a href="https://one.newrelic.com/logger?account=2826932&amp;begin=1707960840000&amp;end=1707982440000&amp;state=bed58ac4-1282-5607-1ab0-dcb2cedfa3c6">all POST requests that errored</a></p>
+
+<pre><code>select max(numeric(memory_redis_bytes)) from Log where heroku_source like '%REDIS%' and team = 'flights' and env in ('prod') facet heroku_source, app limit max timeseries since  3 hour ago  COMPARE WITH 1 week ago
+</code></pre>
+
+<p><a href="https://onenr.io/0qQaPNPJVj1">Redis memory usage compared to previous week</a></p>
+
 
     <!-- Footer -->
     <footer>
