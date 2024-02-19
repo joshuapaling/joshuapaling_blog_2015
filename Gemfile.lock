@@ -1,11 +1,12 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    activesupport (7.0.5)
+    activesupport (6.1.7.6)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+      zeitwerk (~> 2.3)
     addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
     backports (3.24.1)
@@ -15,7 +16,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.2.2)
-    contracts (0.17)
+    contracts (0.16.1)
     dotenv (2.8.1)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
@@ -135,6 +136,7 @@ GEM
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
     webrick (1.8.1)
+    zeitwerk (2.6.13)
 
 PLATFORMS
   ruby
@@ -152,4 +154,4 @@ DEPENDENCIES
   webrick (~> 1.8)
 
 BUNDLED WITH
-   2.2.33
+   2.4.22
