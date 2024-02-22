@@ -51,3 +51,10 @@ select max(numeric(memory_redis_bytes)) from Log where heroku_source like '%REDI
 ~~~
 
 [Redis memory usage compared to previous week](https://onenr.io/0qQaPNPJVj1)
+
+
+~~~
+app:svc-order env:test "source":"heroku" "heroku_error_code":"H12"
+~~~
+
+[Heroku error code H12](https://onenr.io/0EjOnymMbR6)
