@@ -58,3 +58,9 @@ app:svc-order env:test "source":"heroku" "heroku_error_code":"H12"
 ~~~
 
 [Heroku error code H12](https://onenr.io/0EjOnymMbR6)
+
+~~~
+SELECT average(numeric(load_avg_1m))  FROM Log WHERE app = 'svc-order' AND env = 'test' and message like '%load-avg-1m%' and message like '%postgres -%' TIMESERIES SINCE 3 day ago
+~~~
+
+[average postgres DB load](https://onenr.io/0bRmE6ylzRy)
