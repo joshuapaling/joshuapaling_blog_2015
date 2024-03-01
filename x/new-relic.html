@@ -75,7 +75,7 @@ app:svc-order env:test stack:"*"
 <pre><code>SELECT average(numeric(load_avg_1m))  FROM Log WHERE app = 'svc-order' AND env = 'test' and message like '%load-avg-1m%' and message like '%postgres -%' TIMESERIES SINCE 3 day ago
 </code></pre>
 
-<p><a href="https://onenr.io/0bRmE6ylzRy">average postgres DB load</a></p>
+<p><a href="https://onenr.io/0bRmE6ylzRy">average postgres DB load</a>. load_avg_1m is a <a href="https://devcenter.heroku.com/articles/log-runtime-metrics#cpu-load-averages">heroku metric</a>, refers to dyno load.</p>
 
 
     <!-- Footer -->
