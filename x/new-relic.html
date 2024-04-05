@@ -77,6 +77,11 @@ app:svc-order env:test stack:"*"
 
 <p><a href="https://onenr.io/0bRmE6ylzRy">average postgres DB load</a>. load_avg_1m is a <a href="https://devcenter.heroku.com/articles/log-runtime-metrics#cpu-load-averages">heroku metric</a>, refers to dyno load.</p>
 
+<pre><code>SELECT count(*) FROM Log WHERE `http_path_template` LIKE '%booking/departing%' SINCE 10 days ago TIMESERIES 1 day 
+</code></pre>
+
+<p><a href="https://onenr.io/0bRKzyvekwE">Find queries to the path booking/departing</a></p>
+
 
     <!-- Footer -->
     <footer>
