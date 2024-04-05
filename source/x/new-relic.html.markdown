@@ -64,3 +64,10 @@ SELECT average(numeric(load_avg_1m))  FROM Log WHERE app = 'svc-order' AND env =
 ~~~
 
 [average postgres DB load](https://onenr.io/0bRmE6ylzRy). load_avg_1m is a [heroku metric](https://devcenter.heroku.com/articles/log-runtime-metrics#cpu-load-averages), refers to dyno load.
+
+
+~~~
+SELECT count(*) FROM Log WHERE `http_path_template` LIKE '%booking/departing%' SINCE 10 days ago TIMESERIES 1 day 
+~~~
+
+[Find queries to the path booking/departing](https://onenr.io/0bRKzyvekwE)
