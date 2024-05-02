@@ -26,6 +26,15 @@
 
 <h1>New Relic</h1>
 
+<p>New Relic does not support regex - see <a href="https://luxgroup-hq.slack.com/archives/C01B1HZDZ7Z/p1714612806791419">slack discussion</a>
+The best we can do is some basic matches like wildcard <code>*</code> and NOT with eg. <code>message:"Attempt*" -message:"Attempt 0*"</code> to find "Attempt, but not Attempt 0".
+It's based on Lucene query language.
+Query syntax for logs is <a href="https://docs.newrelic.com/docs/logs/ui-data/query-syntax-logs/">here</a>.</p>
+
+<p>At LE we have log retention of 30 days.</p>
+
+<p>We DO have New Relic logs in Big Query, and you can do regex search there.</p>
+
 <pre><code># Anything in test that has a stack trace
 app:svc-order env:test stack:"*"
 </code></pre>
