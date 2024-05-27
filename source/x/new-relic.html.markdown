@@ -4,10 +4,13 @@ title: New Relic
 
 <h1>New Relic</h1>
 
-New Relic does not support regex - see [slack discussion](https://luxgroup-hq.slack.com/archives/C01B1HZDZ7Z/p1714612806791419)
+New Relic log search does not support regex - see [slack discussion](https://luxgroup-hq.slack.com/archives/C01B1HZDZ7Z/p1714612806791419)
 The best we can do is some basic matches like wildcard `*` and NOT with eg. `message:"Attempt*" -message:"Attempt 0*"` to find "Attempt, but not Attempt 0".
 It's based on Lucene query language.
 Query syntax for logs is [here](https://docs.newrelic.com/docs/logs/ui-data/query-syntax-logs/).
+
+However you can do regex with RLIKE when using the Query Builder, and you can query logs with the Query Builder - [see example](https://onenr.io/0EjO9Mdy5w6).
+So, paid users can effectively query logs via regex, using the Query Builder.
 
 At LE we have log retention of 30 days.
 
