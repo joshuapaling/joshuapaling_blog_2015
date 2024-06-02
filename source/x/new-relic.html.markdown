@@ -6,6 +6,9 @@ title: New Relic
 
 New Relic log search does not support regex - see [slack discussion](https://luxgroup-hq.slack.com/archives/C01B1HZDZ7Z/p1714612806791419)
 The best we can do is some basic matches like wildcard `*` and NOT with eg. `message:"Attempt*" -message:"Attempt 0*"` to find "Attempt, but not Attempt 0".
+
+For number fields, use eg. `field:>500`
+
 It's based on Lucene query language.
 Query syntax for logs is [here](https://docs.newrelic.com/docs/logs/ui-data/query-syntax-logs/).
 
@@ -15,6 +18,12 @@ So, paid users can effectively query logs via regex, using the Query Builder.
 At LE we have log retention of 30 days.
 
 We DO have New Relic logs in Big Query, and you can do regex search there.
+
+~~~
+# 50X responses in prod
+ "env":"prod" responseCode:>=500
+~~~
+https://onenr.io/0oR8EOEWMjG
 
 ~~~
 # Anything in test that has a stack trace
@@ -41,10 +50,10 @@ Note the 500 responses only recognise the http response, and don't have a stack 
 
 ---
 
-[errors / exceptions containing a string](https://one.newrelic.com/logger?account=2826932&begin=1691079897362&end=1691101497362&filters=%28name%20LIKE%20%27support%27%20OR%20id%20%3D%20%27support%27%20OR%20domainId%20%3D%20%27support%27%29&state=25196d1e-2ee5-1103-ef1d-b404b65372d3) eg. in this case, "unique_key"
+Errors in prod:
 
 ~~~
-app:svc-public-offer env:prod level:error unique_key
+env:prod level:error
 ~~~
 
 ---
