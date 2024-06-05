@@ -59,6 +59,13 @@ app:svc-order env:test stack:"*"
 
 <hr />
 
+<p><a href="https://onenr.io/0ERznq77ARr">Requests to an endpoint, faceted by source</a></p>
+
+<pre><code>SELECT count(*) FROM Log WHERE `app` = 'svc-review' AND `message` LIKE 'GET /api/review?%' SINCE 3 days ago FACET `userAgent` TIMESERIES
+</code></pre>
+
+<hr />
+
 <p><a href="https://one.newrelic.com/logger?account=2826932&amp;begin=1691099406399&amp;end=1691101206399&amp;state=57a1b262-d1fe-fabb-3571-80c3c72b7ced">public offer 500 responses for a particular offer ID</a></p>
 
 <pre><code>tag:newrelic.prod-le-svc-public-offer-syd status:500 0062y00000CPKupAAH
