@@ -38,6 +38,15 @@ app:svc-order env:test stack:"*"
 Search logs for "running release"
 ~~~
 
+
+---
+
+[Requests to an endpoint, faceted by source](https://onenr.io/0ERznq77ARr)
+
+~~~
+SELECT count(*) FROM Log WHERE `app` = 'svc-review' AND `message` LIKE 'GET /api/review?%' SINCE 3 days ago FACET `userAgent` TIMESERIES
+~~~
+
 ---
 
 [public offer 500 responses for a particular offer ID](https://one.newrelic.com/logger?account=2826932&begin=1691099406399&end=1691101206399&state=57a1b262-d1fe-fabb-3571-80c3c72b7ced)
