@@ -32,7 +32,7 @@ app:svc-order env:test stack:"*"
 
 ---
 
-[Any deployment](https://one.newrelic.com/logger?account=2826932&begin=1691015904712&end=1691102304712&state=716ef9c1-c406-5ca8-4632-e2b027c07bf9)
+[Any deployment](https://onenr.io/0vwB60XG1wp)
 
 ~~~
 Search logs for "running release"

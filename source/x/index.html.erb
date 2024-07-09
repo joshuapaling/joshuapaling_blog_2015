@@ -3,6 +3,6 @@
 
 <p>The idea here is that there's a bunch of stuff I use often, but sometimes forget. Keeping it all in one place, with just enough detail to satisfy me, will be quicker than googling each time I forget it.</p>
 
-<% sub_pages('x').sort_by { |resource| resource.data.title.downcase }.each do |resource| %>
+<% sub_pages('x').sort_by { |resource| resource.data.title.to_s }.each do |resource| %>
   <h3><%= link_to resource.data.title, resource %></h3>
 <% end %>
