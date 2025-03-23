@@ -19,3 +19,6 @@ gem "webrick", "~> 1.8"
 gem 'haml', '~> 5.0'
 
 gem 'sass', '~> 3.4' # fix errors running bundle exec middleman
+gem "concurrent-ruby", "= 1.3.4" # pin per https://stackoverflow.com/a/79361221/1373987
+
+gem "net-ftp", "~> 0.3.8"
