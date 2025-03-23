@@ -6,8 +6,8 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
   <title>Joshua Paling </title>
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
-  <link href="../stylesheets/application-4b18c387.css" rel="stylesheet" />
-  <script src="../javascripts/application-8d565278.js"></script>
+  <link href="../stylesheets/application-3a039e88.css" rel="stylesheet" />
+  <script src="../javascripts/application-547ab8eb.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
@@ -41,9 +41,9 @@
 <p><code>192.168.0.0/16</code> is a CIDR block. It defines a continuous block of IP addresses, starting at 192.168.0.0 and counting up.</p>
 
 <p>The number of IP addresses is determined by the <code>/16</code>.
-An IP is 32 bits, and <code>/32</code> means "all 32 bits are fixed"  (so, there's 2^0 = 1 IPs)
-<code>/31</code> means "first 31 bits are fixed, last 1 bit can vary (so, there's 2^1 = 2 IPs)
-<code>/30</code> means "first 30 bits are fixed, last 2 bits can vary (so, there's 2^2 = 4 IPs)</p>
+An IP is 32 bits, and <code>/32</code> means “all 32 bits are fixed”  (so, there’s 2^0 = 1 IPs)
+<code>/31</code> means “first 31 bits are fixed, last 1 bit can vary (so, there’s 2^1 = 2 IPs)
+<code>/30</code> means “first 30 bits are fixed, last 2 bits can vary (so, there’s 2^2 = 4 IPs)</p>
 
 <p>So the CIDR <code>192.168.0.0/30</code> means these 4 IP addresses:
 <code>192.168.0.0</code>
@@ -53,29 +53,29 @@ An IP is 32 bits, and <code>/32</code> means "all 32 bits are fixed"  (so, there
 
 <p>Of the three private address ranges, home networks use the smallest - <code>192.168.0.0/16</code>.</p>
 
-<p>So that's why all the IPs start with <code>192.168...</code>
-No computer on the internet can be allocated any of these private addresses. When your computer sends a request to <code>192.168.1.1</code>, your router knows eg "this goes to the printer, not out to the internet".</p>
+<p>So that’s why all the IPs start with <code>192.168...</code>
+No computer on the internet can be allocated any of these private addresses. When your computer sends a request to <code>192.168.1.1</code>, your router knows eg “this goes to the printer, not out to the internet”.</p>
 
 <p>Your home network is a collection of computers in your house that are physically together, connected by wire or wireless communication.</p>
 
 <p>It is a physical network, not a virtual network.
-If you wanted to add a computer that's 200m away, you'd need a 200m long ethernet cable to add it to this physical network.</p>
+If you wanted to add a computer that’s 200m away, you’d need a 200m long ethernet cable to add it to this physical network.</p>
 
 <h2 id="virtual-private-cloud">Virtual Private Cloud</h2>
 
-<p>A VPC isn't a physical network - it's a virtual one. That means, a handful of computers (or virtual computers) are taken from a pool, and software is configured so they can communicate with one another securely. It's software, not physical wire, that connects the VPC together, and excludes other computers from it.</p>
+<p>A VPC isn’t a physical network - it’s a virtual one. That means, a handful of computers (or virtual computers) are taken from a pool, and software is configured so they can communicate with one another securely. It’s software, not physical wire, that connects the VPC together, and excludes other computers from it.</p>
 
 <p>A handful of components / ideas make up a VPC.</p>
 
 <h2 id="subnet">Subnet</h2>
 
-<p>A subnet is a single, continuous block of IP addresses. This block must be a subset of the VPC's block.</p>
+<p>A subnet is a single, continuous block of IP addresses. This block must be a subset of the VPC’s block.</p>
 
 <h2 id="nacls---network-access-control-lists">NACLs - Network Access Control Lists</h2>
 
 <p>A NACL is a firewall for a subnet. It determinse what traffic is allowed in, and out, of the subnet. But traffic within the subnet does not need to touch the NACL.</p>
 
-<p>It's a list of rules - eg.</p>
+<p>It’s a list of rules - eg.</p>
 
 <table>
   <thead>
@@ -118,7 +118,7 @@ If you wanted to add a computer that's 200m away, you'd need a 200m long etherne
 
 <h2 id="route-table">Route Table</h2>
 
-<p>Each subnet has a route table. Routers direct traffic between networks. So you can define routing rules to say eg. "Route IP range X to Subnet A, IP range Y to Subnet B, and everything else to the internet".</p>
+<p>Each subnet has a route table. Routers direct traffic between networks. So you can define routing rules to say eg. “Route IP range X to Subnet A, IP range Y to Subnet B, and everything else to the internet”.</p>
 
 <h2 id="public-vs-private-subnets">Public vs Private Subnets</h2>
 
@@ -128,11 +128,11 @@ If you wanted to add a computer that's 200m away, you'd need a 200m long etherne
 
 <p>A public subnet can contain an internet gateway. The IG will allow both outbound requests, and inbound requests.</p>
 
-<p>A NAT gateway does not allow inbound requests. It handles outbound requests on behalf of instances within a private subnet. NAT stands for Network Address Translation. If an instance within a private subnet wants to make a request to the internet, it needs a public IP address so the response can be routed back. The request is sent via the NAT Gateway, which says "OK, private IP A will be mapped to public IP B, and when the response to Public IP B comes back to me, I know to route it back to private IP A."</p>
+<p>A NAT gateway does not allow inbound requests. It handles outbound requests on behalf of instances within a private subnet. NAT stands for Network Address Translation. If an instance within a private subnet wants to make a request to the internet, it needs a public IP address so the response can be routed back. The request is sent via the NAT Gateway, which says “OK, private IP A will be mapped to public IP B, and when the response to Public IP B comes back to me, I know to route it back to private IP A.”</p>
 
 <p>NAT Gateways require internet access, so must be placed in a public subnet.</p>
 
-<p>So if an instance in a private subnet, and makes a request to internet, it'll be like this:</p>
+<p>So if an instance in a private subnet, and makes a request to internet, it’ll be like this:</p>
 
 <p>private instance -&gt; private subnet route table (says to go to NAT in public subnet) -&gt; private subnet NACL -&gt; public subnet NACL -&gt; public subnet route table -&gt; NAT gateway (maps private IP to a public one) -&gt; internet (and the response goes back through the same steps)</p>
 
@@ -140,19 +140,19 @@ If you wanted to add a computer that's 200m away, you'd need a 200m long etherne
 
 <p>In AWS, a subnet must be within a single AZ. A VPC may contain subnets in different AZs, but they must all be in the one region. VPC peering can be used to connect VPCs in different regions - but they must have different IP address ranges. See <a href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html">AWS VPC Peering Basics</a>.</p>
 
-<p>In AWS, you can set up gateways from private subnets to AWS resources, to avoid going over the public internet. These stay on AWS's own networks.</p>
+<p>In AWS, you can set up gateways from private subnets to AWS resources, to avoid going over the public internet. These stay on AWS’s own networks.</p>
 
 <h2 id="vpc-endpoints">VPC Endpoints</h2>
 
 <p>VPC endpoints allow you to privately connect your VPC to supported AWS services without requiring an internet gateway, NAT device, etc.</p>
 
-<p>The traffic stays on AWS's private network.</p>
+<p>The traffic stays on AWS’s private network.</p>
 
 <h2 id="security-groups">Security Groups</h2>
 
 <p>Security groups act as virtual firewalls for your instances to control inbound and outbound traffic.</p>
 
-<p>Unlike NACLs, security groups are stateful. If you allow inbound connections on port 22, they'll keep track of that connection and allow the response traffic to return outbound on port 22 automatically.</p>
+<p>Unlike NACLs, security groups are stateful. If you allow inbound connections on port 22, they’ll keep track of that connection and allow the response traffic to return outbound on port 22 automatically.</p>
 
 
 

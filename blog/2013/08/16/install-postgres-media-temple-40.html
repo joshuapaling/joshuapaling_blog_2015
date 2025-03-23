@@ -6,8 +6,8 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
   <title>Joshua Paling  - Install Postgres on a Media Temple DV 4.0</title>
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
-  <link href="../../../../stylesheets/application-4b18c387.css" rel="stylesheet" />
-  <script src="../../../../javascripts/application-8d565278.js"></script>
+  <link href="../../../../stylesheets/application-3a039e88.css" rel="stylesheet" />
+  <script src="../../../../javascripts/application-547ab8eb.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
@@ -24,22 +24,22 @@
     </header>
 
 
-<p>If you've reached this post, you probably already know… Postgres is generally considered <a href="http://www.anchor.com.au/hosting/dedicated/mysql_vs_postgres">better than MySQL</a>. MySQL is more common, and therefore a bit easier to get up and running (it'll come out of the box with a lot of hosts). Here's how to setup Postgres on Media Temple DV 4.0, running CentOS 5.8.</p>
+<p>If you’ve reached this post, you probably already know… Postgres is generally considered <a href="http://www.anchor.com.au/hosting/dedicated/mysql_vs_postgres">better than MySQL</a>. MySQL is more common, and therefore a bit easier to get up and running (it’ll come out of the box with a lot of hosts). Here’s how to setup Postgres on Media Temple DV 4.0, running CentOS 5.8.</p>
 
 <h2 id="disclaimer">Disclaimer</h2>
-<p>I'm new to Postgres. I'm a programmer, not a DB Admin, or a SysAdmin. I'm writing this post primarily for my own reference, and to help solidify my own understanding. <strong>Keep in mind I'm no expert!!!</strong></p>
+<p>I’m new to Postgres. I’m a programmer, not a DB Admin, or a SysAdmin. I’m writing this post primarily for my own reference, and to help solidify my own understanding. <strong>Keep in mind I’m no expert!!!</strong></p>
 
 <h2 id="my-setup">My Setup</h2>
 
-<p>First up, the date today is 8 Aug, 2013. I'm working on a Media Temple DV 4.0, with Plesk 11 installed. I'm running CentOS 5.8, 64 bit version, using Apache as my webserver. <em>If those details don't match up closely with what you're using, ignore this post!</em></p>
+<p>First up, the date today is 8 Aug, 2013. I’m working on a Media Temple DV 4.0, with Plesk 11 installed. I’m running CentOS 5.8, 64 bit version, using Apache as my webserver. <em>If those details don’t match up closely with what you’re using, ignore this post!</em></p>
 
-<h2 id="media-temple-have-a-guide-but-dont-use-it">Media Temple Have a Guide, But Don't Use It</h2>
+<h2 id="media-temple-have-a-guide-but-dont-use-it">Media Temple Have a Guide, But Don’t Use It</h2>
 
-<p>Media Temple have <a href="https://kb.mediatemple.net/questions/723/How+do+I+install+PostgreSQL+on+my+server%3F#dv_40">some instructions</a> on how to install postgres - but following them verbatim will make the yum package manager install a pretty old version, which probably isn't what you want. There's a few other issues with that set of instructions, too, such as the fact that passwords are encrypted in Plesk 11 (they weren't in earlier versions), so the commands media temple use regarding passwords no longer work. So I'd ignore that guide all together.</p>
+<p>Media Temple have <a href="https://kb.mediatemple.net/questions/723/How+do+I+install+PostgreSQL+on+my+server%3F#dv_40">some instructions</a> on how to install postgres - but following them verbatim will make the yum package manager install a pretty old version, which probably isn’t what you want. There’s a few other issues with that set of instructions, too, such as the fact that passwords are encrypted in Plesk 11 (they weren’t in earlier versions), so the commands media temple use regarding passwords no longer work. So I’d ignore that guide all together.</p>
 
 <h2 id="yum-only-knows-about-older-versions">Yum Only Knows About Older Versions</h2>
 
-<h3 id="first-lets-check-that-yum-does-in-fact-only-have-old-versions">First, let's check that yum does in fact only have old versions</h3>
+<h3 id="first-lets-check-that-yum-does-in-fact-only-have-old-versions">First, let’s check that yum does in fact only have old versions</h3>
 
 <p>ssh into your server, and run</p>
 
@@ -48,27 +48,27 @@
 
 <p>This will list all packages yum knows about, starting with <em>postgres</em>.</p>
 
-<p>To check you're runnning the 64 bit version of CentOS, execute <code>uname -a</code> and you should see <code>x86_64</code> somewhere in the output. If you're on a Media Temple DV 4.0, you'll be running 64 bit.</p>
+<p>To check you’re runnning the 64 bit version of CentOS, execute <code>uname -a</code> and you should see <code>x86_64</code> somewhere in the output. If you’re on a Media Temple DV 4.0, you’ll be running 64 bit.</p>
 
-<p>If we're running 64 bit, then really the only packages we're interested in are the ones ending in x86_64. So, we could list them alone with</p>
+<p>If we’re running 64 bit, then really the only packages we’re interested in are the ones ending in x86_64. So, we could list them alone with</p>
 
 <pre><code class="language-markup">yum list postgres*x86_64
 </code></pre>
-<p>There's a bunch of versions, and we're only after the latest. Check the lastest stable release of Postgres on <a href="http://www.postgresql.org/">the official website</a>. As of today (8 Aug 2013), it's 9.2.4.</p>
+<p>There’s a bunch of versions, and we’re only after the latest. Check the lastest stable release of Postgres on <a href="http://www.postgresql.org/">the official website</a>. As of today (8 Aug 2013), it’s 9.2.4.</p>
 
-<p>However, the latest version we've got listed in yum is 8.4, which is earlier than we want.</p>
+<p>However, the latest version we’ve got listed in yum is 8.4, which is earlier than we want.</p>
 
-<h3 id="convinced-that-yum-doesnt-know-about-the-latest-version-ok-now-for-why">Convinced that yum doesn't know about the latest version? OK, now for why…</h3>
+<h3 id="convinced-that-yum-doesnt-know-about-the-latest-version-ok-now-for-why">Convinced that yum doesn’t know about the latest version? OK, now for why…</h3>
 
-<p>The reason for this is that <a href="http://www.redhat.com/products/enterprise-linux/">REHL</a> doesn't try to stay up to date - it has <strong>very</strong> stable versioning. The true <em>'latest stable version'</em> won't be available in yum for quite a while after it's released.</p>
+<p>The reason for this is that <a href="http://www.redhat.com/products/enterprise-linux/">REHL</a> doesn’t try to stay up to date - it has <strong>very</strong> stable versioning. The true <em>‘latest stable version’</em> won’t be available in yum for quite a while after it’s released.</p>
 
 <h2 id="so-how-do-we-get-the-latest-postgresql">So How Do We Get The Latest Postgresql?</h2>
 
-<p>Luckily, the Postgres maintainers provide newer releases for RHEL and Fedora, <a href="http://yum.postgresql.org/repopackages.php">here</a>. The RPM we're after is called <code>Red Hat Enterprise Linux 5 - x86_64</code>, and it's available at <a href="http://yum.postgresql.org/9.2/redhat/rhel-5-x86_64/pgdg-redhat92-9.2-7.noarch.rpm">http://yum.postgresql.org/9.2/redhat/rhel-5-x86_64/pgdg-redhat92-9.2-7.noarch.rpm</a>.</p>
+<p>Luckily, the Postgres maintainers provide newer releases for RHEL and Fedora, <a href="http://yum.postgresql.org/repopackages.php">here</a>. The RPM we’re after is called <code>Red Hat Enterprise Linux 5 - x86_64</code>, and it’s available at <a href="http://yum.postgresql.org/9.2/redhat/rhel-5-x86_64/pgdg-redhat92-9.2-7.noarch.rpm">http://yum.postgresql.org/9.2/redhat/rhel-5-x86_64/pgdg-redhat92-9.2-7.noarch.rpm</a>.</p>
 
 <p>There are better instructions on the <a href="http://wiki.postgresql.org/wiki/YUM_Installation">Postgres Wiki</a> for how to install lastest versions using yum.</p>
 
-<p>We'll basically follow along with those instructions, but I'll add the exact commands I use, for my setup (Media Temple DV 4.0, CentOS 5, Postgresql 9.2)</p>
+<p>We’ll basically follow along with those instructions, but I’ll add the exact commands I use, for my setup (Media Temple DV 4.0, CentOS 5, Postgresql 9.2)</p>
 
 <h4 id="configure-your-yum-repository">Configure your yum repository</h4>
 
@@ -76,12 +76,12 @@
 
 <pre><code class="language-markup">cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.BAK.2013-08-08
 </code></pre>
-<p>Now, let's open <code>/etc/yum.repos.d/CentOS-Base.repo</code> with a text editor. I'll use nano.</p>
+<p>Now, let’s open <code>/etc/yum.repos.d/CentOS-Base.repo</code> with a text editor. I’ll use nano.</p>
 
 <pre><code class="language-markup">nano /etc/yum.repos.d/CentOS-Base.repo
 </code></pre>
 
-<p>At the end of both the <code>[base]</code> and <code>[updates]</code> sections, add the suggested line, and add a comment on the end if you want, to remind yourself of why it's there:</p>
+<p>At the end of both the <code>[base]</code> and <code>[updates]</code> sections, add the suggested line, and add a comment on the end if you want, to remind yourself of why it’s there:</p>
 
 <pre><code class="language-markup">exclude=postgresql* # added on 2013-08-08, based on http://wiki.postgresql.org/wiki/YUM_Installation
 </code></pre>
@@ -111,7 +111,7 @@ rpm -ivh pgdg-centos92-9.2-6.noarch.rpm
 <pre><code class="language-markup">yum install postgresql92 postgresql92-server postgresql92-devel
 </code></pre>
 
-<p><strong>NOTE:</strong> you may not need the <code>postgresql92-devel</code> option. I do need it, for the Rails pg gem, which I'll install later. Either way, it doesn't really hurt to have it there.</p>
+<p><strong>NOTE:</strong> you may not need the <code>postgresql92-devel</code> option. I do need it, for the Rails pg gem, which I’ll install later. Either way, it doesn’t really hurt to have it there.</p>
 
 <p>Now, initialise the database with</p>
 
@@ -123,7 +123,7 @@ rpm -ivh pgdg-centos92-9.2-6.noarch.rpm
 <pre><code class="language-markup">chkconfig postgresql-9.2 on
 </code></pre>
 
-<p>Note that we'll be able to start / stop / restart / reload with the following commands:
+<p>Note that we’ll be able to start / stop / restart / reload with the following commands:
 <code>service postgresql-9.2 start</code>
 <code>service postgresql-9.2 stop</code>
 <code>service postgresql-9.2 restart</code>
@@ -145,19 +145,19 @@ rpm -ivh pgdg-centos92-9.2-6.noarch.rpm
 
 <h2 id="postgres-is-installed-now-what">Postgres is installed. Now what?</h2>
 
-<p>At this point, you should read through the <a href="http://www.postgresql.org/docs/current/static/tutorial.html">official tutorial</a>. A lot of it is basic SQL stuff, but skim it anyway and pay particular attention to Postgres-specific stuff. There's also a  <a href="http://wiki.postgresql.org/wiki/First_steps">first steps after installation</a> wiki page - though it's not official (anyone can edit the wiki), and I personally found it to be a bit confusing.</p>
+<p>At this point, you should read through the <a href="http://www.postgresql.org/docs/current/static/tutorial.html">official tutorial</a>. A lot of it is basic SQL stuff, but skim it anyway and pay particular attention to Postgres-specific stuff. There’s also a  <a href="http://wiki.postgresql.org/wiki/First_steps">first steps after installation</a> wiki page - though it’s not official (anyone can edit the wiki), and I personally found it to be a bit confusing.</p>
 
-<p>I plan on writing another post on questions I had after installing postgres, and suggested first steps. But for now, I'm done."</p>
+<p>I plan on writing another post on questions I had after installing postgres, and suggested first steps. But for now, I’m done.”</p>
 
 <h4 id="note">Note:</h4>
 
-<p>For lots of stuff (creating users, database, etc), you'll have to be using ssh as the postgres user. You do this by executing <code>su - postgres</code>.</p>
+<p>For lots of stuff (creating users, database, etc), you’ll have to be using ssh as the postgres user. You do this by executing <code>su - postgres</code>.</p>
 
 <h2 id="addendum-1---allow-user--password-authentication">Addendum 1 - allow user / password authentication</h2>
 
-<p>By default, postgres will use <code>ident</code> authentication, which you won't be familiary with if you're coming from MySQL. You can read a great article about it <a href="http://www.upfrontsystems.co.za/Members/izak/sysadman/postgresqls-confusing-authentication-configuration">here</a>. You can read about all of Postgres' authentication means <a href="http://www.postgresql.org/docs/9.0/static/auth-methods.html">here</a>. Because I'm coming from MySQL, and I'm keen to get this thing up and running, for now I'm just going to change <code>ident</code> to <code>md5</code> authentication, which basically means it'll work the same way as I'm used to in MySQL.</p>
+<p>By default, postgres will use <code>ident</code> authentication, which you won’t be familiary with if you’re coming from MySQL. You can read a great article about it <a href="http://www.upfrontsystems.co.za/Members/izak/sysadman/postgresqls-confusing-authentication-configuration">here</a>. You can read about all of Postgres’ authentication means <a href="http://www.postgresql.org/docs/9.0/static/auth-methods.html">here</a>. Because I’m coming from MySQL, and I’m keen to get this thing up and running, for now I’m just going to change <code>ident</code> to <code>md5</code> authentication, which basically means it’ll work the same way as I’m used to in MySQL.</p>
 
-<p>To change that, we'll need to edit <code>pg_hba.conf</code>:</p>
+<p>To change that, we’ll need to edit <code>pg_hba.conf</code>:</p>
 
 <pre><code class="language-markup">nano /var/lib/pgsql/9.2/data/pg_hba.conf
 </code></pre>
@@ -182,15 +182,15 @@ host    all             all             127.0.0.1/32            md5
 <pre><code class="language-markup">gem install pg -v '0.15.0' -- --with-pg_config=/usr/pgsql-9.2/bin/pg_config
 </code></pre>
 
-<p>If you get errors still, you may want to try Christian's solution for Postgres gem on CentOS 5.8, <a href="http://stackoverflow.com/questions/4827092/unable-to-install-pg-gem">here</a> (ie, <code>export PATH=/usr/pgsql-9.2/bin:$PATH</code> and then <code>bundle install</code>)</p>
+<p>If you get errors still, you may want to try Christian’s solution for Postgres gem on CentOS 5.8, <a href="http://stackoverflow.com/questions/4827092/unable-to-install-pg-gem">here</a> (ie, <code>export PATH=/usr/pgsql-9.2/bin:$PATH</code> and then <code>bundle install</code>)</p>
 
 <h2 id="addendum-3---ensure-pgconfig-works">Addendum 3 - ensure pg_config works</h2>
-<p>Type <code>pg_config</code> at the terminal. If you get "command not found" you'll need to add pg_config to your path. You can add it for the <em>current session only</em> with this:</p>
+<p>Type <code>pg_config</code> at the terminal. If you get “command not found” you’ll need to add pg_config to your path. You can add it for the <em>current session only</em> with this:</p>
 
 <pre><code class="language-markup">export PATH=$PATH:/usr/pgsql-9.2/bin/
 </code></pre>
 
-<p>However, you'll probably want to add it to your path permanently, and I'll let Google help you out there.</p>
+<p>However, you’ll probably want to add it to your path permanently, and I’ll let Google help you out there.</p>
 
 
     <!-- Footer -->

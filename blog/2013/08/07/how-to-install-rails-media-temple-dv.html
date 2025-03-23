@@ -6,8 +6,8 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
   <title>Joshua Paling  - How to install Rails on a Media Temple DV 4.0</title>
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
-  <link href="../../../../stylesheets/application-4b18c387.css" rel="stylesheet" />
-  <script src="../../../../javascripts/application-8d565278.js"></script>
+  <link href="../../../../stylesheets/application-3a039e88.css" rel="stylesheet" />
+  <script src="../../../../javascripts/application-547ab8eb.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
@@ -24,20 +24,20 @@
     </header>
 
 
-<p>First up, the date today is 6 Aug, 2013. I'm working on a Media Temple DV 4.0, with Plesk 11 installed. I'm running CentOS 5.8, using Apache as my webserver. <em>If those details don't match up closely with what you're using, ignore this post!</em></p>
+<p>First up, the date today is 6 Aug, 2013. I’m working on a Media Temple DV 4.0, with Plesk 11 installed. I’m running CentOS 5.8, using Apache as my webserver. <em>If those details don’t match up closely with what you’re using, ignore this post!</em></p>
 
 <p>The first thing you should do is create a <a href="https://kb.mediatemple.net/questions/96/Backing+up+your+server+using+the+Snapshot+Backup+tool#dv_40">snapshot backup</a> of your server. Seriously. Do that before doing anything else.</p>
 
 <h3 id="disclaimer">Disclaimer</h3>
 
-<p>I'm new to Ruby and Rails, and I'm a developer, not a SysAdmin. This is what worked for me, but I'm no expert.</p>
+<p>I’m new to Ruby and Rails, and I’m a developer, not a SysAdmin. This is what worked for me, but I’m no expert.</p>
 
-<h2 id="what-well-need">What we'll need</h2>
+<h2 id="what-well-need">What we’ll need</h2>
 
 <p><strong><a href="https://rvm.io/">RVM</a> - Ruby Version Manager</strong>
 RVM allows you to install and manage multiple versions of Ruby, and also of Rails and other Gems. You might also have heard of <a href="http://rbenv.org/">rbenv</a>. RVM and rbenv are basically two competing products which do the same thing.</p>
 
-<p>For this post, we'll go with RVM.</p>
+<p>For this post, we’ll go with RVM.</p>
 
 <p>Check out this <a href="http://screencasts.org/episodes/how-to-use-rvm">RVM screencast</a>.</p>
 
@@ -48,25 +48,25 @@ RVM allows you to install and manage multiple versions of Ruby, and also of Rail
 <pre><code class="language-markup">ruby 1.8.5 (2006-08-25) [x86_64-linux]
 </code></pre>
 
-<p>However, it's probably an old version, and it won't be set up in a way that allows you to run one website on ruby 1.9.2 and another on version 2.0. That's why we want RVM.</p>
+<p>However, it’s probably an old version, and it won’t be set up in a way that allows you to run one website on ruby 1.9.2 and another on version 2.0. That’s why we want RVM.</p>
 
 <p><strong><a href="https://www.phusionpassenger.com/">Passenger</a></strong>
 Passenger is an Application Server for Ruby apps, and therefore, for Rails. <a href="http://www.javaworld.com/javaworld/javaqa/2002-08/01-qa-0823-appvswebserver.html">An application server is not a webserver</a>. So, Passenger is not a replacement for a webserver such as Apache or Nginx.</p>
 
-<p>There are <a href="https://www.engineyard.com/articles/rails-server">several Ruby app servers</a> we could use, but Passenger is recommended on the <a href="http://rubyonrails.org/deploy">official rails deploy page</a>, so that's what we'll go with.</p>
+<p>There are <a href="https://www.engineyard.com/articles/rails-server">several Ruby app servers</a> we could use, but Passenger is recommended on the <a href="http://rubyonrails.org/deploy">official rails deploy page</a>, so that’s what we’ll go with.</p>
 
-<p>We'll assume you're using Apache as your existing web server.</p>
+<p>We’ll assume you’re using Apache as your existing web server.</p>
 
-<h2 id="lets-get-started">Let's get started</h2>
+<h2 id="lets-get-started">Let’s get started</h2>
 
-<p><strong>Note:</strong> I looked at <a href="https://coderwall.com/p/lu3nfa">Tom's guide</a> when I was installing my first Rails app on Media Temple. It helped me a LOT, but it had some missing steps, some inconsistencies, and some information I found to be not recommended - at least, with regards to my particular setup.</p>
+<p><strong>Note:</strong> I looked at <a href="https://coderwall.com/p/lu3nfa">Tom’s guide</a> when I was installing my first Rails app on Media Temple. It helped me a LOT, but it had some missing steps, some inconsistencies, and some information I found to be not recommended - at least, with regards to my particular setup.</p>
 
 <h2 id="prerequisites">Prerequisites</h2>
-<p>You'll need to be able to login to your domain via SSH, with root access. You should also have <strong>a backup</strong> in case something goes wrong!</p>
+<p>You’ll need to be able to login to your domain via SSH, with root access. You should also have <strong>a backup</strong> in case something goes wrong!</p>
 
 <h2 id="install-developer-tools">Install Developer Tools</h2>
 
-<p>Media Temple have a guide on how to <a href="https://kb.mediatemple.net/questions/1672/Installing+Developer+Tools#dv_40">install developer tools</a>. I already had them installed - so I'm not sure if they are required for anything in this post, but you might want to install them to be safe.</p>
+<p>Media Temple have a guide on how to <a href="https://kb.mediatemple.net/questions/1672/Installing+Developer+Tools#dv_40">install developer tools</a>. I already had them installed - so I’m not sure if they are required for anything in this post, but you might want to install them to be safe.</p>
 
 <h2 id="add-your-domain-in-plesk---one-gotcha">Add your domain in Plesk - one gotcha</h2>
 <p>I assume you already know how to do this. However, one gotcha is that the Document Root should be set to the <code>public</code> folder of your rails install, not the root folder.</p>
@@ -76,7 +76,7 @@ Passenger is an Application Server for Ruby apps, and therefore, for Rails. <a h
 <h2 id="install-rvm">Install RVM</h2>
 <p>Log in to your server via SSH as root.</p>
 
-<p>Before starting, lets make a note of what version of Ruby we've currently got installed. Run <code>ruby -v</code>. The output for me is: <code>ruby 1.8.5 (2006-08-25) [x86_64-linux]</code></p>
+<p>Before starting, lets make a note of what version of Ruby we’ve currently got installed. Run <code>ruby -v</code>. The output for me is: <code>ruby 1.8.5 (2006-08-25) [x86_64-linux]</code></p>
 
 <p>OK, now install RVM.</p>
 
@@ -94,7 +94,7 @@ Passenger is an Application Server for Ruby apps, and therefore, for Rails. <a h
     in all your open shell windows, in rare cases you need to reopen all shell windows.
 </code></pre>
 
-<p>So, let's do what it tells us:</p>
+<p>So, let’s do what it tells us:</p>
 
 <h3 id="add-users-to-the-rvm-group">Add users to the RVM group</h3>
 
@@ -103,66 +103,66 @@ Passenger is an Application Server for Ruby apps, and therefore, for Rails. <a h
 <pre><code class="language-markup">usermod -a -G rvm root
 </code></pre>
 
-<p>Read the full <a href="https://rvm.io/rvm/install">RVM install page</a> and make sure you understand the security implications <em>(disclaimer: as of right now, I don't!)</em> before adding any other users to your RVM group.</p>
+<p>Read the full <a href="https://rvm.io/rvm/install">RVM install page</a> and make sure you understand the security implications <em>(disclaimer: as of right now, I don’t!)</em> before adding any other users to your RVM group.</p>
 
 <p>Next, run:</p>
 
 <pre><code class="language-markup">source /etc/profile.d/rvm.sh
 </code></pre>
 
-<p>That should complete the set up of RVM. You can test it's installed by running <code>rvm -v</code>. You should get something like this:</p>
+<p>That should complete the set up of RVM. You can test it’s installed by running <code>rvm -v</code>. You should get something like this:</p>
 
 <pre><code class="language-markup">rvm 1.21.17 (stable) by Wayne E. Seguin &lt;wayneeseguin@gmail.com&gt;, Michal Papis &lt;mpapis@gmail.com&gt; [https://rvm.io/]
 </code></pre>
 
 <h2 id="install-ruby-through-rvm">Install Ruby through RVM</h2>
-<p>At this point, we've installed the Ruby Version Manager, but haven't yet used it to install any versions of Ruby!</p>
+<p>At this point, we’ve installed the Ruby Version Manager, but haven’t yet used it to install any versions of Ruby!</p>
 
-<p>To verify this, run <code>ruby -v</code>, and you'll see you're using the same version of ruby as when you started (for me, <code>ruby 1.8.5 (2006-08-25) [x86_64-linux]</code>). Now, run <code>which ruby</code>. For me, the output is <code>/usr/bin/ruby</code>, and since there's no mention of <code>rvm</code> in that path, I know I'm not using an RVM-managed version of ruby.</p>
+<p>To verify this, run <code>ruby -v</code>, and you’ll see you’re using the same version of ruby as when you started (for me, <code>ruby 1.8.5 (2006-08-25) [x86_64-linux]</code>). Now, run <code>which ruby</code>. For me, the output is <code>/usr/bin/ruby</code>, and since there’s no mention of <code>rvm</code> in that path, I know I’m not using an RVM-managed version of ruby.</p>
 
-<p>Let's fix that.</p>
+<p>Let’s fix that.</p>
 
-<p>First, let's take a look at all the versions of Ruby that RVM knows about:</p>
+<p>First, let’s take a look at all the versions of Ruby that RVM knows about:</p>
 
 <pre><code class="language-markup">rvm list known
 </code></pre>
 
-<p>You'll get a reasonably long list. The <a href="http://en.wikipedia.org/wiki/Ruby_MRI">MRI Rubies</a> are probably the only ones you're interested in at this stage.</p>
+<p>You’ll get a reasonably long list. The <a href="http://en.wikipedia.org/wiki/Ruby_MRI">MRI Rubies</a> are probably the only ones you’re interested in at this stage.</p>
 
-<p>Now, let's install Ruby 1.9.3 (or whichever version you want):</p>
+<p>Now, let’s install Ruby 1.9.3 (or whichever version you want):</p>
 
 <pre><code class="language-markup">rvm install 1.9.3
 </code></pre>
 
-<p>This takes a while. After we've done that, we can re-run <code>ruby -v</code> and we should see that we're using the version we just installed. If we run <code>which ruby</code>, we should get a path with <code>rvm</code> in it, like <code>/usr/local/rvm/rubies/ruby-1.9.3-p448/bin/ruby</code>.</p>
+<p>This takes a while. After we’ve done that, we can re-run <code>ruby -v</code> and we should see that we’re using the version we just installed. If we run <code>which ruby</code>, we should get a path with <code>rvm</code> in it, like <code>/usr/local/rvm/rubies/ruby-1.9.3-p448/bin/ruby</code>.</p>
 
-<p>Now, let's set version 1.9.3 as the default:</p>
+<p>Now, let’s set version 1.9.3 as the default:</p>
 
 <pre><code class="language-markup">rvm use 1.9.3 --default
 </code></pre>
 
 <h2 id="instail-rails">Instail Rails</h2>
 
-<p>We'll use the <code>gem</code> command to do this. <code>gem</code> is maintainted by RVM, as you'll see if you run <code>which gem</code>. OK… rails:</p>
+<p>We’ll use the <code>gem</code> command to do this. <code>gem</code> is maintainted by RVM, as you’ll see if you run <code>which gem</code>. OK… rails:</p>
 
 <pre><code class="language-markup">gem install rails -v 3.2.9
 </code></pre>
 
 <p>Obviously, you might want to install a different version.</p>
 
-<h2 id="use-bundler-dont-use-gemsets">Use Bundler. Don't use Gemsets</h2>
+<h2 id="use-bundler-dont-use-gemsets">Use Bundler. Don’t use Gemsets</h2>
 
-<p>Now, at this point, <a href="https://coderwall.com/p/lu3nfa">Tom's guide</a> has you create a gemset for your project. I was a bit confused about this, and asked about it on #RubyOnRails IRC channel. The creator of Passenger, FooBarWidget, answered my question, and among other things, said:</p>
+<p>Now, at this point, <a href="https://coderwall.com/p/lu3nfa">Tom’s guide</a> has you create a gemset for your project. I was a bit confused about this, and asked about it on #RubyOnRails IRC channel. The creator of Passenger, FooBarWidget, answered my question, and among other things, said:</p>
 
-<p><em>"The tip that I would give you is to completely ignore gemsets. They were introduced before bundler. I consider them legacy technology now that cause more problems and confusion than they're worth."</em></p>
+<p><em>“The tip that I would give you is to completely ignore gemsets. They were introduced before bundler. I consider them legacy technology now that cause more problems and confusion than they’re worth.”</em></p>
 
-<p>I plan on creating a full blog post about not using gemsets, but for now just take it of faith; don't use them.</p>
+<p>I plan on creating a full blog post about not using gemsets, but for now just take it of faith; don’t use them.</p>
 
-<p>So, <strong>don't</strong> create a Gemset. Instead, install bundler now, with:</p>
+<p>So, <strong>don’t</strong> create a Gemset. Instead, install bundler now, with:</p>
 
 <pre><code class="language-markup">gem install bundler
 </code></pre>
-<p>We'll use bundler a bit further down the track.</p>
+<p>We’ll use bundler a bit further down the track.</p>
 
 <h2 id="installing-passenger">Installing Passenger</h2>
 <p>Run:</p>
@@ -170,7 +170,7 @@ Passenger is an Application Server for Ruby apps, and therefore, for Rails. <a h
 <pre><code class="language-markup">gem install passenger
 </code></pre>
 
-<p>And once it's installed, run:</p>
+<p>And once it’s installed, run:</p>
 
 <pre><code class="language-markup">passenger-install-apache2-module
 </code></pre>
@@ -220,12 +220,12 @@ Apache configuration file and set its DocumentRoot to /somewhere/public:
    &lt;/VirtualHost&gt;
 </code></pre>
 
-<p>Let's deal with <strong>Important Bit 1</strong> first. So, it wants us to edit our apache config file. Before doing that, let's make a backup of it (replace YYYY-MM-DD with the current date!):</p>
+<p>Let’s deal with <strong>Important Bit 1</strong> first. So, it wants us to edit our apache config file. Before doing that, let’s make a backup of it (replace YYYY-MM-DD with the current date!):</p>
 
 <pre><code class="language-markup">cp -p /etc/httpd/conf/httpd.conf /etc/httpd/conf/httpd.conf.YYYY-MM-DD.bak
 </code></pre>
 
-<p>Now, open <code>/etc/httpd/conf/httpd.conf</code> with a text editor - I'll use nano:</p>
+<p>Now, open <code>/etc/httpd/conf/httpd.conf</code> with a text editor - I’ll use nano:</p>
 
 <pre><code class="language-markup">nano /etc/httpd/conf/httpd.conf
 </code></pre>
@@ -240,20 +240,20 @@ PassengerDefaultRuby /usr/local/rvm/wrappers/ruby-1.9.3-p448/ruby
 
 <h2 id="configure-apache-important-bit-2">Configure Apache (important bit 2)</h2>
 
-<p><strong>Important Bit 2</strong> tells us how we'll need to configure apache. Unfortunately, that config won't work for us. But don't worry - <a href="https://coderwall.com/p/lu3nfa">Tom's guide</a> has us covered.</p>
+<p><strong>Important Bit 2</strong> tells us how we’ll need to configure apache. Unfortunately, that config won’t work for us. But don’t worry - <a href="https://coderwall.com/p/lu3nfa">Tom’s guide</a> has us covered.</p>
 
-<p><strong>Reminder:</strong> Remember the <em>"Add your domain in Plesk - one gotcha"</em> that I mentioned earlier? It bears repeating. Your rails app will sit in <code>httpdocs</code>, but the site, configured in Plesk, should have it's Document Root set to <code>httpdocs/public</code>, that is, to the <code>public</code> directory inside your rails install.</p>
+<p><strong>Reminder:</strong> Remember the <em>“Add your domain in Plesk - one gotcha”</em> that I mentioned earlier? It bears repeating. Your rails app will sit in <code>httpdocs</code>, but the site, configured in Plesk, should have it’s Document Root set to <code>httpdocs/public</code>, that is, to the <code>public</code> directory inside your rails install.</p>
 
-<p>OK, we're getting close now. Let's <code>cd</code> into our site's configuration directory - something like:</p>
+<p>OK, we’re getting close now. Let’s <code>cd</code> into our site’s configuration directory - something like:</p>
 
 <pre><code class="language-markup">cd /var/www/vhosts/mysite.com/conf
 </code></pre>
-<p>If you do an <code>ls</code>, you'll see there are a bunch of numbered files - these are the configuration files automatically maintained by Plesk. Just leave them there - but we're going to create our own configuration file which will take precedence:</p>
+<p>If you do an <code>ls</code>, you’ll see there are a bunch of numbered files - these are the configuration files automatically maintained by Plesk. Just leave them there - but we’re going to create our own configuration file which will take precedence:</p>
 
 <pre><code class="language-markup">nano vhost.conf
 </code></pre>
 
-<p>Now, paste in the vhost.conf given in Tom's guide:
+<p>Now, paste in the vhost.conf given in Tom’s guide:
 <em>(Be extremely careful to adjust all the paths so they pertain to your site - one wrong path here can cause you a world of pain!)</em></p>
 
 <pre><code class="language-markup">ServerName mysite.com
@@ -277,9 +277,9 @@ PassengerPoolIdleTime 30
 
 <h2 id="upload-your-files--database">Upload Your Files &amp; Database</h2>
 
-<p>Hopefully in future, you'll be using something like <a href="http://www.capistranorb.com/">Capistrano</a> or <a href="http://docs.fabfile.org/en/1.7/">Fabric</a> to automate your deployment. But for now, let's just upload the files to <code>/var/www/vhosts/mysite.com/httpdocs</code> via plain old S/FTP and check if things are working.</p>
+<p>Hopefully in future, you’ll be using something like <a href="http://www.capistranorb.com/">Capistrano</a> or <a href="http://docs.fabfile.org/en/1.7/">Fabric</a> to automate your deployment. But for now, let’s just upload the files to <code>/var/www/vhosts/mysite.com/httpdocs</code> via plain old S/FTP and check if things are working.</p>
 
-<p>You'll also need to create a database and make sure your <code>database.yml</code> file is set up right, but I won't go over that here. Using MySQL will be easiest, as it's available out of the box on Media Temple's DV 4.0's. However, Postgres is better - so try and get that working if you're game.</p>
+<p>You’ll also need to create a database and make sure your <code>database.yml</code> file is set up right, but I won’t go over that here. Using MySQL will be easiest, as it’s available out of the box on Media Temple’s DV 4.0’s. However, Postgres is better - so try and get that working if you’re game.</p>
 
 <h2 id="install-required-gems">Install Required Gems</h2>
 
@@ -294,24 +294,24 @@ PassengerPoolIdleTime 30
 
 <pre><code class="language-markup">bundle install --deployment
 </code></pre>
-<p>I got that suggestion from <a href="http://stackoverflow.com/questions/6648870/is-not-checked-out-bundle-install-does-not-fix-help">here</a>, and there's more info on the <code>--deployment</code> option <a href="http://bundler.io/v1.3/man/bundle-install.1.html#DEPLOYMENT-MODE">here</a>.</p>
+<p>I got that suggestion from <a href="http://stackoverflow.com/questions/6648870/is-not-checked-out-bundle-install-does-not-fix-help">here</a>, and there’s more info on the <code>--deployment</code> option <a href="http://bundler.io/v1.3/man/bundle-install.1.html#DEPLOYMENT-MODE">here</a>.</p>
 
 <p>Basically, <code>bundle install</code> will look through our <code>Gemfile</code> and download everything we need to run our application.</p>
 
 <h2 id="precompile-assets">Precompile Assets</h2>
 
-<p>Now, you'll need to precompile your assets. From your <code>httpdocs</code> directory, run</p>
+<p>Now, you’ll need to precompile your assets. From your <code>httpdocs</code> directory, run</p>
 
 <pre><code class="language-markup">bundle exec rake assets:precompile
 </code></pre>
-<p>If you get an error like <code>Could not find a JavaScript runtime</code>, then you'll need to add <code>therubyracer</code> to your <code>Gemfile</code>, and then re-run <code>bundle install</code>, and then re-run <code>bundle exec rake assets:precompile</code>.</p>
+<p>If you get an error like <code>Could not find a JavaScript runtime</code>, then you’ll need to add <code>therubyracer</code> to your <code>Gemfile</code>, and then re-run <code>bundle install</code>, and then re-run <code>bundle exec rake assets:precompile</code>.</p>
 
 <p>Last but not least, once your assets are precompiled, restart passenger by running this from within the <code>httpdocs</code> directory:</p>
 
 <pre><code class="language-markup">touch tmp/restart.txt
 </code></pre>
 
-<p>If you've done things right, at this point, your app should work. But if you're unlucky like me, and you get an error like: <code>This web application process is being run as user 'nobody' and group 'nobody' and must be able to access its application root directory</code> then read <a href="/post/solution-to-passenger-running-as-user-group-nobody">this post</a>.</p>
+<p>If you’ve done things right, at this point, your app should work. But if you’re unlucky like me, and you get an error like: <code>This web application process is being run as user 'nobody' and group 'nobody' and must be able to access its application root directory</code> then read <a href="/post/solution-to-passenger-running-as-user-group-nobody">this post</a>.</p>
 
 <p>If you think you need to restart anything, for any reason, you can:</p>
 

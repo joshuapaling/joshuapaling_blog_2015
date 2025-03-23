@@ -1,0 +1,101 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+  <title>Joshua Paling </title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+  <link href="../stylesheets/application-3a039e88.css" rel="stylesheet" />
+  <script src="../javascripts/application-547ab8eb.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+  <div class="page-wrapper">
+    <header>
+      <h1>Joshua Paling</h1>
+      <nav>
+        <a class="" href="/">Blog</a>
+        <a class="" href="/about.html">About</a>
+        <a class="" href="/resume.html">Resume</a>
+        <a href="../feed.xml">RSS</a>
+        <a target="_blank" href="https://twitter.com/joshuapaling">@joshuapaling</a>
+      </nav>
+    </header>
+
+
+<h1>Architecture</h1>
+
+<p>Architecture is about:</p>
+
+<p>Responsibilities: What do I know?</p>
+
+<p>Dependencies: What do I know about? Something else holds the details, but I know how that something else works, and I know about the interface it provides to clients like me. If it’s API changes, I have to change.</p>
+
+<p>Boundaries: What do I NOT know about? What are the things that are tempting to make me know about, but that will pollute the mental modal &amp; make future changes harder? What searvices might I want to call, but should not call?</p>
+
+<p>Really, architecture is about dependencies. But clearly defining responsibilities and boundaries helps you get the dependencies right.</p>
+
+<p>Dependencies isn’t about ‘which direction does the http call go?’, it’s about ‘who knows about what?’ or ‘who defines the contract, who accepts that definition’.</p>
+
+<p>Figuring out what depends on what is best done through examples. Let’s imagine our payment service, and Stripe. And consider two types of payments: one regular payment, where we send a request, and Stripe responds to that request immediately with pass/failed response. And another where we’re using 3DS - the customer has to enter a pin code sent to their mobile, this can take a minute, and so stripe will send a response saying ‘pending 3DS check’, then let us know later that the 3DS check has passed, and that our payment is successful (or, the opposite - that it failed).</p>
+
+<h2 id="immediate-response-scenario">immediate response scenario</h2>
+
+<p>We’ll have a hard-coded reference to api.stripe.com in our codebase. We’ll look at stripe’s docs - stripe defines the endpoint and owns the contract - and call the endpoint in the right way. Stripe, as per it’s docs, will respond.
+This one is clear - we depend on Stripe. Stripe does not know about us, or the thousand other clients like us. It releases a new API version, and it’s on all those thousand clients to update themselves. Stripe is the boss here.</p>
+
+<h2 id="asynchronous-response-scenario-3ds">asynchronous response scenario (3DS)</h2>
+
+<h3 id="with-webhooks">with webhooks</h3>
+
+<p>Stripe’s docs say that they can send a webhook when the 3DS check is complete, and they’ll call it, sending a request body that they define.
+So, we go to Stripe’s admin area and add a new webhook - say api.luxuryescapes.com/payments/stripe/webook
+Stripe stores this in their database. Stripe’s codebase has no reference to us - it’s data to stripe. We choose to add or remove that data, stripe doesn’t mind.
+We make an http request to stripe, which kicks off the 3DS check. Once it’s done, if we’ve chosen to define webhooks, stripe will call them, with the request body that it dictates, and it’s on us to know what that request body will be.
+So, even though HTTP requests flow both ways, we depend on stripe. Stripe does not depend on us, even though there’s a webhook going direct from Stripe to us.</p>
+
+<h2 id="with-events">with events</h2>
+
+<p>Say, rather than the webhook going direct from Stripe to our payment service, we configure the webhook to go to an event bus. (we might need a middleman to pass stripe’s webhook on to the event bus, maybe transform it on the way, but let’s ignore that for now). So stripe sends a webhook to the event bus. Then payment service subscribes itself to listen to that event from the event bus, picks it up from the event bus, and processes it.</p>
+
+<p>The dependency relationship is the same here. Our payment service depends on stripe. Stripe does not depend on our payment service, or on the event bus. Stripe just sends a webhook and let’s us say where to send it.
+The event bus does not depend on stripe, or on our payment service. It depends on nothing. It just says ‘anyone can send me events, I’ll forward them on to anyone who subscribes to those events - but the rest is all on you. I don’t know or care who is sending the events, or who is listening to them’.</p>
+
+<p>The service that subscribes to an event, depends on the service who sends that event. The event bus in between handles retires and other handy things, and allows multiple clients to subscribe to the same event, but it’s an implementation detail and doesn’t fundamentally change the dependency relationship.</p>
+
+<h2 id="with-queues">with queues</h2>
+
+<p>Say our payment service had stripe send the webhooks to a queue. Then, if our payment service is overloaded, the queue can build up, and payment service can process the events from the queue later when it’s less busy.
+This queue eliminates the temporal or real-time coupling between stripe’s webhook system and our payment service. Payment service can be down for a moment, and nothing is lost.</p>
+
+<p>But the dependency relationship stays the same. Our payment service depends on stripe. Stripe does not depend on our payment service, or on the queue. Stripe just sends a webhook and let’s us say where to send it.</p>
+
+
+
+    <!-- Footer -->
+    <footer>
+      <nav>
+        <a class="" href="/">Blog</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/about.html">About</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/resume.html">Resume</a>
+        &nbsp;&bull;&nbsp;
+        <a href="../feed.xml">RSS</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/archives.html">Archives</a>
+      </nav>
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright &copy; Joshua Paling 2015</p>
+        </div>
+      </div>
+      <!-- /.row -->
+    </footer>
+
+  </div>
+
+</body>
+</html>
+

@@ -6,8 +6,8 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
   <title>Joshua Paling  - Questions About Unit Testing</title>
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
-  <link href="../../../../stylesheets/application-4b18c387.css" rel="stylesheet" />
-  <script src="../../../../javascripts/application-8d565278.js"></script>
+  <link href="../../../../stylesheets/application-3a039e88.css" rel="stylesheet" />
+  <script src="../../../../javascripts/application-547ab8eb.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
@@ -24,13 +24,13 @@
     </header>
 
 
-<p>Before I started unit testing, back when I knew it was all the rage but just hadn't got around to learning it, or wasn't sure if it'd be worthwhile for me, I wrote down these questions. It took me a while to get round to it, but I finally wrote answers.</p>
+<p>Before I started unit testing, back when I knew it was all the rage but just hadn’t got around to learning it, or wasn’t sure if it’d be worthwhile for me, I wrote down these questions. It took me a while to get round to it, but I finally wrote answers.</p>
 
-<p>This post is intended for people who haven't done any unit testing, but are wondering if it's worthwhile learning for their particular work.</p>
+<p>This post is intended for people who haven’t done any unit testing, but are wondering if it’s worthwhile learning for their particular work.</p>
 
-<p><strong>TL;DR</strong> Learn to unit test. Just do it. Once you've learned, you'll be able to judge whether or not it's worth it. If you do find that it really isn't worth it, you're not building anything complex enough, so it's lucky you did learn it, because it's time to push yourself a bit harder!</p>
+<p><strong>TL;DR</strong> Learn to unit test. Just do it. Once you’ve learned, you’ll be able to judge whether or not it’s worth it. If you do find that it really isn’t worth it, you’re not building anything complex enough, so it’s lucky you did learn it, because it’s time to push yourself a bit harder!</p>
 
-<h2 id="when-im-working-on-smaller-sites-with-basic-crud-functionality-and-next-to-no-business-logic-is-unit-testing-worth-it-nothing-seems-to-break-without-unit-testing">1. When I'm working on smaller sites, with basic CRUD functionality and next to no business logic, is unit testing worth it? (nothing seems to break without unit testing…)</h2>
+<h2 id="when-im-working-on-smaller-sites-with-basic-crud-functionality-and-next-to-no-business-logic-is-unit-testing-worth-it-nothing-seems-to-break-without-unit-testing">1. When I’m working on smaller sites, with basic CRUD functionality and next to no business logic, is unit testing worth it? (nothing seems to break without unit testing…)</h2>
 
 <p><strong>Short answer</strong>: probably not.</p>
 
@@ -42,15 +42,15 @@
 
 <p>Do you currenlty ever have issues with stuff breaking unexpectedly, in these kinds of projects?</p>
 
-<p>You don't unit test for the sake of unit testing. You unit test to be overall better - more time efficient, more reliable, less bugs, less long-term technical debt, less of a challenge to make significant refactors, etc.</p>
+<p>You don’t unit test for the sake of unit testing. You unit test to be overall better - more time efficient, more reliable, less bugs, less long-term technical debt, less of a challenge to make significant refactors, etc.</p>
 
-<p>If the sites you're building are really so simple that you're not having issues with those things, well, fine. Don't waste time unit testing.</p>
+<p>If the sites you’re building are really so simple that you’re not having issues with those things, well, fine. Don’t waste time unit testing.</p>
 
-<p><strong>But, having said that,</strong> if that's the case, it sounds like it's time to push yourself and take on something a little more complex, in which case, you'll want to start testing!</p>
+<p><strong>But, having said that,</strong> if that’s the case, it sounds like it’s time to push yourself and take on something a little more complex, in which case, you’ll want to start testing!</p>
 
 <h2 id="how-big--complex-does-an-app-need-to-be-before-you-start-unit-testing--and-for-big-apps-should-you-unit-test-even-the-simple-stuff-like-basic-crud-functionality-etc">2. How big / complex does an app need to be before you start unit testing?  And for big apps, should you unit test even the simple stuff like basic CRUD functionality, etc?</h2>
 
-<p>That's a matter of personal preference. Some with argue that you should aim for 100% test coverage, even of simple stuff. Others will claim that's ridiculous. Personally, I wouldn't test CRUD. As for things any more complex, I like to ask myself these questions:</p>
+<p>That’s a matter of personal preference. Some with argue that you should aim for 100% test coverage, even of simple stuff. Others will claim that’s ridiculous. Personally, I wouldn’t test CRUD. As for things any more complex, I like to ask myself these questions:</p>
 
 <ul>
   <li>How likely is the code to change?</li>
@@ -59,33 +59,33 @@
   <li>How many different people are likely to be working with this code in the forseeable future?</li>
 </ul>
 
-<p>If the respective answers to these questions are something like "rarely", "not at all easy", "not at all drastic", "one or two", then writing tests might not be worth the time.</p>
+<p>If the respective answers to these questions are something like “rarely”, “not at all easy”, “not at all drastic”, “one or two”, then writing tests might not be worth the time.</p>
 
-<p>Testing isn't intended to make life harder. It's intended to make life easier in the long term for a little extra work in the short term. If the feature is really such that you most likely won't re-gain the time spent on writing tests for a feature, within the forseable future, then fine. Don't write tests.</p>
+<p>Testing isn’t intended to make life harder. It’s intended to make life easier in the long term for a little extra work in the short term. If the feature is really such that you most likely won’t re-gain the time spent on writing tests for a feature, within the forseable future, then fine. Don’t write tests.</p>
 
-<p>But if you're not writing any tests, just write some! Once you've got a few under your belt, you'll be able to make the call yourself on what's worth testing, and what isn't.</p>
+<p>But if you’re not writing any tests, just write some! Once you’ve got a few under your belt, you’ll be able to make the call yourself on what’s worth testing, and what isn’t.</p>
 
-<h2 id="i-already-test-really-thoroughly-and-feel-id-still-need-to-test-just-as-thoroughly-manually-even-if-i-did-unit-testing-just-to-help-me-sleep-at-night-how-will-unit-testing-help-me">3. I already test really thoroughly, and feel I'd still need to test just as thoroughly, manually, even if I did unit testing, just to help me sleep at night. How will unit testing help me?</h2>
+<h2 id="i-already-test-really-thoroughly-and-feel-id-still-need-to-test-just-as-thoroughly-manually-even-if-i-did-unit-testing-just-to-help-me-sleep-at-night-how-will-unit-testing-help-me">3. I already test really thoroughly, and feel I’d still need to test just as thoroughly, manually, even if I did unit testing, just to help me sleep at night. How will unit testing help me?</h2>
 
 <p>You, my treasured soul, are going to L.O.V.E unit tests!</p>
 
-<p>In the beginning, you may well feel the need to manual-test, too. But quickly you'll learn that a) your unit tests are doing the job, and b) they're doing so far more reliably and efficiently than you'll ever be able to.</p>
+<p>In the beginning, you may well feel the need to manual-test, too. But quickly you’ll learn that a) your unit tests are doing the job, and b) they’re doing so far more reliably and efficiently than you’ll ever be able to.</p>
 
-<p>Unit tests will also help you catch any of those evil cowboy coders when they change your code and break it, but don't bother to test.</p>
+<p>Unit tests will also help you catch any of those evil cowboy coders when they change your code and break it, but don’t bother to test.</p>
 
 <p>Your life is about to get WAY better!</p>
 
 <h2 id="what-about-unit-testing-private-methods-should-you-make-them-public-just-so-you-can-test-them-it-seems-private-methods-are-an-easy-thing-to-test-where-you-can-specify-certain-input-cases-and-expect-certain-outputs-this-was-a-question-i-had-when-i-first-started-testing">4. What about unit testing private methods? Should you make them public just so you can test them? It seems private methods are an easy thing to test where you can specify certain input cases and expect certain outputs. <em>(This was a question I had when I first started testing)</em></h2>
 
-<p>No! Don't test private methods directly.</p>
+<p>No! Don’t test private methods directly.</p>
 
 <p>Test the FUNCTIONALITY and the CASES that pivate methods take care of, but through the interface of public methods. If a private method exists, it must be called somewhere by a public method. And testing that public method, under the right circumstances, will test the private method.</p>
 
-<p>One of the times when unit tests are great is when you have a well-tested class, with many private methods, and you decide it's time to do a big refactor. If you've tested private methods directly, then you'll be having to write new tests each time you shuffle private methods around, and that's dangerous. Too much is changing at once.</p>
+<p>One of the times when unit tests are great is when you have a well-tested class, with many private methods, and you decide it’s time to do a big refactor. If you’ve tested private methods directly, then you’ll be having to write new tests each time you shuffle private methods around, and that’s dangerous. Too much is changing at once.</p>
 
-<p>Ideally, during a big refactor, the public methods of your class will be well tested, and you'll be able to shuffle around your private methods, refactor to your heart's content, break things, and then know everything's working again when all your tests pass again - without having to modify tests at all.</p>
+<p>Ideally, during a big refactor, the public methods of your class will be well tested, and you’ll be able to shuffle around your private methods, refactor to your heart’s content, break things, and then know everything’s working again when all your tests pass again - without having to modify tests at all.</p>
 
-<p>If you start testing private methods, your code becomes really closely tied to your tests, and it's a pain to refactor. So, test all cases that a private method takes care of, but do so through the lens of a public method that calls that private method under given circumstances.</p>
+<p>If you start testing private methods, your code becomes really closely tied to your tests, and it’s a pain to refactor. So, test all cases that a private method takes care of, but do so through the lens of a public method that calls that private method under given circumstances.</p>
 
 
     <!-- Footer -->

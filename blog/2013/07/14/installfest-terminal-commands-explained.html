@@ -6,8 +6,8 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
   <title>Joshua Paling  - InstallFest Terminal Commands Explained</title>
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
-  <link href="../../../../stylesheets/application-4b18c387.css" rel="stylesheet" />
-  <script src="../../../../javascripts/application-8d565278.js"></script>
+  <link href="../../../../stylesheets/application-3a039e88.css" rel="stylesheet" />
+  <script src="../../../../javascripts/application-547ab8eb.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
@@ -26,28 +26,28 @@
 
 <p>This post is <a href="http://joshuapaling.com/post/rails-blog-in-15-weeks">part of a series</a></p>
 
-<p>You use several command line tools throughout the blog tutorial, and you'll copy/pasted several commands into the terminal. Here's a bit more explanation on each command.</p>
+<p>You use several command line tools throughout the blog tutorial, and you’ll copy/pasted several commands into the terminal. Here’s a bit more explanation on each command.</p>
 
 <h3 id="rails">rails</h3>
 
 <p>When you install the Rails gem, you also get the rails command line tool - aptly named… wait for it… rails. At some point, read the <a href="http://guides.rubyonrails.org/command_line.html">full doco</a>.</p>
 
-<p><em>Here's what we use in the tutorial:</em></p>
+<p><em>Here’s what we use in the tutorial:</em></p>
 
 <p><strong>Create a new app</strong></p>
 
 <pre><code class="language-markup">rails new quick_blog -T
 </code></pre>
 
-<p>This creates a folder called 'quick_blog' in the current directory,
-with a new rails application inside it. The '-T' option just means we don't include 'Test::Unit' files. <a href="http://test-unit.rubyforge.org/">Test::Unit</a> is the default unit testing framework for Rails - though most developers prefer to use <a href="http://rspec.info/">RSpec</a> instead, which is what we use in this blog.</p>
+<p>This creates a folder called ‘quick_blog’ in the current directory,
+with a new rails application inside it. The ‘-T’ option just means we don’t include ‘Test::Unit’ files. <a href="http://test-unit.rubyforge.org/">Test::Unit</a> is the default unit testing framework for Rails - though most developers prefer to use <a href="http://rspec.info/">RSpec</a> instead, which is what we use in this blog.</p>
 
 <p><strong>Start our local webserver</strong></p>
 
 <pre><code class="language-markup">rails server
 </code></pre>
 
-<p>Or 'rails s' for short. This launches the WEBrick web server, allowing us to access our app through the browser. WEBrick comes bundled with Ruby, making it the easiest webserver to use for our new blog.</p>
+<p>Or ‘rails s’ for short. This launches the WEBrick web server, allowing us to access our app through the browser. WEBrick comes bundled with Ruby, making it the easiest webserver to use for our new blog.</p>
 
 <p>Type <code>Control-C</code> to stop the server.</p>
 
@@ -58,11 +58,11 @@ with a new rails application inside it. The '-T' option just means we don't incl
 
 <p>Short for <code>rails generate</code>. The <code>rails g</code> command can help us create controllers, views, models, and more.</p>
 
-<p>The option we've gone with - <em>scaffold</em> - creates a full set including a model file, a controller file,  view files, some route defenitions, and a database migration file.</p>
+<p>The option we’ve gone with - <em>scaffold</em> - creates a full set including a model file, a controller file,  view files, some route defenitions, and a database migration file.</p>
 
 <p>After <em>scaffold</em>, we specify the name of our model (Post), along with the <em>name:type</em> pairs we want as fields in our posts database table.</p>
 
-<p>Since we don't specify a type for <em>title</em>, it will use the default type of <em>string</em>.</p>
+<p>Since we don’t specify a type for <em>title</em>, it will use the default type of <em>string</em>.</p>
 
 <p>Lots more info on column types <a href="http://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/TableDefinition.html#method-i-column">here</a>.</p>
 
@@ -71,19 +71,19 @@ with a new rails application inside it. The '-T' option just means we don't incl
 <pre><code class="language-markup">rails generate resource Comment post:references body:text
 </code></pre>
 
-<p>We've opted for the longer <code>rails generate</code> option, but it's exactly the same as <code>rails g</code>. We've specified <code>resource</code> this time, rather than <code>scaffold</code>.</p>
+<p>We’ve opted for the longer <code>rails generate</code> option, but it’s exactly the same as <code>rails g</code>. We’ve specified <code>resource</code> this time, rather than <code>scaffold</code>.</p>
 
-<p><code>resource</code> will generate all the same stuff as <code>scaffold</code>, except it'll leave out the view files. We don't need view files for Comments, because comments aren't viewed in their own right. To view comments, we'll manually add some code to our Post view files.</p>
+<p><code>resource</code> will generate all the same stuff as <code>scaffold</code>, except it’ll leave out the view files. We don’t need view files for Comments, because comments aren’t viewed in their own right. To view comments, we’ll manually add some code to our Post view files.</p>
 
 <p>After <code>resource</code>, we specify the name of our model (Comment), followed by the name:type pairs we want as fields in the comments database table.</p>
 
 <p>Note the <code>post:references</code> pair just says that a Comment should have a <code>post_id</code> foriegn key field.</p>
 
-<h3 id="rake-short-for-ruby-make">rake (short for 'Ruby Make')</h3>
+<h3 id="rake-short-for-ruby-make">rake (short for ‘Ruby Make’)</h3>
 
 <p>Full doco <a href="http://guides.rubyonrails.org/command_line.html#rake">here</a>.</p>
 
-<p>Rake helps with common admin tasks, like compiling asses, creating / updating databases, clearing temp data, and more. Most commonly, it's used for handling database migrations.</p>
+<p>Rake helps with common admin tasks, like compiling asses, creating / updating databases, clearing temp data, and more. Most commonly, it’s used for handling database migrations.</p>
 
 <p><strong>Update the database based on your migrations files</strong></p>
 
@@ -94,21 +94,21 @@ with a new rails application inside it. The '-T' option just means we don't incl
 
 <p>Rails auto-maintains the <code>app/db/schema.rb</code> file, where it keeps track of which migration the database is up to.</p>
 
-<p>After running this command, you'll need to restart the rails server (<code>Control-C</code> to stop, <code>rails s</code> to start).</p>
+<p>After running this command, you’ll need to restart the rails server (<code>Control-C</code> to stop, <code>rails s</code> to start).</p>
 
 <p><strong>bundle exec</strong></p>
 
-<p>If you're having to prefix your rake commands with <strong>bundle exec</strong>, see the explanation why <a href="http://stackoverflow.com/questions/6588674/what-does-bundle-exec-rake-mean">here</a></p>
+<p>If you’re having to prefix your rake commands with <strong>bundle exec</strong>, see the explanation why <a href="http://stackoverflow.com/questions/6588674/what-does-bundle-exec-rake-mean">here</a></p>
 
 <h3 id="git-version-control">git (version control)</h3>
 
-<p>Several git commands are used in the tutorial, but I won't go over git here. If you're not already familiar with git, you'd best learn it before writing another line of code, in any language!</p>
+<p>Several git commands are used in the tutorial, but I won’t go over git here. If you’re not already familiar with git, you’d best learn it before writing another line of code, in any language!</p>
 
 <p>Tower made a great <a href="http://www.git-tower.com/files/cheatsheet/Git_Cheat_Sheet_grey.pdf">git cheat sheet</a>.</p>
 
 <h3 id="heroku">heroku</h3>
 
-<p>The heroku command line tool is used to interact with Heroku's server, to put our blog live, and publish changes. I've done a separate post covering the <code>heroku</code> commands. (ToDo - Add link here)</p>
+<p>The heroku command line tool is used to interact with Heroku’s server, to put our blog live, and publish changes. I’ve done a separate post covering the <code>heroku</code> commands. (ToDo - Add link here)</p>
 
 
     <!-- Footer -->

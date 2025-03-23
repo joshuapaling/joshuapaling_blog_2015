@@ -6,8 +6,8 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
   <title>Joshua Paling  - Automate MySQL Database Backups with Capistrano</title>
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
-  <link href="../../../../stylesheets/application-4b18c387.css" rel="stylesheet" />
-  <script src="../../../../javascripts/application-8d565278.js"></script>
+  <link href="../../../../stylesheets/application-3a039e88.css" rel="stylesheet" />
+  <script src="../../../../javascripts/application-547ab8eb.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
@@ -30,15 +30,15 @@
 
 <p><em>b)</em> Backup the database prior to each capistrano deployment, and download a copy of the backup to my own computer.</p>
 
-<p>I've found a solution I'm happy with, so I thought I'd share it here.</p>
+<p>I’ve found a solution I’m happy with, so I thought I’d share it here.</p>
 
 <h2 id="a-regular-automated-mysql-backups">a) Regular, Automated MySQL Backups</h2>
 
-<p><em>a)</em> was easy. <a href="http://sourceforge.net/projects/automysqlbackup/">AutoMySQLBackup</a> will take care of it all for you, and is well documented in it's README. I was surprised to see it on sourceforge and not github, but it still appears to receive somewhat regular updates, so I went ahead and installed it.</p>
+<p><em>a)</em> was easy. <a href="http://sourceforge.net/projects/automysqlbackup/">AutoMySQLBackup</a> will take care of it all for you, and is well documented in it’s README. I was surprised to see it on sourceforge and not github, but it still appears to receive somewhat regular updates, so I went ahead and installed it.</p>
 
-<p>As I mentioned, it's well documented, so I won't go over the how-to here, but basically it allows you to create backups of any number of databases on your system, and by changing a few numbers in a config file, it allows you to set requirements for how many copies to keep, for how long.</p>
+<p>As I mentioned, it’s well documented, so I won’t go over the how-to here, but basically it allows you to create backups of any number of databases on your system, and by changing a few numbers in a config file, it allows you to set requirements for how many copies to keep, for how long.</p>
 
-<p>So, you can keep daily backups for the past week, monthly backups for the past year, and so on - however you see fit. Run it via a daily cron job, and that's half your problem solved.</p>
+<p>So, you can keep daily backups for the past week, monthly backups for the past year, and so on - however you see fit. Run it via a daily cron job, and that’s half your problem solved.</p>
 
 <p><strong>Note:</strong> If you happen to come across the error below, <a href="http://sourceforge.net/p/automysqlbackup/discussion/350022/thread/8f17e483/">this</a> fixes it.</p>
 
@@ -71,37 +71,37 @@ end
 
 <h2 id="breaking-down-the-capistrano-task-line-by-line">Breaking down the capistrano task, line by line</h2>
 
-<p>If you're one to copy/paste code without understanding it, don't. Read this. There's essentially only 5 lines of code (excluding the task definition), so lets break them down:</p>
+<p>If you’re one to copy/paste code without understanding it, don’t. Read this. There’s essentially only 5 lines of code (excluding the task definition), so lets break them down:</p>
 
 <h3 id="run-the-automysqlbackup">1. Run the AutoMySQLBackup</h3>
 
 <pre><code class="language-ruby">run "automysqlbackup /etc/automysqlbackup/myserver.conf"
 </code></pre>
 
-<p>This just runs the AutoMySQLBackup script we set up in part a). You'll need to change myserver.conf to the name of your config file, and also change the path to the config file if you didn't do a standard install.</p>
+<p>This just runs the AutoMySQLBackup script we set up in part a). You’ll need to change myserver.conf to the name of your config file, and also change the path to the config file if you didn’t do a standard install.</p>
 
-<p>If you've gone through part <em>a)</em>, this should be pretty familiar.</p>
+<p>If you’ve gone through part <em>a)</em>, this should be pretty familiar.</p>
 
 <h3 id="set-the-path-to-your-backups">2. Set the path to your backups</h3>
 
 <pre><code class="language-ruby">backups_path = "/var/backup/db/daily/your_database/"
 </code></pre>
-<p>This is easy - just store a path to your database backups. If you've done a standard install of AutoMySQLBackup, then it should look similar to the above.</p>
+<p>This is easy - just store a path to your database backups. If you’ve done a standard install of AutoMySQLBackup, then it should look similar to the above.</p>
 
 <h3 id="get-the-name-of-the-latest-backup-file">3. Get the name of the latest backup file</h3>
 
 <pre><code class="language-ruby">latest_backup = capture "ls -t #{backups_path} | head -1"
 </code></pre>
 
-<p>The <code>capture</code> method is the same as <code>run</code>, but it'll return the output for you - which we then store in our <code>latest_backup</code> variable.</p>
+<p>The <code>capture</code> method is the same as <code>run</code>, but it’ll return the output for you - which we then store in our <code>latest_backup</code> variable.</p>
 
-<p>Running <code>ls -t</code> will list the contents of the directory (in our case, the directory of our backups), sorted by time modified (most recently modified first). So, the first line of it's output will be our latest backup.</p>
+<p>Running <code>ls -t</code> will list the contents of the directory (in our case, the directory of our backups), sorted by time modified (most recently modified first). So, the first line of it’s output will be our latest backup.</p>
 
 <p><code>head -n</code> displays the first <em>n</em> lines of a file.</p>
 
-<p>The pipe operator - <code>|</code> - allows you to feed the output (stdout) of one process to the input (stdin) of another process. So, we're feeding the output of our <code>ls -t</code> command into our <code>head -1</code> command.</p>
+<p>The pipe operator - <code>|</code> - allows you to feed the output (stdout) of one process to the input (stdin) of another process. So, we’re feeding the output of our <code>ls -t</code> command into our <code>head -1</code> command.</p>
 
-<p>To sum up, we're listing the files in our backups directory, ordered by date modified, and then taking the first line and storing it in a local variable.</p>
+<p>To sum up, we’re listing the files in our backups directory, ordered by date modified, and then taking the first line and storing it in a local variable.</p>
 
 <h3 id="trim-white-space">4. Trim white space</h3>
 
@@ -115,7 +115,7 @@ end
 <pre><code class="language-ruby">run_locally "scp #{user}@#{domain}:#{backups_path}#{latest_backup} ../live_db_backups/#{latest_backup}"
 </code></pre>
 
-<p>Capistrano's <code>run_locally</code> executes the command on your local machine, as opposed to on a remote server.</p>
+<p>Capistrano’s <code>run_locally</code> executes the command on your local machine, as opposed to on a remote server.</p>
 
 <p><code>scp</code> allows you to securely copy a file from one host to another (in our case, from our server to our local machine). It provides the same security / authentication as ssh.</p>
 
@@ -123,7 +123,7 @@ end
 
 <p>Note that <code>:user</code> and <code>:domain</code> will need to have been set earlier in your <code>deploy.rb</code> file.</p>
 
-<p>The path I've chosen on my local machine, <code>../live_db_backups/#{latest_backup}</code> will just copy the database backup, keeping it's original name, to a folder just above my current directory. But you can copy it anywhere you want on your hard drive, and give it any name you want.</p>
+<p>The path I’ve chosen on my local machine, <code>../live_db_backups/#{latest_backup}</code> will just copy the database backup, keeping it’s original name, to a folder just above my current directory. But you can copy it anywhere you want on your hard drive, and give it any name you want.</p>
 
 
     <!-- Footer -->

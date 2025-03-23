@@ -6,8 +6,8 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
   <title>Joshua Paling  - Duck Typing - What is it?</title>
   <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
-  <link href="../../../../stylesheets/application-4b18c387.css" rel="stylesheet" />
-  <script src="../../../../javascripts/application-8d565278.js"></script>
+  <link href="../../../../stylesheets/application-3a039e88.css" rel="stylesheet" />
+  <script src="../../../../javascripts/application-547ab8eb.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
@@ -24,12 +24,12 @@
     </header>
 
 
-<p>Duck Typing is a bit of a buzz word. If you don't know what it is, it's likely that you've used it, or at least read code that uses it, without knowing it.</p>
+<p>Duck Typing is a bit of a buzz word. If you don’t know what it is, it’s likely that you’ve used it, or at least read code that uses it, without knowing it.</p>
 
-<p>There's a million posts on duck typing. Most try to get all meta and use an example of a class called "Duck", which does nothing to help explain the concept. This post is what I wished I could read straight up.</p>
+<p>There’s a million posts on duck typing. Most try to get all meta and use an example of a class called “Duck”, which does nothing to help explain the concept. This post is what I wished I could read straight up.</p>
 
 <h2 id="duck">Duck</h2>
-<p>The first word of <em>duck typing</em> is a reference to the phrase "If it walks like a duck, and quacks like a duck, it's a duck". That'll make more sense as we go.</p>
+<p>The first word of <em>duck typing</em> is a reference to the phrase “If it walks like a duck, and quacks like a duck, it’s a duck”. That’ll make more sense as we go.</p>
 
 <h2 id="typing">Typing</h2>
 <p>The second word of <em>duck typing</em> refers to the type of an object. Consider the code below:</p>
@@ -47,22 +47,22 @@ birthday = Date.new(2001,2,3)
 
 <h2 id="duck--typing">Duck + Typing</h2>
 
-<p><a href="http://en.wikipedia.org/wiki/Duck_typing">Wikipaedia</a> states: "In duck typing, a programmer is only concerned with ensuring that objects behave as demanded of them in a given context, rather than ensuring that they are of a specific type."</p>
+<p><a href="http://en.wikipedia.org/wiki/Duck_typing">Wikipaedia</a> states: “In duck typing, a programmer is only concerned with ensuring that objects behave as demanded of them in a given context, rather than ensuring that they are of a specific type.”</p>
 
-<p>So, when we're 'duck typing', then we're not concerned with exactly what type of object we have (String, Array, Date, etc). If it behaves like the object we want for our specific purposes, then that's good enough. (If it 'talks like a duck', it's good enough.)</p>
+<p>So, when we’re ‘duck typing’, then we’re not concerned with exactly what type of object we have (String, Array, Date, etc). If it behaves like the object we want for our specific purposes, then that’s good enough. (If it ‘talks like a duck’, it’s good enough.)</p>
 
 <p><strong>That will make a LOT more sense after an example.</strong></p>
 
 <h2 id="a-contrived-example">A Contrived Example</h2>
 
-<p>Let's say we want to implement a method, <code>show_length</code> which will tell us how long a string is. Eg:</p>
+<p>Let’s say we want to implement a method, <code>show_length</code> which will tell us how long a string is. Eg:</p>
 
 <pre><code class="language-ruby">name = "Joss"
 show_length(name)
 # output: "It has a length of 4"
 </code></pre>
 
-<p>First we will NOT use duck typing, then we'll show the same example using duck typing.</p>
+<p>First we will NOT use duck typing, then we’ll show the same example using duck typing.</p>
 
 <h3 id="not-duck-typing">NOT duck typing</h3>
 
@@ -86,9 +86,9 @@ show_length(Date.new(2001,2,3))
 # Outputs: You passed a Date. We wanted a String.
 </code></pre>
 
-<p>But maybe it was overkill to enforce that the parameter was a String. When we passed in the array, it should have just told us the length of the array. In fact, lets not bother checking the type of the object at all; if it responds to the <code>length</code> method, it's good enough for us. (If it walks like a duck, and quacks like a duck, it's a duck.)</p>
+<p>But maybe it was overkill to enforce that the parameter was a String. When we passed in the array, it should have just told us the length of the array. In fact, lets not bother checking the type of the object at all; if it responds to the <code>length</code> method, it’s good enough for us. (If it walks like a duck, and quacks like a duck, it’s a duck.)</p>
 
-<p>So, let's use duck typing…</p>
+<p>So, let’s use duck typing…</p>
 
 <h3 id="using-soft-duck-typing">Using Soft Duck Typing</h3>
 
@@ -111,15 +111,15 @@ show_length([1, 2, 3])
 show_length(Date.new(2001,2,3))
 # Outputs: You passed a Date. We wanted something with a length.
 </code></pre>
-<p>See how we don't check the type of the object; we just check that it's good enough for this particular context. If it responds to the <code>length</code> method, it'll do.</p>
+<p>See how we don’t check the type of the object; we just check that it’s good enough for this particular context. If it responds to the <code>length</code> method, it’ll do.</p>
 
-<p>As <a href="http://en.wikipedia.org/wiki/Duck_typing">Wikipaedia</a> states: "In duck typing, a programmer is only concerned with ensuring that objects behave as demanded of them in a given context, rather than ensuring that they are of a specific type."</p>
+<p>As <a href="http://en.wikipedia.org/wiki/Duck_typing">Wikipaedia</a> states: “In duck typing, a programmer is only concerned with ensuring that objects behave as demanded of them in a given context, rather than ensuring that they are of a specific type.”</p>
 
-<p>In this context, we just care that we can display the object's length. We don't care about the specific type of object.</p>
+<p>In this context, we just care that we can display the object’s length. We don’t care about the specific type of object.</p>
 
 <p>Note that in this example of <em>soft duck typing</em>, we do at least check that the parameter passed in has a <code>length</code> method. We might decide we want to save ourself a few lines, and just assume the caller will pass the correct thing.</p>
 
-<p>Let's do that now…</p>
+<p>Let’s do that now…</p>
 
 <h3 id="using-hard-duck-typing">Using Hard Duck Typing</h3>
 
@@ -127,7 +127,7 @@ show_length(Date.new(2001,2,3))
   puts "It has a length of #{object.length}"
 end
 </code></pre>
-<p>That's concise! We <strong>perform NO CHECKS on the object passed in</strong>. We just assume it'll have a <code>length</code> method. So, example input / output would be as follows:</p>
+<p>That’s concise! We <strong>perform NO CHECKS on the object passed in</strong>. We just assume it’ll have a <code>length</code> method. So, example input / output would be as follows:</p>
 
 <pre><code class="language-ruby">show_length("Fred")
 # Outputs: It has a length of 4
