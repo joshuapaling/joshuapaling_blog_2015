@@ -27,7 +27,7 @@ A good heuristic is, if someone else in a similar position (eg same level, same 
 
 > v1. Collaborated across teams to build dynamic, responsive websites.
 
-🔴 Bad. Can be copied to many resume and hold true.
+🔴 Bad. Can be copied to any resume and hold true.
 
 > v2. Collaborated across teams to optimise page loading, creating measurable impact on performance.
 
