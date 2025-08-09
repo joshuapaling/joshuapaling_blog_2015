@@ -31,10 +31,131 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2023-06-13T10:00:00+10:00</updated>
+  <updated>2025-08-08T10:00:00+10:00</updated>
   <author>
     <name>Joshua Paling</name>
   </author>
+  <entry>
+    <title>What I look for in a resume</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2025/08/08/resumes.html"/>
+    <id>http://blog.url.com/blog/2025/08/08/resumes.html</id>
+    <published>2025-08-08T10:00:00+10:00</published>
+    <updated>2025-08-09T15:33:56+10:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">
+&lt;p&gt;I’ve been experimenting with having GPT help me grade resumes. This is what I’m looking for.&lt;/p&gt;
+
+&lt;h3 id="two-modes-of-hiring"&gt;Two modes of hiring&lt;/h3&gt;
+
+&lt;p&gt;Before we go further…&lt;/p&gt;
+
+&lt;p&gt;Sometimes, there’s one role to fill. In that case, the resume must match the role closely.
+Other times, there’s many roles to fill. In that case, you want to highlight candidates who match the role closely, but also flag any very strong candidates for consideration in other roles.&lt;/p&gt;
+
+&lt;p&gt;We’re in the second mode of hiring.&lt;/p&gt;
+
+&lt;h2 id="what-i-look-for-at-all-levels"&gt;What I look for at all levels&lt;/h2&gt;
+
+&lt;h3 id="specific-not-generic"&gt;Specific, not generic&lt;/h3&gt;
+
+&lt;p&gt;A good heuristic is, if someone else in a similar position (eg same level, same tech) replaces your name with theirs - would it now be 100% lies? How many edits would it take for them to make it truthful for themselves?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example - describing specific achievements&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;v1. Collaborated across teams to build dynamic, responsive websites.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;🔴 Bad. Can be copied to many resume and hold true.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;v2. Collaborated across teams to optimise page loading, creating measurable impact on performance.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;🟠 Only slightly better. Can be copied to most resumes and hold true.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;v3. Reduced checkout page load time by 40%, through lazy-loading route-level components for multiple payment methods and removing third-party script bloat. Partnered with Marketing to balance customer performance with analytics requirements.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;🟢 Good. Almost certainly a lie if copied to anyone else’s resume.&lt;/p&gt;
+
+&lt;h3 id="signal-not-noise"&gt;Signal, not noise&lt;/h3&gt;
+
+&lt;p&gt;Focus on what makes you stand out, that’s relevant for the role you’re applying for.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example - describing specific skills&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;v1. &lt;strong&gt;Skills:&lt;/strong&gt; React.JS, Angular 2-16 Versions, SCSS, MUI, Bootstrap, CSS, Tailwind CSS, TypeScript, HTML5, jQuery, Responsive Web Design, Redux, Router, JSON, Webpack, AngularJS, Sass, REST API, React, Ionic Framework, Jest, XML, JavaScript library, Next.JS, Postman, Vite.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;🔴 Bad. Are they all relevant for the role you’re applying for? Do you really still use jQuery regularly?&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;v2. &lt;strong&gt;Skills:&lt;/strong&gt; React, Redux. Strong testing focus using Jest, React Testing Library, and Cypress. Deep TypeScript experience, including advanced language features and building robust, scalable type systems.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;🟢 Good. Focus on what you personally are best at, what’s the core of the stack, and what differentiates you from other engineers.&lt;/p&gt;
+
+&lt;h3 id="no-typos"&gt;No typos!&lt;/h3&gt;
+
+&lt;p&gt;If there’s a typo in your resume, I’ll assume you don’t test well.&lt;/p&gt;
+
+&lt;h2 id="what-i-look-for-at-each-level"&gt;What I look for at each level&lt;/h2&gt;
+
+&lt;p&gt;At all levels, we want to identify people who stand out as talented, ambitious, and hard-working. And, we want people who take initiative - who identify opportunities and push them forward, rather than just completing tickets assigned to them.&lt;/p&gt;
+
+&lt;p&gt;Below are the tell-tale signs of such people, at each level.&lt;/p&gt;
+
+&lt;h3 id="juniors"&gt;Juniors&lt;/h3&gt;
+
+&lt;p&gt;In priority order:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Projects, projects, projects.&lt;/strong&gt; Put them live on the web and link to them. Make them novel and varied. Go beyond a basic portfolio site. I’ve got 30 junior resumes to screen. Make your projects immediately stand out as the best.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Great grades.&lt;/strong&gt; Distinction or higher. If you’re on the Dean’s List, you’re instantly worth a call.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id="mids"&gt;Mids&lt;/h3&gt;
+
+&lt;p&gt;Specific deliverables, clear growth trajectory. What have you done that other mids at your company couldn’t? Make that clear.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Clear ownership&lt;/strong&gt;. Proof you’ve lead features end to end. Tell me what you personally did — not just what the team delivered.
+“Delivered frontend for the booking calendar” is ok.
+“Scoped, implemented and tested a new calendar UX that increased booking rate by 8%” is much better. Bonus points for a particular challenge you solved on the way.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Growth and initiative&lt;/strong&gt;. Have you taken on increasingly complex challenges? Mentored juniors? Driven cross-team projects? Identified and pushed forward fundamental engineering improvements - eg. to tooling, testing, architecture?&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Some depth, not just breadth&lt;/strong&gt;. By now, you’ve surely had a chance to dive deep on some area (e.g. performance, developer experience, security, analytics). Talk about it.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Narrative coherence&lt;/strong&gt;. Your resume should tell a story of consistent growth. Jumping between too many roles or companies every 6–12 months can hurt unless it’s clearly explained.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id="seniors"&gt;Seniors&lt;/h3&gt;
+
+&lt;p&gt;For senior candidates, I’m looking for engineers who:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Shipped impact, not just code. Eg:&lt;/strong&gt;&lt;br /&gt;
+ • Reduced lead time for changes from 1.5 hours to 15 minutes by streamlining the CD process, parallelising tests, and removing redundant steps and tests.  &lt;br /&gt;
+ • Increased conversion by 6% on mobile by redesigning the checkout flow: streamlined payment steps, introduced Apple Pay, and implemented persistent cart recovery.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Show technical leadership&lt;/strong&gt;. Did you rescue a late delivery? Jump on production incidents? Architect a major project?&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Demonstrate influence beyond your team&lt;/strong&gt;. The best seniors make their whole org better. Eg:&lt;br /&gt;
+ • Improved typical developer onboarding time from 2 days to 1, through improved documentation, docker-based developer infrastructure repo, and driving a “ship to prod on day 1” culture.&lt;br /&gt;
+ • Championed new practices (e.g. observability, testing, documentation culture)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Communicate clearly&lt;/strong&gt;. If your resume is hard to follow, your code and design docs probably are too. A clear, well-structured resume with concrete examples tells me you’re good at communicating ideas and priorities.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Final thoughts&lt;/p&gt;
+
+&lt;p&gt;You don’t have to tick every box — but you should give me something to remember you by. A project, a metric, an impact story, a clear signal of initiative or excellence.&lt;/p&gt;
+
+&lt;p&gt;I reject most resumes in a minute or two. Make yours worth pausing on, and make it easy to say “yes”.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Talk on database indexing</title>
     <link rel="alternate" href="http://blog.url.com/blog/2023/06/13/database-indexing.html"/>
@@ -245,99 +366,6 @@
 &lt;h2 id="overestimate"&gt;Overestimate&lt;/h2&gt;
 
 &lt;p&gt;Often the advice for estimating software projects is “decide how long you think it’ll take, then double it”. For data imports, multiplying by 4, or negotiating to do that part of the project hourly rather than fixed cost, is a safer bet.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>How to make fixed price work</title>
-    <link rel="alternate" href="http://blog.url.com/blog/2016/10/14/how-to-make-fixed-price-work.html"/>
-    <id>http://blog.url.com/blog/2016/10/14/how-to-make-fixed-price-work.html</id>
-    <published>2016-10-14T11:00:00+11:00</published>
-    <updated>2021-05-26T19:22:31+10:00</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;Customers want fixed price. Here’s how to make it a fair deal for yourself.
-I recently read &lt;a href="https://twitter.com/arohner/status/766688027745751041"&gt;this tweet-storm&lt;/a&gt;, on why you should never take fixed price contracts.&lt;/p&gt;
-
-&lt;p&gt;It says:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Unless you’ve done the job 20 times, and can estimate how long it will take with a high-degree of certainty, fixed-price is suboptimal. Like the over-under in betting, someone wins, and someone loses. And to answer who is more likely to win, the contractor or the employer, you can answer with another question: When was the last time you had a software project come in on-schedule? For clarity, fixed duration contracts are fine: “You pay for N weeks of work, I do N weeks of work”. Where you get into trouble is: “I pay for N weeks of work, regardless of how much time it takes to complete”. The employers who do this tend to also like to play games with what is in vs. out of scope. Avoid.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Having spent years in a small digital agency where &amp;gt; 95% of our work was fixed price, I agree with all the points. The problem is, almost all customers want a fixed price.&lt;/p&gt;
-
-&lt;p&gt;Here’s some tips for making fixed price work.&lt;/p&gt;
-
-&lt;h2 id="fixed-price-is-insurance"&gt;Fixed price is insurance&lt;/h2&gt;
-
-&lt;p&gt;This is the golden rule. In a fixed price job, you’re selling the customer two things:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;The product you’re building them&lt;/li&gt;
-  &lt;li&gt;Insurance on the cost of that product&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;Insurance costs money.&lt;/strong&gt; In the case of software, you should charge \~30% additional for fixed price jobs. You can tell the client this in plain english. They will still want fixed cost for the same reasons they still buy travel/car/indemnity insurance.&lt;/p&gt;
-
-&lt;p&gt;Companies selling insurance (ie, you):&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Don’t win on every single customer. They win overall.&lt;/li&gt;
-  &lt;li&gt;Have different premiums for different customers, based on risk.&lt;/li&gt;
-  &lt;li&gt;Have strict written terms on what is and isn’t inside the scope of the insurance policy.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id="estimating"&gt;Estimating&lt;/h2&gt;
-
-&lt;p&gt;You’ll drastically underestimate your first few projects. Don’t underestimate the next few. Here’s some tips:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Hofstadtler’s law states “It always takes longer than you expect, even when you take into account Hofstadter’s Law.” This is doubly true of software.&lt;/li&gt;
-  &lt;li&gt;Break the work into small chunks, estimate each, then total.&lt;br /&gt; You’ll want to break the project into chunks for writing your scope too. More on that later.&lt;/li&gt;
-  &lt;li&gt;Scope will change. The client doesn’t know what they want yet. You’ll write a formal scope to protect you against scope change, but asking for more money at every tiny change sucks. Allow a significant amount of fat so you can absorb some reasonable amount of scope change.&lt;/li&gt;
-  &lt;li&gt;Consider the value of the job to the client. Is it a game changer for them? If so, charge more.&lt;/li&gt;
-  &lt;li&gt;Got your estimate? Now, Double it. Everything takes twice as long as you think.&lt;br /&gt;
-&lt;em&gt;And DON’T consider the fact that it’ll get doubled when going through the points above!&lt;/em&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id="wont-i-be-out-competed-on-price"&gt;Won’t I be out-competed on price?&lt;/h2&gt;
-
-&lt;p&gt;Companies who get a few quotes on a job will get figures all over the place. Not everyone’s shopping for the cheapest price, and regardless of your price point, you’ll have people turning you down for being too expensive, and others turning you down for being too cheap. Yes, really.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;You want to go for the clients who know cheapest isn’t best.&lt;/em&gt; Not only do they pay more, they’re also usually more professional, less petty, and much more enjoyable to work with.&lt;/p&gt;
-
-&lt;h2 id="writing-a-scope"&gt;Writing a scope&lt;/h2&gt;
-
-&lt;p&gt;For a significant sized job, you should write a scope and have clients read and sign it before commencing work. Most clients won’t actually read it, but do it anyway.&lt;/p&gt;
-
-&lt;p&gt;A scope should detail what you will complete under the fixed cost. It should also outline what you won’t complete. You can place this under a euphemism like “Future Considerations”, and mention that these are ideas / possible enhancements for future, not included under the current scope.&lt;/p&gt;
-
-&lt;p&gt;A scope is what you’ll fall back on when your client says “… but I wanted this from the beginning” and you say “it wasn’t mentioned in the scope — we can do it, but at additional cost”. Assuming you’re being fair and telling the truth, clients will usually accept that without much fuss.&lt;/p&gt;
-
-&lt;p&gt;A scope is also what you’ll fall back on, on the off chance things get much worse than that. A scope is like writing the terms for the insurance you’re offering. Insurance companies don’t say “sure, we’ll cover any unexpected expenses you have on your holiday, no questions asked!”&lt;/p&gt;
-
-&lt;h2 id="payment"&gt;Payment&lt;/h2&gt;
-
-&lt;p&gt;It’s hard, but if you can, charge some amount to prepare a scope. One way to pitch it is “it comes of the cost of the job if you go ahead with us”. Companies can, and will, get you to write a great scope, then take your scope out to tender with cheaper companies that would not have done half as good a job of scoping out their project. A good scope is worth money in its own right.&lt;/p&gt;
-
-&lt;p&gt;Take a deposit up front. For smaller jobs (say up to 20k), take 50% up front, as soon as the scope is signed. For larger jobs, break it into milestones as makes sense, but the first payment should be up front, before starting work.&lt;/p&gt;
-
-&lt;p&gt;The last payment should be prior to going live — as in “it’s in staging and we’re ready to flick the go live switch once you pay”. Even if you trust the client, invoices get paid much more slowly after the project is live! (If the client resists, you may hold back some nominal amount to bill after it’s gone live, but 90% + should be before.)
-Most importantly, watch Mike Montiero’s great talk &lt;a href="https://www.youtube.com/watch?v=jVkLVRt6c1U"&gt;“Fuck you, pay me”&lt;/a&gt;. I can’t say I follow all his advice, but I probably should.&lt;/p&gt;
-
-&lt;h2 id="no-claim-bonus"&gt;No claim bonus&lt;/h2&gt;
-
-&lt;p&gt;You know how insurance companies have a “no claim bonus”? That’s clever marketing. It means “clients who make claims get charged more”. You can do the same. For difficult clients, or clients where you’ve lost out before, charge them a higher premium for future fixed price work (and recoup some of what you lost previously).&lt;/p&gt;
-
-&lt;h2 id="tracking-time--estimates-vs-actuals"&gt;Tracking time — estimates vs actuals&lt;/h2&gt;
-
-&lt;p&gt;Fixed price means you’re under no obligation to track time. It’s a good idea to do so anyway, for your own future reference. Don’t be too transparent with the client, though.&lt;/p&gt;
-
-&lt;p&gt;If you do fixed price right, there’ll be plenty of times where you come in under estimate, and the client could have got it cheaper at an hourly rate. That’s completely fair — fixed price is insurance, which the client wanted. You took the risk and it paid off. But there’s nothing to be gained from letting the client know that this time, you won.&lt;/p&gt;
-
-&lt;p&gt;Many clients expect a “Fixed price if it goes over estimate, but hourly if it goes under” deal — and that’s simply not viable for you. Fixed price means actual hours aren’t the client’s concern.&lt;/p&gt;
-
 </content>
   </entry>
 </feed>
