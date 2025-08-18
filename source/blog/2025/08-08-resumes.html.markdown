@@ -51,6 +51,13 @@ Focus on what makes you stand out, that's relevant for the role you're applying 
 
 🟢 Good. Focus on what you personally are best at, what's the core of the stack, and what differentiates you from other engineers.
 
+### Companies
+
+If someone has worked at AWS, Facebook, etc - that's a sign they've passed a pretty rigorous and competitive interview process and are likely talented.
+
+If they've only ever worked in government roles or large consultancies, they may not be the best cultural fit for us.
+
+
 ### No typos!
 
 If there's a typo in your resume, I'll assume you don't test well.
@@ -66,7 +73,7 @@ Below are the tell-tale signs of such people, at each level.
 In priority order:
 
 1. **Projects, projects, projects.** Put them live on the web and link to them. Make them novel and varied. Go beyond a basic portfolio site. I've got 30 junior resumes to screen. Make your projects immediately stand out as the best.
-2. **Great grades.** Distinction or higher. If you're on the Dean's List, you're instantly worth a call.
+1. **Great grades.** Distinction or higher. If you're on the Dean's List, you're instantly worth a call.
 
 
 ### Mids
@@ -77,8 +84,8 @@ Specific deliverables, clear growth trajectory. What have you done that other mi
 “Delivered frontend for the booking calendar” is ok.
 “Scoped, implemented and tested a new calendar UX that increased booking rate by 8%” is much better. Bonus points for a particular challenge you solved on the way.
 1. **Growth and initiative**. Have you taken on increasingly complex challenges? Mentored juniors? Driven cross-team projects? Identified and pushed forward fundamental engineering improvements - eg. to tooling, testing, architecture?
-2. **Some depth, not just breadth**. By now, you've surely had a chance to dive deep on some area (e.g. performance, developer experience, security, analytics). Talk about it.
-3. **Narrative coherence**. Your resume should tell a story of consistent growth. Jumping between too many roles or companies every 6–12 months can hurt unless it’s clearly explained.
+1. **Some depth, not just breadth**. By now, you've surely had a chance to dive deep on some area (e.g. performance, developer experience, security, analytics). Talk about it.
+1. **Narrative coherence**. Your resume should tell a story of consistent growth. Jumping between too many roles or companies every 6–12 months can hurt unless it’s clearly explained.
 
 ### Seniors
 
@@ -88,7 +95,7 @@ For senior candidates, I’m looking for engineers who:
     • Reduced lead time for changes from 1.5 hours to 15 minutes by streamlining the CD process, parallelising tests, and removing redundant steps and tests.  <br />
     • Increased conversion by 6% on mobile by redesigning the checkout flow: streamlined payment steps, introduced Apple Pay, and implemented persistent cart recovery.
 1. **Show technical leadership**. Did you rescue a late delivery? Jump on production incidents? Architect a major project?
-2. **Demonstrate influence beyond your team**. The best seniors make their whole org better. Eg:<br />
+1. **Demonstrate influence beyond your team**. The best seniors make their whole org better. Eg:<br />
     • Improved typical developer onboarding time from 2 days to 1, through improved documentation, docker-based developer infrastructure repo, and driving a "ship to prod on day 1" culture.<br />
     • Championed new practices (e.g. observability, testing, documentation culture)
 1. **Communicate clearly**. If your resume is hard to follow, your code and design docs probably are too. A clear, well-structured resume with concrete examples tells me you’re good at communicating ideas and priorities.
