@@ -53,14 +53,15 @@ Focus on what makes you stand out, that's relevant for the role you're applying 
 
 ### Companies
 
-If someone has worked at AWS, Facebook, etc - that's a sign they've passed a pretty rigorous and competitive interview process and are likely talented.
+If someone has worked at AWS, Facebook, etc - that's a sign they've passed a competitive interview process and are talented.
 
-If they've only ever worked in government roles or large consultancies, they may not be the best cultural fit for us.
+Experience in low-bureaucracy, high-paced start ups and scale ups is also a good signal.
 
+If they've only ever worked in government roles, big banks, or large consultancies, they may not be the best cultural fit for us.
 
-### No typos!
+### No Errors!
 
-If there's a typo in your resume, I'll assume you don't test well.
+If there's a typo in your resume, or your portfolio links to an expired domain, I'll assume you don't test well.
 
 ## What I look for at each level
 
@@ -72,8 +73,8 @@ Below are the tell-tale signs of such people, at each level.
 
 In priority order:
 
-1. **Projects, projects, projects.** Put them live on the web and link to them. Make them novel and varied. Go beyond a basic portfolio site. I've got 30 junior resumes to screen. Make your projects immediately stand out as the best.
-1. **Great grades.** Distinction or higher. If you're on the Dean's List, you're instantly worth a call.
+1. **Projects, projects, projects.** Put them live on the web and link to them. Make them novel and varied. Go beyond a basic portfolio site or 'ecommerce store tutorial'. I've got 30 junior resumes to screen. Make your projects immediately stand out as the best. And make it clear you love to code, and learn. You'll need to do a lot of both!
+2. **Great grades.** Distinction or higher. If you're on the Dean's List, you're instantly worth a call.
 
 
 ### Mids
@@ -84,8 +85,8 @@ Specific deliverables, clear growth trajectory. What have you done that other mi
 “Delivered frontend for the booking calendar” is ok.
 “Scoped, implemented and tested a new calendar UX that increased booking rate by 8%” is much better. Bonus points for a particular challenge you solved on the way.
 1. **Growth and initiative**. Have you taken on increasingly complex challenges? Mentored juniors? Driven cross-team projects? Identified and pushed forward fundamental engineering improvements - eg. to tooling, testing, architecture?
-1. **Some depth, not just breadth**. By now, you've surely had a chance to dive deep on some area (e.g. performance, developer experience, security, analytics). Talk about it.
-1. **Narrative coherence**. Your resume should tell a story of consistent growth. Jumping between too many roles or companies every 6–12 months can hurt unless it’s clearly explained.
+1. **Some depth, not just breadth**. By now, you've surely had a chance to dive deep on some area (e.g. frontend performance, build tools, database indexing, etc). Talk about it.
+2. **Narrative coherence**. Your resume should tell a story of consistent growth. Jumping between roles or companies every 6–12 months can hurt unless it’s clearly explained. A promotion at the same role is higher signal than a promotion through role change.
 
 ### Seniors
 
