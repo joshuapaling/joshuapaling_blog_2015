@@ -31,16 +31,146 @@
   <id>http://blog.url.com/</id>
   <link href="http://blog.url.com/"/>
   <link href="http://blog.url.com/feed.xml" rel="self"/>
-  <updated>2025-08-08T10:00:00+10:00</updated>
+  <updated>2025-09-03T10:00:00+10:00</updated>
   <author>
     <name>Joshua Paling</name>
   </author>
+  <entry>
+    <title>Are LLMs Safe? Busting the Myth of "LLM Superstition"</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2025/09/03/llm-superstition.html"/>
+    <id>http://blog.url.com/blog/2025/09/03/llm-superstition.html</id>
+    <published>2025-09-03T10:00:00+10:00</published>
+    <updated>2025-09-03T21:31:09+10:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;One of the best ways to hamstring your organisation in this AI era is to fall victim to what I call &lt;strong&gt;“LLM superstition.”&lt;/strong&gt; It’s the belief that large language models are uniquely unsafe; that info you put into ChatGPT might be regurgitated in a recognisable form in a colleague’s ChatGPT session - or worse, externally to your org. It reveals a &lt;strong&gt;fundamental misunderstandings&lt;/strong&gt; of how LLMs work.&lt;/p&gt;
+
+&lt;p&gt;Failing to squash such superstition doesn’t avoid risk, but it does avoid opportunity. It’s on technical leaders to set the culture straight in their org.&lt;/p&gt;
+
+&lt;h2 id="training-vs-inference"&gt;Training vs Inference&lt;/h2&gt;
+
+&lt;p&gt;The biggest misunderstanding is conflating &lt;strong&gt;training&lt;/strong&gt; with &lt;strong&gt;inference&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Training:&lt;/strong&gt; The provider builds a model using large, curated datasets. This happens offline and produces a fixed set of weights, which explains why the model has a “knowledge cutoff.”&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Inference:&lt;/strong&gt; This is simply using the finished model. You send a prompt, it generates an output. Inference just means ‘generating a response’. It does not update the model or add your input back into training.&lt;/p&gt;
+
+&lt;p&gt;During inference, models don’t spontaneously regurgitate arbitrary training data. They may reproduce very common text (e.g., Martin Luther King’s “I Have a Dream” speech) because it’s so frequent in the training data. But unique, private text (like your personal emails) won’t appear unless it was already in the training set. Even then, providers work to prevent rare “memorization” from leaking.&lt;/p&gt;
+
+&lt;p&gt;A model can be trained on any text. In theory, Google could train a model exclusively on personal emails they’ve legally agreed not to share. In practice, that would be career-ending malpractice. Reputable providers are bound by contracts, law, and hard-won trust. And, by really, really big fines when they get it wrong.&lt;/p&gt;
+
+&lt;p&gt;Think you don’t trust Big Tech? If you’re already using Slack, WhatsApp, Gmail, iPhones, and Amazon, you do. LLMs don’t add a new risk vector — they live inside the same trust framework you’ve been relying on for years.&lt;/p&gt;
+
+&lt;h2 id="what-providers-could-do-vs-what-they-actually-do"&gt;What Providers &lt;em&gt;Could&lt;/em&gt; Do vs What They Actually Do&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Scenario (in theory)&lt;/th&gt;
+      &lt;th&gt;Reality (in practice)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Train on &lt;strong&gt;any text&lt;/strong&gt; they can technically access — e.g. your personal Gmail inbox.&lt;/td&gt;
+      &lt;td&gt;That would be &lt;strong&gt;career-ending malpractice&lt;/strong&gt;. Providers are bound by contracts and laws that are very expensive to violate.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Secretly mix in &lt;strong&gt;customer data&lt;/strong&gt; from enterprise products (emails, docs, chats).&lt;/td&gt;
+      &lt;td&gt;Enterprise agreements explicitly forbid this. Customer data is &lt;strong&gt;not used for training&lt;/strong&gt;.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Collect prompts at inference time and quietly add them into the model weights.&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Inference does not update model weights.&lt;/strong&gt; Enterprise logs are separate, encrypted, and often zero-retention.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Use &lt;strong&gt;private, contractually protected data&lt;/strong&gt; to boost accuracy without disclosure.&lt;/td&gt;
+      &lt;td&gt;Providers train on licensed datasets, public web, or opt-in corpora. Private data is &lt;strong&gt;off-limits&lt;/strong&gt;.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Hope no one notices if private data leaks out verbatim during inference.&lt;/td&gt;
+      &lt;td&gt;Providers actively &lt;strong&gt;test for “memorization”&lt;/strong&gt; and filter outputs to prevent leakage of rare/private data.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;👉 The superstition says: &lt;em&gt;“Maybe they’re secretly training on my stuff.”&lt;/em&gt;&lt;br /&gt;
+✅ The reality is: providers know that crossing that line would destroy their credibility, violate contracts, and invite regulators with eye-watering fines.&lt;/p&gt;
+
+&lt;h2 id="myth-vs-reality-does-chatgpt-learn-from-my-chats"&gt;Myth vs Reality: Does ChatGPT Learn From My Chats?&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Myth:&lt;/strong&gt;&lt;br /&gt;
+When I type something into ChatGPT, the model is instantly “learning” from me and updating itself. My private data could leak back out in someone else’s next answer.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Reality:&lt;/strong&gt;&lt;br /&gt;
+ChatGPT doesn’t learn in real time. The model weights are frozen during inference.&lt;br /&gt;
+- In the &lt;strong&gt;free/Plus product&lt;/strong&gt;, your chats &lt;em&gt;may&lt;/em&gt; be saved and later reviewed to help improve future models — unless you turn off history in settings.&lt;br /&gt;
+- In &lt;strong&gt;Enterprise or API use&lt;/strong&gt;, your prompts and outputs are &lt;strong&gt;never used for training&lt;/strong&gt; by default.&lt;/p&gt;
+
+&lt;p&gt;There’s an important distinction though: &lt;strong&gt;Chat history&lt;/strong&gt; is a feature that lets ChatGPT remember your past conversations &lt;em&gt;with you&lt;/em&gt; so it can give more personalized responses (like recalling your preferences or previous context). That memory is only available to &lt;em&gt;you&lt;/em&gt; in your account. It’s not the same as retraining the model, and it doesn’t affect what anyone else sees.&lt;/p&gt;
+
+&lt;p&gt;And here’s the nuance: even when your chats &lt;em&gt;are&lt;/em&gt; used in future training runs (in the consumer product), the risk of those details showing up elsewhere is &lt;strong&gt;extremely low&lt;/strong&gt;. Why?&lt;br /&gt;
+1. &lt;strong&gt;Scale of training data:&lt;/strong&gt; Models are trained on billions of tokens. Your individual chat is a grain of sand in a desert.&lt;br /&gt;
+2. &lt;strong&gt;Generalisation over memorisation:&lt;/strong&gt; Training is designed to capture &lt;em&gt;patterns&lt;/em&gt;, not rote memorisation. Unless text is common and widely published, it won’t resurface verbatim.&lt;br /&gt;
+3. &lt;strong&gt;Safety filters:&lt;/strong&gt; Providers test for and actively suppress memorisation of rare, unique strings (like secrets or personal details).&lt;/p&gt;
+
+&lt;p&gt;👉 What feels like “live learning” is just the model generating from patterns it already knows — not secretly retraining on your inputs. And even in the free version, where chats may help improve future models, the odds of your private details being regurgitated are vanishingly small.&lt;/p&gt;
+
+&lt;h2 id="chatgpt-vs-a-slack-message--more-similar-than-youd-think"&gt;ChatGPT vs a Slack message — more similar than you’d think&lt;/h2&gt;
+
+&lt;p&gt;Here’s the step-by-step of how a Slack message flows, then the same for an LLM request. You’ll see the bones are the same: encrypt → transmit → process → (optional) store → access under policy. LLMs use the same protocols, ciphers, and internet plumbing you already rely on every day.&lt;/p&gt;
+
+&lt;h3 id="slack-message-step-by-step"&gt;Slack message: step-by-step&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;1.	Compose: You type a message in the Slack client.
+2.	Encrypt-in-transit: The client sends it over HTTPS/TLS to Slack’s servers.
+3.	Authenticate/authorise: Your identity (SSO/OAuth/cookies) is checked; workspace and channel ACLs are applied.
+4.	Process: Backend services (running on CPUs) validate payloads, apply retention/DLP rules, thread routing, notifications.
+5.	Store (optional by policy): The message is written to a database and search index, encrypted at rest.
+6.	Deliver: Other clients fetch the message over TLS, render it, and update unread counts.
+7.	Operate: Logs/metrics are captured; admins can audit according to workspace policy.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id="llm-request-eg-chatgptapi-step-by-step"&gt;LLM request (e.g., ChatGPT/API): step-by-step&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;1.	Compose: You enter a prompt in the UI or send an API call.
+2.	Encrypt-in-transit: The client sends it over HTTPS/TLS to the provider endpoint.
+3.	Authenticate/authorise: API key/SSO is checked; org/workspace, usage limits, and feature flags are applied.
+4.	Process (stateless inference):
+•	The request hits a model gateway that validates input size, model selection, and safety settings.
+•	The prompt is fed to a running model on GPU/TPU (or CPU for small models).
+•	Important: at inference, the model does not update its weights with your prompt.
+5.	Store (configurable):
+•	Zero/limited retention options may avoid writing prompts/outputs to disk entirely.
+•	If enabled, conversation logs/metadata go to a database encrypted at rest for troubleshooting/product analytics; training usage is policy-controlled.
+6.	Deliver: The generated output is returned over TLS to the client.
+7.	Operate: Observability, safety filters (e.g., PII redaction/toxicity), rate limits, and audit logs run per your policy.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="the-same-protections-you-already-trust"&gt;The Same Protections You Already Trust&lt;/h2&gt;
+
+&lt;p&gt;LLM requests and responses travel over &lt;strong&gt;HTTPS/TLS&lt;/strong&gt;—the same encryption standards that protect banking sites, email, Jira, Slack, and Teams.
+They’re processed by CPUs and GPUs - the same things that process every other computational operation you perform, every day.
+When logs or chat history are stored, they’re stored in databases - the same tech that stores your emails, slack messages, banking records, and everything else you trust online, every day.&lt;/p&gt;
+
+&lt;p&gt;LLMs don’t introduce alien categories of risk. They slot into the same security model as your existing tools.&lt;/p&gt;
+
+&lt;h2 id="are-there-any-llm-specific-risks"&gt;Are There Any LLM-Specific Risks?&lt;/h2&gt;
+
+&lt;p&gt;Sure - &lt;em&gt;different&lt;/em&gt;, not necessarily &lt;em&gt;greater&lt;/em&gt;. Blindly trusting output is a risk. Letting ChatGPT interact with other programs on your computer, and not checking what it’s doing is a risk. A rogue driver behind the wheel is a risk, just like it is with slack, email, etc.&lt;/p&gt;
+
+&lt;h2 id="what-about-complex-agentic-systems-with-mpc-servers-etc"&gt;What about complex agentic systems with MPC servers etc&lt;/h2&gt;
+
+&lt;p&gt;Once you move away from the stock-standard chat tools like ChatGPT or Perplexity, and get into the world of custom-coded agentic workflows, MCP servers, etc - you get into different territory. But still, that “different territory” isn’t new, unique risk. It’s just the same old territory of designing a complex software system with many interacting sub-components, and ensuring it’s secure.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>What I look for in a resume</title>
     <link rel="alternate" href="http://blog.url.com/blog/2025/08/08/resumes.html"/>
     <id>http://blog.url.com/blog/2025/08/08/resumes.html</id>
     <published>2025-08-08T10:00:00+10:00</published>
-    <updated>2025-08-09T15:34:32+10:00</updated>
+    <updated>2025-09-03T20:04:50+10:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -100,9 +230,17 @@ Other times, there’s many roles to fill. In that case, you want to highlight c
 
 &lt;p&gt;🟢 Good. Focus on what you personally are best at, what’s the core of the stack, and what differentiates you from other engineers.&lt;/p&gt;
 
-&lt;h3 id="no-typos"&gt;No typos!&lt;/h3&gt;
+&lt;h3 id="companies"&gt;Companies&lt;/h3&gt;
 
-&lt;p&gt;If there’s a typo in your resume, I’ll assume you don’t test well.&lt;/p&gt;
+&lt;p&gt;If someone has worked at AWS, Facebook, etc - that’s a sign they’ve passed a competitive interview process and are talented.&lt;/p&gt;
+
+&lt;p&gt;Experience in low-bureaucracy, high-paced start ups and scale ups is also a good signal.&lt;/p&gt;
+
+&lt;p&gt;If they’ve only ever worked in government roles, big banks, or large consultancies, they may not be the best cultural fit for us.&lt;/p&gt;
+
+&lt;h3 id="no-errors"&gt;No Errors!&lt;/h3&gt;
+
+&lt;p&gt;If there’s a typo in your resume, or your portfolio links to an expired domain, I’ll assume you don’t test well.&lt;/p&gt;
 
 &lt;h2 id="what-i-look-for-at-each-level"&gt;What I look for at each level&lt;/h2&gt;
 
@@ -115,7 +253,7 @@ Other times, there’s many roles to fill. In that case, you want to highlight c
 &lt;p&gt;In priority order:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Projects, projects, projects.&lt;/strong&gt; Put them live on the web and link to them. Make them novel and varied. Go beyond a basic portfolio site. I’ve got 30 junior resumes to screen. Make your projects immediately stand out as the best.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Projects, projects, projects.&lt;/strong&gt; Put them live on the web and link to them. Make them novel and varied. Go beyond a basic portfolio site or ‘ecommerce store tutorial’. I’ve got 30 junior resumes to screen. Make your projects immediately stand out as the best. And make it clear you love to code, and learn. You’ll need to do a lot of both!&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Great grades.&lt;/strong&gt; Distinction or higher. If you’re on the Dean’s List, you’re instantly worth a call.&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -128,8 +266,8 @@ Other times, there’s many roles to fill. In that case, you want to highlight c
 “Delivered frontend for the booking calendar” is ok.
 “Scoped, implemented and tested a new calendar UX that increased booking rate by 8%” is much better. Bonus points for a particular challenge you solved on the way.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Growth and initiative&lt;/strong&gt;. Have you taken on increasingly complex challenges? Mentored juniors? Driven cross-team projects? Identified and pushed forward fundamental engineering improvements - eg. to tooling, testing, architecture?&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Some depth, not just breadth&lt;/strong&gt;. By now, you’ve surely had a chance to dive deep on some area (e.g. performance, developer experience, security, analytics). Talk about it.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Narrative coherence&lt;/strong&gt;. Your resume should tell a story of consistent growth. Jumping between too many roles or companies every 6–12 months can hurt unless it’s clearly explained.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Some depth, not just breadth&lt;/strong&gt;. By now, you’ve surely had a chance to dive deep on some area (e.g. frontend performance, build tools, database indexing, etc). Talk about it.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Narrative coherence&lt;/strong&gt;. Your resume should tell a story of consistent growth. Jumping between roles or companies every 6–12 months can hurt unless it’s clearly explained. A promotion at the same role is higher signal than a promotion through role change.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h3 id="seniors"&gt;Seniors&lt;/h3&gt;
@@ -177,41 +315,6 @@ Other times, there’s many roles to fill. In that case, you want to highlight c
 </content>
   </entry>
   <entry>
-    <title>Every New Hire Must Raise the Bar</title>
-    <link rel="alternate" href="http://blog.url.com/blog/2021/05/26/some-management-lessons.html"/>
-    <id>http://blog.url.com/blog/2021/05/26/some-management-lessons.html</id>
-    <published>2021-05-26T10:00:00+10:00</published>
-    <updated>2021-06-21T11:58:31+10:00</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;Just a few personal lessons here, recording for my own reference.&lt;/p&gt;
-
-&lt;h2 id="set-an-extremely-high-bar-on-hiring"&gt;Set an extremely high bar on hiring&lt;/h2&gt;
-
-&lt;p&gt;Hiring is the most important thing you do as a manager. And every new hire must raise the bar. They must make the whole team better. This is an &lt;a href="https://www.aboutamazon.com/news/workplace/hire-power-how-amazonians-raise-the-bar-with-every-interview"&gt;Amazon principle&lt;/a&gt;, but it’s universally applicable.&lt;/p&gt;
-
-&lt;p&gt;If you’re unsure, pass on the candidate, or add an extra interview step to provide more certainty. Hire only when you’re very confident that this candidate will be a bar-raiser.&lt;/p&gt;
-
-&lt;p&gt;When a good hire joins, it raises morale and productivity across the whole team. Likewise, a bad hire is a wet blanket on the whole team.&lt;/p&gt;
-
-&lt;h2 id="own-your-bad-hiring-decisions"&gt;Own your bad hiring decisions&lt;/h2&gt;
-
-&lt;p&gt;You’ll make some. Hopefully not many, if your bar is high enough. But when you do, own it. They must be given direct, specific feedback, very quickly. If they can’t turn around quickly, you must let them go within their probation period. The question to ask, regularly throughout the probation, is “if I could just re-wind time, would I hire them again?” If the answer’s no, they can’t pass probation.&lt;/p&gt;
-
-&lt;p&gt;Letting someone go sux for everyone - you, your team, and most of all, the person being fired. If you’re doing it more than “very rarely”, it means your hiring bar isn’t high enough. You still must do it! But raise your bar to prevent it in future.&lt;/p&gt;
-
-&lt;h2 id="create-a-strong-feedback-culture"&gt;Create a strong feedback culture&lt;/h2&gt;
-
-&lt;p&gt;Not just for new hires, but for everyone. If a manager has negative feedback for a report, it must be delivered quickly. Don’t wait for next performance review. And usually, don’t wait for next 1:1. The feedback must be direct, specific, empathetic, and framed in the best way to allow the report to quickly change and grow.&lt;/p&gt;
-
-&lt;p&gt;You must lead by example on delivering feedback to this standard; culture filters down from the top. It’s scary at first, but most people - either immediately, or at least later upon reflection - appreciate the honesty and opportunity to improve.&lt;/p&gt;
-
-&lt;p&gt;Likewise, positive feedback is easy to forget about (if everything’s going well, no need for feedback, right?). But it’s equally important. Positive feedback must be specific and heartfelt. “You’re doing a great job” isn’t good enough - what exact thing are they doing well, and what good outcome is it creating? Why do you truly appreciate them doing it? Let them know - and usually, do it in a public channel so they know the team is aware of their effort, and so the team knows what “doing a great job” looks like to you.&lt;/p&gt;
-
-</content>
-  </entry>
-  <entry>
     <title>Hiring Offshore</title>
     <link rel="alternate" href="http://blog.url.com/blog/2021/05/26/hiring-offshore.html"/>
     <id>http://blog.url.com/blog/2021/05/26/hiring-offshore.html</id>
@@ -249,6 +352,41 @@ Other times, there’s many roles to fill. In that case, you want to highlight c
 &lt;p&gt;Because they’re cheaper, because they’re not permanent / direct employees, and because they &lt;em&gt;feel&lt;/em&gt; further removed, it’s tempting to give off-shore hires second-class service as a manager. “I know they’re blocked… but I’m busy, I’ll get to it in a few hours” or “Doesn’t matter if it takes twice as long; they’re half the cost anyway”.&lt;/p&gt;
 
 &lt;p&gt;Don’t. Apart from being a shitty thing to do, there’s a big opportunity cost in leaving good developers un-supported. As much as reasonable, give your off-shore teams the same level of support and service as your on-shore teams.&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Every New Hire Must Raise the Bar</title>
+    <link rel="alternate" href="http://blog.url.com/blog/2021/05/26/some-management-lessons.html"/>
+    <id>http://blog.url.com/blog/2021/05/26/some-management-lessons.html</id>
+    <published>2021-05-26T10:00:00+10:00</published>
+    <updated>2021-06-21T11:58:31+10:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;Just a few personal lessons here, recording for my own reference.&lt;/p&gt;
+
+&lt;h2 id="set-an-extremely-high-bar-on-hiring"&gt;Set an extremely high bar on hiring&lt;/h2&gt;
+
+&lt;p&gt;Hiring is the most important thing you do as a manager. And every new hire must raise the bar. They must make the whole team better. This is an &lt;a href="https://www.aboutamazon.com/news/workplace/hire-power-how-amazonians-raise-the-bar-with-every-interview"&gt;Amazon principle&lt;/a&gt;, but it’s universally applicable.&lt;/p&gt;
+
+&lt;p&gt;If you’re unsure, pass on the candidate, or add an extra interview step to provide more certainty. Hire only when you’re very confident that this candidate will be a bar-raiser.&lt;/p&gt;
+
+&lt;p&gt;When a good hire joins, it raises morale and productivity across the whole team. Likewise, a bad hire is a wet blanket on the whole team.&lt;/p&gt;
+
+&lt;h2 id="own-your-bad-hiring-decisions"&gt;Own your bad hiring decisions&lt;/h2&gt;
+
+&lt;p&gt;You’ll make some. Hopefully not many, if your bar is high enough. But when you do, own it. They must be given direct, specific feedback, very quickly. If they can’t turn around quickly, you must let them go within their probation period. The question to ask, regularly throughout the probation, is “if I could just re-wind time, would I hire them again?” If the answer’s no, they can’t pass probation.&lt;/p&gt;
+
+&lt;p&gt;Letting someone go sux for everyone - you, your team, and most of all, the person being fired. If you’re doing it more than “very rarely”, it means your hiring bar isn’t high enough. You still must do it! But raise your bar to prevent it in future.&lt;/p&gt;
+
+&lt;h2 id="create-a-strong-feedback-culture"&gt;Create a strong feedback culture&lt;/h2&gt;
+
+&lt;p&gt;Not just for new hires, but for everyone. If a manager has negative feedback for a report, it must be delivered quickly. Don’t wait for next performance review. And usually, don’t wait for next 1:1. The feedback must be direct, specific, empathetic, and framed in the best way to allow the report to quickly change and grow.&lt;/p&gt;
+
+&lt;p&gt;You must lead by example on delivering feedback to this standard; culture filters down from the top. It’s scary at first, but most people - either immediately, or at least later upon reflection - appreciate the honesty and opportunity to improve.&lt;/p&gt;
+
+&lt;p&gt;Likewise, positive feedback is easy to forget about (if everything’s going well, no need for feedback, right?). But it’s equally important. Positive feedback must be specific and heartfelt. “You’re doing a great job” isn’t good enough - what exact thing are they doing well, and what good outcome is it creating? Why do you truly appreciate them doing it? Let them know - and usually, do it in a public channel so they know the team is aware of their effort, and so the team knows what “doing a great job” looks like to you.&lt;/p&gt;
+
 </content>
   </entry>
   <entry>
@@ -294,78 +432,6 @@ Other times, there’s many roles to fill. In that case, you want to highlight c
   &lt;li&gt;If someone posts in the #support slack channel after business hours, auto-respond with instructions on how to alert the on-call staff.&lt;/li&gt;
   &lt;li&gt;When releasing a significant feature outside of business hours, document a rollback plan and communicate it with on-call staff&lt;/li&gt;
 &lt;/ul&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Data imports done right</title>
-    <link rel="alternate" href="http://blog.url.com/blog/2016/12/22/data-imports-done-right.html"/>
-    <id>http://blog.url.com/blog/2016/12/22/data-imports-done-right.html</id>
-    <published>2016-12-22T11:00:00+11:00</published>
-    <updated>2021-05-26T19:06:31+10:00</updated>
-    <author>
-      <name>Article Author</name>
-    </author>
-    <content type="html">&lt;p&gt;I’ve been bitten more than once by data imports consuming an unreasonable amount of time in software projects. Here are some lessons.&lt;/p&gt;
-
-&lt;h2 id="know-what-to-expect"&gt;Know what to expect&lt;/h2&gt;
-
-&lt;p&gt;The client (or whoever is sourcing the data) will give you poor quality data from disparate sources, and they’ll drip-feed it over a period of way-too-long. Each version will be in a slightly different format. They’ll say “just get started with this” then want a complete re-do with fresh data later. They’ll give you the final copy, then the actual final copy, then the final FINAL copy. Eventually, you’ll get the real actual final renamed FINAL CONFIRMED copy. A few months after going live, they’ll want to import a bit more data that they forgot about the first time round. Expect this.&lt;/p&gt;
-
-&lt;p&gt;You will end up running your import scripts countless times, with dozens of variations in the data format supplied by the client.&lt;/p&gt;
-
-&lt;h2 id="know-how-to-deal-with-it"&gt;Know how to deal with it&lt;/h2&gt;
-
-&lt;h3 id="your-import-scripts-should-be-production-level-code"&gt;Your import scripts should be production level code&lt;/h3&gt;
-
-&lt;p&gt;You and your team will run them enough to make this MORE than worth it. Write unit tests. Have tests for each edge case. Name them well. Where there’s cheap performance wins, take them. Commit them to the codebase with the expectation that they’ll live there for several months, minimum, and be used countless times.&lt;/p&gt;
-
-&lt;h3 id="your-import-scripts-should-be-easily-re-runnable"&gt;Your import scripts should be easily re-runnable&lt;/h3&gt;
-
-&lt;p&gt;You should be able to re-run them with a single command — ./import.sh or whatever. You should not have to manually delete or otherwise wrangle around with data in the database, or csv files, or anything else, before re-running.&lt;/p&gt;
-
-&lt;p&gt;Your import scripts should take care of either: deleting all data before they re-run, or running in an idempotent kinda way so on the second run through, they’ll update the same existing record if it exists, rather than adding a duplicate.&lt;/p&gt;
-
-&lt;h2 id="your-app-primarily-your-database-schema-should-dictate-the-data-format-for-imports"&gt;Your app (primarily your database schema) should dictate the data format for imports&lt;/h2&gt;
-
-&lt;p&gt;When the client gives you a messy spreadsheet, it’s easy to think: “That’s Ok, I’ll write script that loops over this, untangles it, and imports it directly to the database”.&lt;/p&gt;
-
-&lt;p&gt;Don’t do this. Don’t let the mess of spreadsheets you’re provided with dictate the data formats used by your import scripts. Imagine if the app was in production and the client wanted a page where they could upload a CSV of additional data at any time, and expect to get understandable errors when data didn’t match the expected format. You’d have to dictate the format of the CSV. What would you ideally dictate? That’s the format your inport scripts should use.&lt;/p&gt;
-
-&lt;p&gt;This requires a little more thought and effort up front on your part, but it pays back in the long run.&lt;/p&gt;
-
-&lt;p&gt;If you have to deal with a dirty spreadsheet of data, the approach should be to write a (possibly dirty, throw-away) script to transform that data into the format your app expects (ie, a format closely matching your app’s database schema), then import the transformed data using your nice, production quality code.&lt;/p&gt;
-
-&lt;p&gt;Alternatively, don’t write script to transform messy data, and just tell the client: “This data isn’t in a suitable format. Here’s a template CSV with the headers we expect. Fill that out and send it back”.&lt;/p&gt;
-
-&lt;h3 id="you-mostly-want-one-import-per-table-as-the-database-schema-changes-modify-existing-scripts-dont-add-new-ones"&gt;You mostly want one import per table. As the database schema changes, modify existing scripts; don’t add new ones.&lt;/h3&gt;
-
-&lt;p&gt;Let’s say a client wants to give you data about restaurants. They have the restaurant names now — but will give you the addresses later. So, create a restaurants import script that handles just names now. Later, modify that same script to handle both names and addresses. Don’t create a second restaurant_addresses import script later. One script per table, modify it as the schema for that table changes.&lt;/p&gt;
-
-&lt;p&gt;Ideally, when the client says “I have the addresses data now”, you say “great — add it to this spreadsheet which already contains the names, and empty columns for the address data, then send that spreadsheet back to me”. Of course, since your expected CSV format closely matches your database schema, it’ll be easy to export a CSV of existing data using your favourite RDBMS client.&lt;/p&gt;
-
-&lt;h3 id="know-whos-responsible-for-providing-clean-data"&gt;Know who’s responsible for providing clean data&lt;/h3&gt;
-
-&lt;p&gt;In almost all cases, the ultimate responsibility of providing clean data (or cleaning up bad data) should lie with the client. That should be clear in writing prior to starting the job.&lt;/p&gt;
-
-&lt;p&gt;Ideally, the job of getting that clean data into the most convenient format for your app should also lie with the client — that is, you should be able to say “here’s how the app’s import scripts expect the data to look”, and they’ll provide you data looking like that.&lt;/p&gt;
-
-&lt;p&gt;Both the above steps (getting clean data, and formatting it) ALWAYS take WAY longer than expected. So avoid those responsibilities if you can.&lt;/p&gt;
-
-&lt;p&gt;Of course, in practice, you’ll cut the client some slack and sometimes tidy up data for them. But having it clear in writing that cleaning and formatting data is their responsibility means after the 20th iteration of being provided unsuitable data, you can say “Stop! Get us clean data, and then we’ll continue. Or, pay us extra for cleaning up dirty data, because that work is outside scope.”&lt;/p&gt;
-
-&lt;h3 id="dont-be-too-preoccupied-with-getting-real-data-in-your-app-early-on"&gt;Don’t be too preoccupied with getting “real” data in your app early on&lt;/h3&gt;
-
-&lt;p&gt;It’s tempting to jump the gun and get “real” data in your app to make your dev or staging environment feel more complete or realistic, even when the data you’ve been provided so far is a messy, inconsistent or incomplete. Avoid this temptation.&lt;/p&gt;
-
-&lt;p&gt;The danger here is that every time you find a bug in the app, you’re never sure wether it’s a result of bad code, or bad data. Sticking to a smaller subset of “non-real” but clean, correct, consistent data ensures that when you do have a bug, you can be a lot more confident that the codebase, not the database, is where you should be trying to fix it.&lt;/p&gt;
-
-&lt;p&gt;Always make every effort to avoid having any inconsistent / incomplete data, even in the early stages of development / prototyping.&lt;/p&gt;
-
-&lt;p&gt;Maintain a small but complete and consistent subset of data that you can use for development, until ALL of the real data becomes available.&lt;/p&gt;
-
-&lt;h2 id="overestimate"&gt;Overestimate&lt;/h2&gt;
-
-&lt;p&gt;Often the advice for estimating software projects is “decide how long you think it’ll take, then double it”. For data imports, multiplying by 4, or negotiating to do that part of the project hourly rather than fixed cost, is a safer bet.&lt;/p&gt;
 </content>
   </entry>
 </feed>

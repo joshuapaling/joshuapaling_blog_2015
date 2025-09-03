@@ -1,0 +1,174 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+  <title>Joshua Paling  - Are LLMs Safe? Busting the Myth of "LLM Superstition"</title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+  <link href="../../../../stylesheets/application-3a039e88.css" rel="stylesheet" />
+  <script src="../../../../javascripts/application-547ab8eb.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+  <div class="page-wrapper">
+    <header>
+      <h1>Joshua Paling</h1>
+      <nav>
+        <a class="active" href="/">Blog</a>
+        <a class="" href="/about.html">About</a>
+        <a class="" href="/resume.html">Resume</a>
+        <a href="../../../../feed.xml">RSS</a>
+        <a target="_blank" href="https://twitter.com/joshuapaling">@joshuapaling</a>
+      </nav>
+    </header>
+
+
+<h1>Are LLMs Safe? Busting the Myth of "LLM Superstition"</h1>
+<p>One of the best ways to hamstring your organisation in this AI era is to fall victim to what I call <strong>“LLM superstition.”</strong> It’s the belief that large language models are uniquely unsafe; that info you put into ChatGPT might be regurgitated in a recognisable form in a colleague’s ChatGPT session - or worse, externally to your org. It reveals a <strong>fundamental misunderstandings</strong> of how LLMs work.</p>
+
+<p>Failing to squash such superstition doesn’t avoid risk, but it does avoid opportunity. It’s on technical leaders to set the culture straight in their org.</p>
+
+<h2 id="training-vs-inference">Training vs Inference</h2>
+
+<p>The biggest misunderstanding is conflating <strong>training</strong> with <strong>inference</strong>.</p>
+
+<p><strong>Training:</strong> The provider builds a model using large, curated datasets. This happens offline and produces a fixed set of weights, which explains why the model has a “knowledge cutoff.”</p>
+
+<p><strong>Inference:</strong> This is simply using the finished model. You send a prompt, it generates an output. Inference just means ‘generating a response’. It does not update the model or add your input back into training.</p>
+
+<p>During inference, models don’t spontaneously regurgitate arbitrary training data. They may reproduce very common text (e.g., Martin Luther King’s “I Have a Dream” speech) because it’s so frequent in the training data. But unique, private text (like your personal emails) won’t appear unless it was already in the training set. Even then, providers work to prevent rare “memorization” from leaking.</p>
+
+<p>A model can be trained on any text. In theory, Google could train a model exclusively on personal emails they’ve legally agreed not to share. In practice, that would be career-ending malpractice. Reputable providers are bound by contracts, law, and hard-won trust. And, by really, really big fines when they get it wrong.</p>
+
+<p>Think you don’t trust Big Tech? If you’re already using Slack, WhatsApp, Gmail, iPhones, and Amazon, you do. LLMs don’t add a new risk vector — they live inside the same trust framework you’ve been relying on for years.</p>
+
+<h2 id="what-providers-could-do-vs-what-they-actually-do">What Providers <em>Could</em> Do vs What They Actually Do</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Scenario (in theory)</th>
+      <th>Reality (in practice)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Train on <strong>any text</strong> they can technically access — e.g. your personal Gmail inbox.</td>
+      <td>That would be <strong>career-ending malpractice</strong>. Providers are bound by contracts and laws that are very expensive to violate.</td>
+    </tr>
+    <tr>
+      <td>Secretly mix in <strong>customer data</strong> from enterprise products (emails, docs, chats).</td>
+      <td>Enterprise agreements explicitly forbid this. Customer data is <strong>not used for training</strong>.</td>
+    </tr>
+    <tr>
+      <td>Collect prompts at inference time and quietly add them into the model weights.</td>
+      <td><strong>Inference does not update model weights.</strong> Enterprise logs are separate, encrypted, and often zero-retention.</td>
+    </tr>
+    <tr>
+      <td>Use <strong>private, contractually protected data</strong> to boost accuracy without disclosure.</td>
+      <td>Providers train on licensed datasets, public web, or opt-in corpora. Private data is <strong>off-limits</strong>.</td>
+    </tr>
+    <tr>
+      <td>Hope no one notices if private data leaks out verbatim during inference.</td>
+      <td>Providers actively <strong>test for “memorization”</strong> and filter outputs to prevent leakage of rare/private data.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>👉 The superstition says: <em>“Maybe they’re secretly training on my stuff.”</em><br />
+✅ The reality is: providers know that crossing that line would destroy their credibility, violate contracts, and invite regulators with eye-watering fines.</p>
+
+<h2 id="myth-vs-reality-does-chatgpt-learn-from-my-chats">Myth vs Reality: Does ChatGPT Learn From My Chats?</h2>
+
+<p><strong>Myth:</strong><br />
+When I type something into ChatGPT, the model is instantly “learning” from me and updating itself. My private data could leak back out in someone else’s next answer.</p>
+
+<p><strong>Reality:</strong><br />
+ChatGPT doesn’t learn in real time. The model weights are frozen during inference.<br />
+- In the <strong>free/Plus product</strong>, your chats <em>may</em> be saved and later reviewed to help improve future models — unless you turn off history in settings.<br />
+- In <strong>Enterprise or API use</strong>, your prompts and outputs are <strong>never used for training</strong> by default.</p>
+
+<p>There’s an important distinction though: <strong>Chat history</strong> is a feature that lets ChatGPT remember your past conversations <em>with you</em> so it can give more personalized responses (like recalling your preferences or previous context). That memory is only available to <em>you</em> in your account. It’s not the same as retraining the model, and it doesn’t affect what anyone else sees.</p>
+
+<p>And here’s the nuance: even when your chats <em>are</em> used in future training runs (in the consumer product), the risk of those details showing up elsewhere is <strong>extremely low</strong>. Why?<br />
+1. <strong>Scale of training data:</strong> Models are trained on billions of tokens. Your individual chat is a grain of sand in a desert.<br />
+2. <strong>Generalisation over memorisation:</strong> Training is designed to capture <em>patterns</em>, not rote memorisation. Unless text is common and widely published, it won’t resurface verbatim.<br />
+3. <strong>Safety filters:</strong> Providers test for and actively suppress memorisation of rare, unique strings (like secrets or personal details).</p>
+
+<p>👉 What feels like “live learning” is just the model generating from patterns it already knows — not secretly retraining on your inputs. And even in the free version, where chats may help improve future models, the odds of your private details being regurgitated are vanishingly small.</p>
+
+<h2 id="chatgpt-vs-a-slack-message--more-similar-than-youd-think">ChatGPT vs a Slack message — more similar than you’d think</h2>
+
+<p>Here’s the step-by-step of how a Slack message flows, then the same for an LLM request. You’ll see the bones are the same: encrypt → transmit → process → (optional) store → access under policy. LLMs use the same protocols, ciphers, and internet plumbing you already rely on every day.</p>
+
+<h3 id="slack-message-step-by-step">Slack message: step-by-step</h3>
+
+<pre><code>1.	Compose: You type a message in the Slack client.
+2.	Encrypt-in-transit: The client sends it over HTTPS/TLS to Slack’s servers.
+3.	Authenticate/authorise: Your identity (SSO/OAuth/cookies) is checked; workspace and channel ACLs are applied.
+4.	Process: Backend services (running on CPUs) validate payloads, apply retention/DLP rules, thread routing, notifications.
+5.	Store (optional by policy): The message is written to a database and search index, encrypted at rest.
+6.	Deliver: Other clients fetch the message over TLS, render it, and update unread counts.
+7.	Operate: Logs/metrics are captured; admins can audit according to workspace policy.
+</code></pre>
+
+<h3 id="llm-request-eg-chatgptapi-step-by-step">LLM request (e.g., ChatGPT/API): step-by-step</h3>
+
+<pre><code>1.	Compose: You enter a prompt in the UI or send an API call.
+2.	Encrypt-in-transit: The client sends it over HTTPS/TLS to the provider endpoint.
+3.	Authenticate/authorise: API key/SSO is checked; org/workspace, usage limits, and feature flags are applied.
+4.	Process (stateless inference):
+•	The request hits a model gateway that validates input size, model selection, and safety settings.
+•	The prompt is fed to a running model on GPU/TPU (or CPU for small models).
+•	Important: at inference, the model does not update its weights with your prompt.
+5.	Store (configurable):
+•	Zero/limited retention options may avoid writing prompts/outputs to disk entirely.
+•	If enabled, conversation logs/metadata go to a database encrypted at rest for troubleshooting/product analytics; training usage is policy-controlled.
+6.	Deliver: The generated output is returned over TLS to the client.
+7.	Operate: Observability, safety filters (e.g., PII redaction/toxicity), rate limits, and audit logs run per your policy.
+</code></pre>
+
+<h2 id="the-same-protections-you-already-trust">The Same Protections You Already Trust</h2>
+
+<p>LLM requests and responses travel over <strong>HTTPS/TLS</strong>—the same encryption standards that protect banking sites, email, Jira, Slack, and Teams.
+They’re processed by CPUs and GPUs - the same things that process every other computational operation you perform, every day.
+When logs or chat history are stored, they’re stored in databases - the same tech that stores your emails, slack messages, banking records, and everything else you trust online, every day.</p>
+
+<p>LLMs don’t introduce alien categories of risk. They slot into the same security model as your existing tools.</p>
+
+<h2 id="are-there-any-llm-specific-risks">Are There Any LLM-Specific Risks?</h2>
+
+<p>Sure - <em>different</em>, not necessarily <em>greater</em>. Blindly trusting output is a risk. Letting ChatGPT interact with other programs on your computer, and not checking what it’s doing is a risk. A rogue driver behind the wheel is a risk, just like it is with slack, email, etc.</p>
+
+<h2 id="what-about-complex-agentic-systems-with-mpc-servers-etc">What about complex agentic systems with MPC servers etc</h2>
+
+<p>Once you move away from the stock-standard chat tools like ChatGPT or Perplexity, and get into the world of custom-coded agentic workflows, MCP servers, etc - you get into different territory. But still, that “different territory” isn’t new, unique risk. It’s just the same old territory of designing a complex software system with many interacting sub-components, and ensuring it’s secure.</p>
+
+
+    <!-- Footer -->
+    <footer>
+      <nav>
+        <a class="active" href="/">Blog</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/about.html">About</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/resume.html">Resume</a>
+        &nbsp;&bull;&nbsp;
+        <a href="../../../../feed.xml">RSS</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/archives.html">Archives</a>
+      </nav>
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright &copy; Joshua Paling 2015</p>
+        </div>
+      </div>
+      <!-- /.row -->
+    </footer>
+
+  </div>
+
+</body>
+</html>
+
