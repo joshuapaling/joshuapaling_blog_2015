@@ -1,0 +1,131 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+  <title>Joshua Paling </title>
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+  <link href="/stylesheets/application-3a039e88.css" rel="stylesheet" />
+  <script src="/javascripts/application-547ab8eb.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+  <div class="page-wrapper">
+    <header>
+      <h1>Joshua Paling</h1>
+      <nav>
+        <a class="" href="/">Blog</a>
+        <a class="" href="/about.html">About</a>
+        <a class="" href="/resume.html">Resume</a>
+        <a href="../feed.xml">RSS</a>
+        <a target="_blank" href="https://twitter.com/joshuapaling">@joshuapaling</a>
+      </nav>
+    </header>
+
+
+<h1>AAA Useful</h1>
+
+<p>The most useful thing I can be doing is work for Luxury Escapes, that pushes forward the company mission and my career.</p>
+
+<p>The least useful thing I can be doing is youtube, or anything on any other social media site including Facebook Marketplace.</p>
+
+<p>In between is things that expand my expertise. But these are a distant second to work. Doing has much more impact than developing more expertise.</p>
+
+<h3 id="very-useful-things">Very useful things</h3>
+
+<ol>
+  <li>Make the E2Es more reliable.
+    <ol>
+      <li>Pick one flakey E2E (or one in purgatory)</li>
+      <li>Run it 100x using the tool</li>
+      <li>Change til it runs 100x successfully</li>
+    </ol>
+  </li>
+  <li>Find more ways to leverage LLMs effectively
+    <ol>
+      <li>AI PR reviews for more PRs</li>
+      <li>AI to help get started on tickets &amp; provide relevant context. Build a tool that takes a JIRA ticket, picks which codebase to edit, identifies points in that codebase to change, etc, and maybe even opens a draft PR?
+        <ol>
+          <li>Probably a how-to guide is better here, and less effort. Prove it works on a few tickets.</li>
+        </ol>
+      </li>
+      <li>AI to push forward quality metrics
+        <ol>
+          <li>Improve docs</li>
+          <li>Update packages</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>Admin portal quality of life improvements
+    <ol>
+      <li>AI chat bot with access to page info</li>
+      <li>Devs page with links to LPC, LPP etc deals</li>
+    </ol>
+  </li>
+  <li>On boarding
+    <ol>
+      <li>Can you follow current instructions and set up an env from scratch, easily?</li>
+      <li>What training materials are missing? What are the concepts everyone should know?
+        <ol>
+          <li>Eg. the white labels</li>
+          <li>Eg. LuxPlus+</li>
+          <li>Eg. the most common acronyms</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="useless-things">Useless things</h3>
+
+<p>These things may occasionally provide gems of useful info but are on the whole very net negative.</p>
+
+<ol>
+  <li>Youtube</li>
+  <li>X / Twitter</li>
+  <li>Facebook including Marketplace</li>
+  <li>Any other social media</li>
+</ol>
+
+<h3 id="alternatives-to-useless-things">Alternatives to useless things</h3>
+
+<p>For when you don’t have the willpower to work, but want something less useless than social media.</p>
+
+<ol>
+  <li>https://leetcode.com/</li>
+  <li>https://www.3blue1brown.com/</li>
+  <li>https://platform.openai.com/docs/overview</li>
+  <li>https://www.veritasium.com/</li>
+  <li>The Imposters Handbook</li>
+  <li>Udemy AI course</li>
+</ol>
+
+
+    <!-- Footer -->
+    <footer>
+      <nav>
+        <a class="" href="/">Blog</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/about.html">About</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/resume.html">Resume</a>
+        &nbsp;&bull;&nbsp;
+        <a href="../feed.xml">RSS</a>
+        &nbsp;&bull;&nbsp;
+        <a class="" href="/archives.html">Archives</a>
+      </nav>
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright &copy; Joshua Paling 2015</p>
+        </div>
+      </div>
+      <!-- /.row -->
+    </footer>
+
+  </div>
+
+</body>
+</html>
+
