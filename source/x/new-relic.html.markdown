@@ -101,3 +101,5 @@ SELECT count(*) FROM Log WHERE `http_path_template` LIKE '%booking/departing%' S
 ~~~
 
 [Find queries to the path booking/departing](https://onenr.io/0bRKzyvekwE)
+
+[Bedbank oldest replication lag](https://onenr.io/0VwgMKqk0jJ)
