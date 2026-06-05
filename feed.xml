@@ -40,7 +40,7 @@
     <link rel="alternate" href="http://blog.url.com/blog/2025/09/03/llm-superstition.html"/>
     <id>http://blog.url.com/blog/2025/09/03/llm-superstition.html</id>
     <published>2025-09-03T10:00:00+10:00</published>
-    <updated>2025-09-03T21:31:09+10:00</updated>
+    <updated>2026-06-05T21:49:47+10:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -60,7 +60,7 @@
 
 &lt;p&gt;A model can be trained on any text. In theory, Google could train a model exclusively on personal emails they’ve legally agreed not to share. In practice, that would be career-ending malpractice. Reputable providers are bound by contracts, law, and hard-won trust. And, by really, really big fines when they get it wrong.&lt;/p&gt;
 
-&lt;p&gt;Think you don’t trust Big Tech? If you’re already using Slack, WhatsApp, Gmail, iPhones, and Amazon, you do. LLMs don’t add a new risk vector — they live inside the same trust framework you’ve been relying on for years.&lt;/p&gt;
+&lt;p&gt;Think you don’t trust Big Tech? If you’re already using Slack, WhatsApp, Gmail, iPhones, and Amazon, you do. LLMs don’t add a new risk vector - they live inside the same trust framework you’ve been relying on for years.&lt;/p&gt;
 
 &lt;h2 id="what-providers-could-do-vs-what-they-actually-do"&gt;What Providers &lt;em&gt;Could&lt;/em&gt; Do vs What They Actually Do&lt;/h2&gt;
 
@@ -73,7 +73,7 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;Train on &lt;strong&gt;any text&lt;/strong&gt; they can technically access — e.g. your personal Gmail inbox.&lt;/td&gt;
+      &lt;td&gt;Train on &lt;strong&gt;any text&lt;/strong&gt; they can technically access - e.g. your personal Gmail inbox.&lt;/td&gt;
       &lt;td&gt;That would be &lt;strong&gt;career-ending malpractice&lt;/strong&gt;. Providers are bound by contracts and laws that are very expensive to violate.&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
@@ -105,7 +105,7 @@ When I type something into ChatGPT, the model is instantly “learning” from m
 
 &lt;p&gt;&lt;strong&gt;Reality:&lt;/strong&gt;&lt;br /&gt;
 ChatGPT doesn’t learn in real time. The model weights are frozen during inference.&lt;br /&gt;
-- In the &lt;strong&gt;free/Plus product&lt;/strong&gt;, your chats &lt;em&gt;may&lt;/em&gt; be saved and later reviewed to help improve future models — unless you turn off history in settings.&lt;br /&gt;
+- In the &lt;strong&gt;free/Plus product&lt;/strong&gt;, your chats &lt;em&gt;may&lt;/em&gt; be saved and later reviewed to help improve future models - unless you turn off history in settings.&lt;br /&gt;
 - In &lt;strong&gt;Enterprise or API use&lt;/strong&gt;, your prompts and outputs are &lt;strong&gt;never used for training&lt;/strong&gt; by default.&lt;/p&gt;
 
 &lt;p&gt;There’s an important distinction though: &lt;strong&gt;Chat history&lt;/strong&gt; is a feature that lets ChatGPT remember your past conversations &lt;em&gt;with you&lt;/em&gt; so it can give more personalized responses (like recalling your preferences or previous context). That memory is only available to &lt;em&gt;you&lt;/em&gt; in your account. It’s not the same as retraining the model, and it doesn’t affect what anyone else sees.&lt;/p&gt;
@@ -115,9 +115,9 @@ ChatGPT doesn’t learn in real time. The model weights are frozen during infere
 2. &lt;strong&gt;Generalisation over memorisation:&lt;/strong&gt; Training is designed to capture &lt;em&gt;patterns&lt;/em&gt;, not rote memorisation. Unless text is common and widely published, it won’t resurface verbatim.&lt;br /&gt;
 3. &lt;strong&gt;Safety filters:&lt;/strong&gt; Providers test for and actively suppress memorisation of rare, unique strings (like secrets or personal details).&lt;/p&gt;
 
-&lt;p&gt;👉 What feels like “live learning” is just the model generating from patterns it already knows — not secretly retraining on your inputs. And even in the free version, where chats may help improve future models, the odds of your private details being regurgitated are vanishingly small.&lt;/p&gt;
+&lt;p&gt;👉 What feels like “live learning” is just the model generating from patterns it already knows - not secretly retraining on your inputs. And even in the free version, where chats may help improve future models, the odds of your private details being regurgitated are vanishingly small.&lt;/p&gt;
 
-&lt;h2 id="chatgpt-vs-a-slack-message--more-similar-than-youd-think"&gt;ChatGPT vs a Slack message — more similar than you’d think&lt;/h2&gt;
+&lt;h2 id="chatgpt-vs-a-slack-message---more-similar-than-youd-think"&gt;ChatGPT vs a Slack message - more similar than you’d think&lt;/h2&gt;
 
 &lt;p&gt;Here’s the step-by-step of how a Slack message flows, then the same for an LLM request. You’ll see the bones are the same: encrypt → transmit → process → (optional) store → access under policy. LLMs use the same protocols, ciphers, and internet plumbing you already rely on every day.&lt;/p&gt;
 
@@ -150,7 +150,7 @@ ChatGPT doesn’t learn in real time. The model weights are frozen during infere
 
 &lt;h2 id="the-same-protections-you-already-trust"&gt;The Same Protections You Already Trust&lt;/h2&gt;
 
-&lt;p&gt;LLM requests and responses travel over &lt;strong&gt;HTTPS/TLS&lt;/strong&gt;—the same encryption standards that protect banking sites, email, Jira, Slack, and Teams.
+&lt;p&gt;LLM requests and responses travel over &lt;strong&gt;HTTPS/TLS&lt;/strong&gt;-the same encryption standards that protect banking sites, email, Jira, Slack, and Teams.
 They’re processed by CPUs and GPUs - the same things that process every other computational operation you perform, every day.
 When logs or chat history are stored, they’re stored in databases - the same tech that stores your emails, slack messages, banking records, and everything else you trust online, every day.&lt;/p&gt;
 
