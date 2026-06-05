@@ -100,3 +100,5 @@ Sure - *different*, not necessarily *greater*. Blindly trusting output is a risk
 ## What about complex agentic systems with MPC servers etc
 
 Once you move away from the stock-standard chat tools like ChatGPT or Perplexity, and get into the world of custom-coded agentic workflows, MCP servers, etc - you get into different territory. But still, that "different territory" isn't new, unique risk. It's just the same old territory of designing a complex software system with many interacting sub-components, and ensuring it's secure.
+
+Beware in particular of [the lethal trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) for LLM systems: Access to private data, ability to externally communicate, and exposure to untrusted content.
