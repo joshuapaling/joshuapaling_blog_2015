@@ -40,7 +40,7 @@
     <link rel="alternate" href="http://blog.url.com/blog/2025/09/03/llm-superstition.html"/>
     <id>http://blog.url.com/blog/2025/09/03/llm-superstition.html</id>
     <published>2025-09-03T10:00:00+10:00</published>
-    <updated>2026-06-05T21:49:47+10:00</updated>
+    <updated>2026-06-05T21:51:23+10:00</updated>
     <author>
       <name>Article Author</name>
     </author>
@@ -163,6 +163,8 @@ When logs or chat history are stored, they’re stored in databases - the same t
 &lt;h2 id="what-about-complex-agentic-systems-with-mpc-servers-etc"&gt;What about complex agentic systems with MPC servers etc&lt;/h2&gt;
 
 &lt;p&gt;Once you move away from the stock-standard chat tools like ChatGPT or Perplexity, and get into the world of custom-coded agentic workflows, MCP servers, etc - you get into different territory. But still, that “different territory” isn’t new, unique risk. It’s just the same old territory of designing a complex software system with many interacting sub-components, and ensuring it’s secure.&lt;/p&gt;
+
+&lt;p&gt;Beware in particular of &lt;a href="https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/"&gt;the lethal trifecta&lt;/a&gt; for LLM systems: Access to private data, ability to externally communicate, and exposure to untrusted content.&lt;/p&gt;
 </content>
   </entry>
   <entry>
