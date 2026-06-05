@@ -21,13 +21,13 @@ During inference, models don’t spontaneously regurgitate arbitrary training da
 
 A model can be trained on any text. In theory, Google could train a model exclusively on personal emails they’ve legally agreed not to share. In practice, that would be career-ending malpractice. Reputable providers are bound by contracts, law, and hard-won trust. And, by really, really big fines when they get it wrong.
 
-Think you don’t trust Big Tech? If you’re already using Slack, WhatsApp, Gmail, iPhones, and Amazon, you do. LLMs don’t add a new risk vector — they live inside the same trust framework you’ve been relying on for years.
+Think you don’t trust Big Tech? If you’re already using Slack, WhatsApp, Gmail, iPhones, and Amazon, you do. LLMs don’t add a new risk vector - they live inside the same trust framework you’ve been relying on for years.
 
 ## What Providers *Could* Do vs What They Actually Do
 
 | Scenario (in theory)                                                                 | Reality (in practice)                                                                 |
 |---------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
-| Train on **any text** they can technically access — e.g. your personal Gmail inbox.   | That would be **career-ending malpractice**. Providers are bound by contracts and laws that are very expensive to violate. |
+| Train on **any text** they can technically access - e.g. your personal Gmail inbox.   | That would be **career-ending malpractice**. Providers are bound by contracts and laws that are very expensive to violate. |
 | Secretly mix in **customer data** from enterprise products (emails, docs, chats).     | Enterprise agreements explicitly forbid this. Customer data is **not used for training**.  |
 | Collect prompts at inference time and quietly add them into the model weights.        | **Inference does not update model weights.** Enterprise logs are separate, encrypted, and often zero-retention. |
 | Use **private, contractually protected data** to boost accuracy without disclosure.   | Providers train on licensed datasets, public web, or opt-in corpora. Private data is **off-limits**. |
@@ -44,7 +44,7 @@ When I type something into ChatGPT, the model is instantly “learning” from m
 
 **Reality:**  
 ChatGPT doesn’t learn in real time. The model weights are frozen during inference.  
-- In the **free/Plus product**, your chats *may* be saved and later reviewed to help improve future models — unless you turn off history in settings.  
+- In the **free/Plus product**, your chats *may* be saved and later reviewed to help improve future models - unless you turn off history in settings.  
 - In **Enterprise or API use**, your prompts and outputs are **never used for training** by default.  
 
 There’s an important distinction though: **Chat history** is a feature that lets ChatGPT remember your past conversations *with you* so it can give more personalized responses (like recalling your preferences or previous context). That memory is only available to *you* in your account. It’s not the same as retraining the model, and it doesn’t affect what anyone else sees.  
@@ -54,9 +54,9 @@ And here’s the nuance: even when your chats *are* used in future training runs
 2. **Generalisation over memorisation:** Training is designed to capture *patterns*, not rote memorisation. Unless text is common and widely published, it won’t resurface verbatim.  
 3. **Safety filters:** Providers test for and actively suppress memorisation of rare, unique strings (like secrets or personal details).  
 
-👉 What feels like “live learning” is just the model generating from patterns it already knows — not secretly retraining on your inputs. And even in the free version, where chats may help improve future models, the odds of your private details being regurgitated are vanishingly small.
+👉 What feels like “live learning” is just the model generating from patterns it already knows - not secretly retraining on your inputs. And even in the free version, where chats may help improve future models, the odds of your private details being regurgitated are vanishingly small.
 
-## ChatGPT vs a Slack message — more similar than you’d think
+## ChatGPT vs a Slack message - more similar than you’d think
 
 Here’s the step-by-step of how a Slack message flows, then the same for an LLM request. You’ll see the bones are the same: encrypt → transmit → process → (optional) store → access under policy. LLMs use the same protocols, ciphers, and internet plumbing you already rely on every day.
 
@@ -87,7 +87,7 @@ Here’s the step-by-step of how a Slack message flows, then the same for an LLM
 
 ## The Same Protections You Already Trust
 
-LLM requests and responses travel over **HTTPS/TLS**—the same encryption standards that protect banking sites, email, Jira, Slack, and Teams.
+LLM requests and responses travel over **HTTPS/TLS**-the same encryption standards that protect banking sites, email, Jira, Slack, and Teams.
 They're processed by CPUs and GPUs - the same things that process every other computational operation you perform, every day.
 When logs or chat history are stored, they're stored in databases - the same tech that stores your emails, slack messages, banking records, and everything else you trust online, every day.
 
